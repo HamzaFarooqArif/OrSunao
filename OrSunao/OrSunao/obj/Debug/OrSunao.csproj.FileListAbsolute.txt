@@ -1,0 +1,6 @@
+c:\users\waris\documents\visual studio 2015\Projects\OrSunao\OrSunao\obj\Debug\OrSunao.csprojResolveAssemblyReference.cache
+c:\users\waris\documents\visual studio 2015\Projects\OrSunao\OrSunao\bin\OrSunao.dll.config
+c:\users\waris\documents\visual studio 2015\Projects\OrSunao\OrSunao\bin\OrSunao.dll
+c:\users\waris\documents\visual studio 2015\Projects\OrSunao\OrSunao\bin\OrSunao.pdb
+c:\users\waris\documents\visual studio 2015\Projects\OrSunao\OrSunao\obj\Debug\OrSunao.dll
+c:\users\waris\documents\visual studio 2015\Projects\OrSunao\OrSunao\obj\Debug\OrSunao.pdb
