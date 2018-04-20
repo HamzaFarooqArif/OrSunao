@@ -19,6 +19,11 @@ namespace OrSunao
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
+        [OperationContract]
+        bool SRegisterAdmin(string UserFirstName, string UserLastName, string Password, string Email, string CNIC, string Contact);
+
+        [OperationContract]
+        bool SLoginAdmin(string Email, string Password);
         // TODO: Add your service operations here
     }
 

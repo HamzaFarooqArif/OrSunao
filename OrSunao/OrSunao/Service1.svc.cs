@@ -29,5 +29,33 @@ namespace OrSunao
             }
             return composite;
         }
+
+        public bool SRegisterAdmin(string UserFirstName, string UserLastName, string Password, string Email, string CNIC, string Contact)
+        {
+            if (UserDl.adminExist == false)
+            {
+                bool isregister;
+                Admin a = new Admin();
+                isregister = a.RegisterAdmin(UserFirstName, UserFirstName, Password, Email, CNIC, Contact);
+                return isregister;
+            }
+            return false;
+           
+        }
+
+        public bool SLoginAdmin(string Email, string Password)
+        {
+            bool isregister;
+   
+            Admin a1 = new Admin();
+            isregister = a1.LoginAdmin(Email, Password);
+            if(isregister)
+            {
+           
+                    return true;
+       
+            }
+            return false;
+        }
     }
 }

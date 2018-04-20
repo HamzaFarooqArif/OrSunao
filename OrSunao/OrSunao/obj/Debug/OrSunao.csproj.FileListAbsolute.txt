@@ -4,3 +4,9 @@ c:\users\waris\documents\visual studio 2015\Projects\OrSunao\OrSunao\bin\OrSunao
 c:\users\waris\documents\visual studio 2015\Projects\OrSunao\OrSunao\bin\OrSunao.pdb
 c:\users\waris\documents\visual studio 2015\Projects\OrSunao\OrSunao\obj\Debug\OrSunao.dll
 c:\users\waris\documents\visual studio 2015\Projects\OrSunao\OrSunao\obj\Debug\OrSunao.pdb
+C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\LabProject\OrSunao\OrSunao\obj\Debug\OrSunao.csprojResolveAssemblyReference.cache
+C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\LabProject\OrSunao\OrSunao\obj\Debug\OrSunao.dll
+C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\LabProject\OrSunao\OrSunao\obj\Debug\OrSunao.pdb
+C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\LabProject\OrSunao\OrSunao\bin\OrSunao.dll.config
+C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\LabProject\OrSunao\OrSunao\bin\OrSunao.dll
+C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\LabProject\OrSunao\OrSunao\bin\OrSunao.pdb

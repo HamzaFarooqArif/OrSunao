@@ -9,6 +9,7 @@ namespace OrSunao
     {
         private string firstName;
         private string lastName;
+        private string password;
         private string contactNumber;
         private string cNIC;
         private string email;
@@ -75,6 +76,19 @@ namespace OrSunao
             set
             {
                 email = value;
+            }
+        }
+
+        public string Password
+        {
+            get
+            {
+                return password;
+            }
+
+            set
+            {
+                password = value;
             }
         }
     }

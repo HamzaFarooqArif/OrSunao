@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication11
 {
-    partial class Form1
+    partial class OrSunao
     {
         /// <summary>
         /// Required designer variable.
@@ -43,6 +43,7 @@
             this.registeradmin.TabIndex = 0;
             this.registeradmin.TabStop = true;
             this.registeradmin.Text = "Register as an  Admin";
+            this.registeradmin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.registeradmin_LinkClicked);
             // 
             // registeruser
             // 
@@ -63,6 +64,7 @@
             this.loginadmin.TabIndex = 2;
             this.loginadmin.TabStop = true;
             this.loginadmin.Text = "Log in as an Admin";
+            this.loginadmin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.loginadmin_LinkClicked);
             // 
             // loginuser
             // 
@@ -74,7 +76,7 @@
             this.loginuser.TabStop = true;
             this.loginuser.Text = "Log in as a User";
             // 
-            // Form1
+            // OrSunao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -85,7 +87,7 @@
             this.Controls.Add(this.loginadmin);
             this.Controls.Add(this.registeruser);
             this.Controls.Add(this.registeradmin);
-            this.Name = "Form1";
+            this.Name = "OrSunao";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
