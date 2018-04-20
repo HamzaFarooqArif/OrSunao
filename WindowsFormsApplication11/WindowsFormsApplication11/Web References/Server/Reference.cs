@@ -23,11 +23,15 @@ namespace WindowsFormsApplication11.Server {
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="BasicHttpBinding_IService1", Namespace="http://tempuri.org/")]
     public partial class Service1 : System.Web.Services.Protocols.SoapHttpClientProtocol {
+        
+        private System.Threading.SendOrPostCallback SRegisterUserOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SLoginUserOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetDataOperationCompleted;
         
@@ -76,6 +80,12 @@ namespace WindowsFormsApplication11.Server {
         }
         
         /// <remarks/>
+        public event SRegisterUserCompletedEventHandler SRegisterUserCompleted;
+        
+        /// <remarks/>
+        public event SLoginUserCompletedEventHandler SLoginUserCompleted;
+        
+        /// <remarks/>
         public event GetDataCompletedEventHandler GetDataCompleted;
         
         /// <remarks/>
@@ -86,6 +96,82 @@ namespace WindowsFormsApplication11.Server {
         
         /// <remarks/>
         public event SLoginAdminCompletedEventHandler SLoginAdminCompleted;
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/SRegisterUser", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void SRegisterUser([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string firstname, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string lastname, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string password, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string email, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string contact, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string cnic, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string secretq, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string ans, out bool SRegisterUserResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool SRegisterUserResultSpecified) {
+            object[] results = this.Invoke("SRegisterUser", new object[] {
+                        firstname,
+                        lastname,
+                        password,
+                        email,
+                        contact,
+                        cnic,
+                        secretq,
+                        ans});
+            SRegisterUserResult = ((bool)(results[0]));
+            SRegisterUserResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public void SRegisterUserAsync(string firstname, string lastname, string password, string email, string contact, string cnic, string secretq, string ans) {
+            this.SRegisterUserAsync(firstname, lastname, password, email, contact, cnic, secretq, ans, null);
+        }
+        
+        /// <remarks/>
+        public void SRegisterUserAsync(string firstname, string lastname, string password, string email, string contact, string cnic, string secretq, string ans, object userState) {
+            if ((this.SRegisterUserOperationCompleted == null)) {
+                this.SRegisterUserOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSRegisterUserOperationCompleted);
+            }
+            this.InvokeAsync("SRegisterUser", new object[] {
+                        firstname,
+                        lastname,
+                        password,
+                        email,
+                        contact,
+                        cnic,
+                        secretq,
+                        ans}, this.SRegisterUserOperationCompleted, userState);
+        }
+        
+        private void OnSRegisterUserOperationCompleted(object arg) {
+            if ((this.SRegisterUserCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SRegisterUserCompleted(this, new SRegisterUserCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/SLoginUser", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void SLoginUser([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string email, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string password, out bool SLoginUserResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool SLoginUserResultSpecified) {
+            object[] results = this.Invoke("SLoginUser", new object[] {
+                        email,
+                        password});
+            SLoginUserResult = ((bool)(results[0]));
+            SLoginUserResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public void SLoginUserAsync(string email, string password) {
+            this.SLoginUserAsync(email, password, null);
+        }
+        
+        /// <remarks/>
+        public void SLoginUserAsync(string email, string password, object userState) {
+            if ((this.SLoginUserOperationCompleted == null)) {
+                this.SLoginUserOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSLoginUserOperationCompleted);
+            }
+            this.InvokeAsync("SLoginUser", new object[] {
+                        email,
+                        password}, this.SLoginUserOperationCompleted, userState);
+        }
+        
+        private void OnSLoginUserOperationCompleted(object arg) {
+            if ((this.SLoginUserCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SLoginUserCompleted(this, new SLoginUserCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/GetData", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -288,11 +374,79 @@ namespace WindowsFormsApplication11.Server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void SRegisterUserCompletedEventHandler(object sender, SRegisterUserCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SRegisterUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SRegisterUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool SRegisterUserResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public bool SRegisterUserResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void SLoginUserCompletedEventHandler(object sender, SLoginUserCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SLoginUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SLoginUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool SLoginUserResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public bool SLoginUserResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void GetDataCompletedEventHandler(object sender, GetDataCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetDataCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -314,11 +468,11 @@ namespace WindowsFormsApplication11.Server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void GetDataUsingDataContractCompletedEventHandler(object sender, GetDataUsingDataContractCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetDataUsingDataContractCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -340,11 +494,11 @@ namespace WindowsFormsApplication11.Server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void SRegisterAdminCompletedEventHandler(object sender, SRegisterAdminCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SRegisterAdminCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -374,11 +528,11 @@ namespace WindowsFormsApplication11.Server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void SLoginAdminCompletedEventHandler(object sender, SLoginAdminCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SLoginAdminCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {

@@ -9,7 +9,7 @@ namespace OrSunao
     {
         public static bool adminExist = false;
         public static Admin adminUtill = null;
-        public static List<User> orSunaoMembers;
+        public static List<User> orSunaoMembers = new List<User>();
         public static List<User> registrationRequests;
         public static List<User> suspendedUsers;
 

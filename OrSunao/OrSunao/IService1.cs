@@ -12,8 +12,15 @@ namespace OrSunao
     [ServiceContract]
     public interface IService1
     {
+        [OperationContract]
+        bool SRegisterUser(string firstname, string lastname, string password, string email, string contact, string cnic, string secretq, string ans);
+
 
         [OperationContract]
+        bool SLoginUser(string email, string password);
+
+        [OperationContract]
+
         string GetData(int value);
 
         [OperationContract]

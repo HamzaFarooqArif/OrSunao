@@ -19,6 +19,11 @@ namespace WindowsFormsApplication11
 
         private void btn_Register_Click(object sender, EventArgs e)
         {
+            if(Txt_FirstName.Text == "" || txt_LastName.Text == "" || txt_Email.Text == "" || Txt_Password.Text == "" || txt_CNIC.Text == "" || txt_Contact.Text == "")
+            {
+                MessageBox.Show("invalied entries in text boxes the cant be empty :(");
+                return;
+            }
             Server.Service1 server = new Server.Service1();
             bool isregister;
             bool ispassed;
@@ -27,13 +32,19 @@ namespace WindowsFormsApplication11
             {
                 if(isregister)
                 {
-                    MessageBox.Show("yayyyyy! u r registered");
+                    MessageBox.Show("yayyyyy! u r registered from now u are an admin of or sunao");
                 }
                 else
                 {
-                    MessageBox.Show("mr jao");
+                    MessageBox.Show("oops there is already an admin here!");
                 }
             }
+            Txt_FirstName.Clear();
+            txt_LastName.Clear();
+            txt_Email.Clear();
+            txt_Contact.Clear();
+            Txt_Password.Clear();
+            txt_CNIC.Clear();
         }
 
         private void lnklbl_Login_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

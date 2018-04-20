@@ -10,3 +10,9 @@ C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\La
 C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\LabProject\OrSunao\OrSunao\bin\OrSunao.dll.config
 C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\LabProject\OrSunao\OrSunao\bin\OrSunao.dll
 C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\LabProject\OrSunao\OrSunao\bin\OrSunao.pdb
+C:\Users\Dc\Desktop\ooadP\version3\OrSunao\OrSunao\bin\OrSunao.dll.config
+C:\Users\Dc\Desktop\ooadP\version3\OrSunao\OrSunao\bin\OrSunao.dll
+C:\Users\Dc\Desktop\ooadP\version3\OrSunao\OrSunao\bin\OrSunao.pdb
+C:\Users\Dc\Desktop\ooadP\version3\OrSunao\OrSunao\obj\Debug\OrSunao.csprojResolveAssemblyReference.cache
+C:\Users\Dc\Desktop\ooadP\version3\OrSunao\OrSunao\obj\Debug\OrSunao.dll
+C:\Users\Dc\Desktop\ooadP\version3\OrSunao\OrSunao\obj\Debug\OrSunao.pdb

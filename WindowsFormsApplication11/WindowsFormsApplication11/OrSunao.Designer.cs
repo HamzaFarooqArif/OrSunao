@@ -54,6 +54,7 @@
             this.registeruser.TabIndex = 1;
             this.registeruser.TabStop = true;
             this.registeruser.Text = "Register as a User";
+            this.registeruser.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.registeruser_LinkClicked);
             // 
             // loginadmin
             // 
@@ -75,6 +76,7 @@
             this.loginuser.TabIndex = 3;
             this.loginuser.TabStop = true;
             this.loginuser.Text = "Log in as a User";
+            this.loginuser.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.loginuser_LinkClicked);
             // 
             // OrSunao
             // 

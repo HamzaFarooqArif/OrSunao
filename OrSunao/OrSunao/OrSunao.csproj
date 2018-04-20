@@ -78,7 +78,6 @@
     <Compile Include="Admin.cs" />
     <Compile Include="ChatBox.cs" />
     <Compile Include="ChatRoom.cs" />
-    <Compile Include="Contact.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Service References\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>

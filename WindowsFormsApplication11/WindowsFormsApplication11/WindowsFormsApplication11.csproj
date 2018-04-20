@@ -54,6 +54,12 @@
     <Compile Include="LoginAdmin.Designer.cs">
       <DependentUpon>LoginAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginUser.Designer.cs">
+      <DependentUpon>LoginUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrSunao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,12 @@
     <Compile Include="RegisterAdmin.Designer.cs">
       <DependentUpon>RegisterAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegisterUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterUser.Designer.cs">
+      <DependentUpon>RegisterUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Web References\Server\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -75,6 +87,9 @@
     </Compile>
     <EmbeddedResource Include="LoginAdmin.resx">
       <DependentUpon>LoginAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginUser.resx">
+      <DependentUpon>LoginUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrSunao.resx">
       <DependentUpon>OrSunao.cs</DependentUpon>
@@ -91,6 +106,9 @@
     </Compile>
     <EmbeddedResource Include="RegisterAdmin.resx">
       <DependentUpon>RegisterAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterUser.resx">
+      <DependentUpon>RegisterUser.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
