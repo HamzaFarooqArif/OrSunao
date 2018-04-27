@@ -11,10 +11,53 @@ namespace OrSunao
         private string answer;
         private string message;
         private bool isBlocked;
-        private List<User> contacts;
+        
+
+        public string getPassword()
+        {
+            return this.Password;
+        }
+
+        public string getEmail()
+        {
+            return this.Email;
+        }
+        public User getuserfromr(string email, string password)
+        {
+            User p = new User();
+            foreach (User k in UserDl.orSunaoMembers)
+            {
+                if (k.Email == email && k.Password == password)
+                {
+                    p = k;
+                    break;
+                }
+            }
+            return p;
+        }
+        public User getuser(string email, string password)
+        {
+            User p = new User();
+            foreach(User k in UserDl.registrationRequests)
+            {
+                if(k.Email == email && k.Password == password)
+                {
+                    p = k;
+                    break;
+                }
+            }
+            return p;
+        }
 
         public bool registeruser(string firstname, string lastname,string password, string email, string contact, string cnic, string secretq, string ans)
         {
+            foreach(User u in UserDl.suspendedUsers)
+            {
+                if(u.Email == email && u.Password == password)
+                {
+                    return false;
+                }
+            }
             if (UserDl.orSunaoMembers != null)
             {
                 foreach (User k in UserDl.orSunaoMembers)
@@ -34,7 +77,7 @@ namespace OrSunao
             this.CNIC = cnic;
             this.SecretQuestion = secretq;
             this.Answer = ans;
-            UserDl.orSunaoMembers.Add(this);
+            UserDl.registrationRequests.Add(this);
             return true;
         }
         public bool loginuser(string email, string password)
@@ -108,17 +151,6 @@ namespace OrSunao
             }
         }
 
-        public List<User> Contacts
-        {
-            get
-            {
-                return contacts;
-            }
-
-            set
-            {
-                contacts = value;
-            }
-        }
+     
     }
 }

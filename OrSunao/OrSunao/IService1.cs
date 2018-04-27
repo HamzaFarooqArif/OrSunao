@@ -13,11 +13,34 @@ namespace OrSunao
     public interface IService1
     {
         [OperationContract]
+        bool SDeleteUser(string email, string password);
+        [OperationContract]
+        bool SSuspendUser(string email, string password);
+
+        [OperationContract]
+        void SPassRegisteredUsersname(ref List<string> str);
+        [OperationContract]
+        void SPassRegisteredUserspassword(ref List<string> str);
+
+        [OperationContract]
+        void SPassSuspendedUsersname(ref List<string> str);
+        [OperationContract]
+        void SPassSuspendedUserspassword(ref List<string> str);
+        [OperationContract]
+        void SPassToBeRegisteredUsersname(ref List<string> str);
+        [OperationContract]
+        void SPassToBeRegisteredUserspassword(ref List<string> str);
+
+
+        [OperationContract]
         bool SRegisterUser(string firstname, string lastname, string password, string email, string contact, string cnic, string secretq, string ans);
 
 
         [OperationContract]
         bool SLoginUser(string email, string password);
+
+        [OperationContract]
+        bool SPassUser(string email, string password);
 
         [OperationContract]
 

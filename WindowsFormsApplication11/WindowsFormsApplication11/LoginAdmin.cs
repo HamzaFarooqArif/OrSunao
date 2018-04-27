@@ -27,6 +27,7 @@ namespace WindowsFormsApplication11
         private void btn_Login_Click(object sender, EventArgs e)
         {
             Server.Service1 server = new Server.Service1();
+            EnterAdmin p = new EnterAdmin();
             bool islogin;
             bool ispassed;
             server.SLoginAdmin(txt_Email.Text, txt_Password.Text, out islogin, out ispassed);
@@ -34,7 +35,9 @@ namespace WindowsFormsApplication11
             {
                 if(islogin)
                 {
-                    MessageBox.Show("hey Admin ! You have entered the Or_Sunao");
+                   
+                    p.Show();
+                    this.Hide();
                 }
                 else
                 {

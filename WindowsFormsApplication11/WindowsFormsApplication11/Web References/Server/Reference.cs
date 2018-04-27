@@ -29,9 +29,27 @@ namespace WindowsFormsApplication11.Server {
     [System.Web.Services.WebServiceBindingAttribute(Name="BasicHttpBinding_IService1", Namespace="http://tempuri.org/")]
     public partial class Service1 : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
+        private System.Threading.SendOrPostCallback SDeleteUserOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SSuspendUserOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SPassRegisteredUsersnameOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SPassRegisteredUserspasswordOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SPassSuspendedUsersnameOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SPassSuspendedUserspasswordOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SPassToBeRegisteredUsersnameOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SPassToBeRegisteredUserspasswordOperationCompleted;
+        
         private System.Threading.SendOrPostCallback SRegisterUserOperationCompleted;
         
         private System.Threading.SendOrPostCallback SLoginUserOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SPassUserOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetDataOperationCompleted;
         
@@ -80,10 +98,37 @@ namespace WindowsFormsApplication11.Server {
         }
         
         /// <remarks/>
+        public event SDeleteUserCompletedEventHandler SDeleteUserCompleted;
+        
+        /// <remarks/>
+        public event SSuspendUserCompletedEventHandler SSuspendUserCompleted;
+        
+        /// <remarks/>
+        public event SPassRegisteredUsersnameCompletedEventHandler SPassRegisteredUsersnameCompleted;
+        
+        /// <remarks/>
+        public event SPassRegisteredUserspasswordCompletedEventHandler SPassRegisteredUserspasswordCompleted;
+        
+        /// <remarks/>
+        public event SPassSuspendedUsersnameCompletedEventHandler SPassSuspendedUsersnameCompleted;
+        
+        /// <remarks/>
+        public event SPassSuspendedUserspasswordCompletedEventHandler SPassSuspendedUserspasswordCompleted;
+        
+        /// <remarks/>
+        public event SPassToBeRegisteredUsersnameCompletedEventHandler SPassToBeRegisteredUsersnameCompleted;
+        
+        /// <remarks/>
+        public event SPassToBeRegisteredUserspasswordCompletedEventHandler SPassToBeRegisteredUserspasswordCompleted;
+        
+        /// <remarks/>
         public event SRegisterUserCompletedEventHandler SRegisterUserCompleted;
         
         /// <remarks/>
         public event SLoginUserCompletedEventHandler SLoginUserCompleted;
+        
+        /// <remarks/>
+        public event SPassUserCompletedEventHandler SPassUserCompleted;
         
         /// <remarks/>
         public event GetDataCompletedEventHandler GetDataCompleted;
@@ -96,6 +141,244 @@ namespace WindowsFormsApplication11.Server {
         
         /// <remarks/>
         public event SLoginAdminCompletedEventHandler SLoginAdminCompleted;
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/SDeleteUser", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void SDeleteUser([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string email, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string password, out bool SDeleteUserResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool SDeleteUserResultSpecified) {
+            object[] results = this.Invoke("SDeleteUser", new object[] {
+                        email,
+                        password});
+            SDeleteUserResult = ((bool)(results[0]));
+            SDeleteUserResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public void SDeleteUserAsync(string email, string password) {
+            this.SDeleteUserAsync(email, password, null);
+        }
+        
+        /// <remarks/>
+        public void SDeleteUserAsync(string email, string password, object userState) {
+            if ((this.SDeleteUserOperationCompleted == null)) {
+                this.SDeleteUserOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSDeleteUserOperationCompleted);
+            }
+            this.InvokeAsync("SDeleteUser", new object[] {
+                        email,
+                        password}, this.SDeleteUserOperationCompleted, userState);
+        }
+        
+        private void OnSDeleteUserOperationCompleted(object arg) {
+            if ((this.SDeleteUserCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SDeleteUserCompleted(this, new SDeleteUserCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/SSuspendUser", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void SSuspendUser([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string email, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string password, out bool SSuspendUserResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool SSuspendUserResultSpecified) {
+            object[] results = this.Invoke("SSuspendUser", new object[] {
+                        email,
+                        password});
+            SSuspendUserResult = ((bool)(results[0]));
+            SSuspendUserResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public void SSuspendUserAsync(string email, string password) {
+            this.SSuspendUserAsync(email, password, null);
+        }
+        
+        /// <remarks/>
+        public void SSuspendUserAsync(string email, string password, object userState) {
+            if ((this.SSuspendUserOperationCompleted == null)) {
+                this.SSuspendUserOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSSuspendUserOperationCompleted);
+            }
+            this.InvokeAsync("SSuspendUser", new object[] {
+                        email,
+                        password}, this.SSuspendUserOperationCompleted, userState);
+        }
+        
+        private void OnSSuspendUserOperationCompleted(object arg) {
+            if ((this.SSuspendUserCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SSuspendUserCompleted(this, new SSuspendUserCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/SPassRegisteredUsersname", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void SPassRegisteredUsersname([System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)] [System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays")] ref string[] str) {
+            object[] results = this.Invoke("SPassRegisteredUsersname", new object[] {
+                        str});
+            str = ((string[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void SPassRegisteredUsersnameAsync(string[] str) {
+            this.SPassRegisteredUsersnameAsync(str, null);
+        }
+        
+        /// <remarks/>
+        public void SPassRegisteredUsersnameAsync(string[] str, object userState) {
+            if ((this.SPassRegisteredUsersnameOperationCompleted == null)) {
+                this.SPassRegisteredUsersnameOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSPassRegisteredUsersnameOperationCompleted);
+            }
+            this.InvokeAsync("SPassRegisteredUsersname", new object[] {
+                        str}, this.SPassRegisteredUsersnameOperationCompleted, userState);
+        }
+        
+        private void OnSPassRegisteredUsersnameOperationCompleted(object arg) {
+            if ((this.SPassRegisteredUsersnameCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SPassRegisteredUsersnameCompleted(this, new SPassRegisteredUsersnameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/SPassRegisteredUserspassword", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void SPassRegisteredUserspassword([System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)] [System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays")] ref string[] str) {
+            object[] results = this.Invoke("SPassRegisteredUserspassword", new object[] {
+                        str});
+            str = ((string[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void SPassRegisteredUserspasswordAsync(string[] str) {
+            this.SPassRegisteredUserspasswordAsync(str, null);
+        }
+        
+        /// <remarks/>
+        public void SPassRegisteredUserspasswordAsync(string[] str, object userState) {
+            if ((this.SPassRegisteredUserspasswordOperationCompleted == null)) {
+                this.SPassRegisteredUserspasswordOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSPassRegisteredUserspasswordOperationCompleted);
+            }
+            this.InvokeAsync("SPassRegisteredUserspassword", new object[] {
+                        str}, this.SPassRegisteredUserspasswordOperationCompleted, userState);
+        }
+        
+        private void OnSPassRegisteredUserspasswordOperationCompleted(object arg) {
+            if ((this.SPassRegisteredUserspasswordCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SPassRegisteredUserspasswordCompleted(this, new SPassRegisteredUserspasswordCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/SPassSuspendedUsersname", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void SPassSuspendedUsersname([System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)] [System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays")] ref string[] str) {
+            object[] results = this.Invoke("SPassSuspendedUsersname", new object[] {
+                        str});
+            str = ((string[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void SPassSuspendedUsersnameAsync(string[] str) {
+            this.SPassSuspendedUsersnameAsync(str, null);
+        }
+        
+        /// <remarks/>
+        public void SPassSuspendedUsersnameAsync(string[] str, object userState) {
+            if ((this.SPassSuspendedUsersnameOperationCompleted == null)) {
+                this.SPassSuspendedUsersnameOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSPassSuspendedUsersnameOperationCompleted);
+            }
+            this.InvokeAsync("SPassSuspendedUsersname", new object[] {
+                        str}, this.SPassSuspendedUsersnameOperationCompleted, userState);
+        }
+        
+        private void OnSPassSuspendedUsersnameOperationCompleted(object arg) {
+            if ((this.SPassSuspendedUsersnameCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SPassSuspendedUsersnameCompleted(this, new SPassSuspendedUsersnameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/SPassSuspendedUserspassword", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void SPassSuspendedUserspassword([System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)] [System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays")] ref string[] str) {
+            object[] results = this.Invoke("SPassSuspendedUserspassword", new object[] {
+                        str});
+            str = ((string[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void SPassSuspendedUserspasswordAsync(string[] str) {
+            this.SPassSuspendedUserspasswordAsync(str, null);
+        }
+        
+        /// <remarks/>
+        public void SPassSuspendedUserspasswordAsync(string[] str, object userState) {
+            if ((this.SPassSuspendedUserspasswordOperationCompleted == null)) {
+                this.SPassSuspendedUserspasswordOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSPassSuspendedUserspasswordOperationCompleted);
+            }
+            this.InvokeAsync("SPassSuspendedUserspassword", new object[] {
+                        str}, this.SPassSuspendedUserspasswordOperationCompleted, userState);
+        }
+        
+        private void OnSPassSuspendedUserspasswordOperationCompleted(object arg) {
+            if ((this.SPassSuspendedUserspasswordCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SPassSuspendedUserspasswordCompleted(this, new SPassSuspendedUserspasswordCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/SPassToBeRegisteredUsersname", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void SPassToBeRegisteredUsersname([System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)] [System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays")] ref string[] str) {
+            object[] results = this.Invoke("SPassToBeRegisteredUsersname", new object[] {
+                        str});
+            str = ((string[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void SPassToBeRegisteredUsersnameAsync(string[] str) {
+            this.SPassToBeRegisteredUsersnameAsync(str, null);
+        }
+        
+        /// <remarks/>
+        public void SPassToBeRegisteredUsersnameAsync(string[] str, object userState) {
+            if ((this.SPassToBeRegisteredUsersnameOperationCompleted == null)) {
+                this.SPassToBeRegisteredUsersnameOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSPassToBeRegisteredUsersnameOperationCompleted);
+            }
+            this.InvokeAsync("SPassToBeRegisteredUsersname", new object[] {
+                        str}, this.SPassToBeRegisteredUsersnameOperationCompleted, userState);
+        }
+        
+        private void OnSPassToBeRegisteredUsersnameOperationCompleted(object arg) {
+            if ((this.SPassToBeRegisteredUsersnameCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SPassToBeRegisteredUsersnameCompleted(this, new SPassToBeRegisteredUsersnameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/SPassToBeRegisteredUserspassword", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void SPassToBeRegisteredUserspassword([System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)] [System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays")] ref string[] str) {
+            object[] results = this.Invoke("SPassToBeRegisteredUserspassword", new object[] {
+                        str});
+            str = ((string[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void SPassToBeRegisteredUserspasswordAsync(string[] str) {
+            this.SPassToBeRegisteredUserspasswordAsync(str, null);
+        }
+        
+        /// <remarks/>
+        public void SPassToBeRegisteredUserspasswordAsync(string[] str, object userState) {
+            if ((this.SPassToBeRegisteredUserspasswordOperationCompleted == null)) {
+                this.SPassToBeRegisteredUserspasswordOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSPassToBeRegisteredUserspasswordOperationCompleted);
+            }
+            this.InvokeAsync("SPassToBeRegisteredUserspassword", new object[] {
+                        str}, this.SPassToBeRegisteredUserspasswordOperationCompleted, userState);
+        }
+        
+        private void OnSPassToBeRegisteredUserspasswordOperationCompleted(object arg) {
+            if ((this.SPassToBeRegisteredUserspasswordCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SPassToBeRegisteredUserspasswordCompleted(this, new SPassToBeRegisteredUserspasswordCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/SRegisterUser", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -170,6 +453,38 @@ namespace WindowsFormsApplication11.Server {
             if ((this.SLoginUserCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.SLoginUserCompleted(this, new SLoginUserCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/SPassUser", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void SPassUser([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string email, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string password, out bool SPassUserResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool SPassUserResultSpecified) {
+            object[] results = this.Invoke("SPassUser", new object[] {
+                        email,
+                        password});
+            SPassUserResult = ((bool)(results[0]));
+            SPassUserResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public void SPassUserAsync(string email, string password) {
+            this.SPassUserAsync(email, password, null);
+        }
+        
+        /// <remarks/>
+        public void SPassUserAsync(string email, string password, object userState) {
+            if ((this.SPassUserOperationCompleted == null)) {
+                this.SPassUserOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSPassUserOperationCompleted);
+            }
+            this.InvokeAsync("SPassUser", new object[] {
+                        email,
+                        password}, this.SPassUserOperationCompleted, userState);
+        }
+        
+        private void OnSPassUserOperationCompleted(object arg) {
+            if ((this.SPassUserCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SPassUserCompleted(this, new SPassUserCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -375,6 +690,230 @@ namespace WindowsFormsApplication11.Server {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void SDeleteUserCompletedEventHandler(object sender, SDeleteUserCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SDeleteUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SDeleteUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool SDeleteUserResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public bool SDeleteUserResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void SSuspendUserCompletedEventHandler(object sender, SSuspendUserCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SSuspendUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SSuspendUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool SSuspendUserResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public bool SSuspendUserResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void SPassRegisteredUsersnameCompletedEventHandler(object sender, SPassRegisteredUsersnameCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SPassRegisteredUsersnameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SPassRegisteredUsersnameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string[] str {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void SPassRegisteredUserspasswordCompletedEventHandler(object sender, SPassRegisteredUserspasswordCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SPassRegisteredUserspasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SPassRegisteredUserspasswordCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string[] str {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void SPassSuspendedUsersnameCompletedEventHandler(object sender, SPassSuspendedUsersnameCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SPassSuspendedUsersnameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SPassSuspendedUsersnameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string[] str {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void SPassSuspendedUserspasswordCompletedEventHandler(object sender, SPassSuspendedUserspasswordCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SPassSuspendedUserspasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SPassSuspendedUserspasswordCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string[] str {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void SPassToBeRegisteredUsersnameCompletedEventHandler(object sender, SPassToBeRegisteredUsersnameCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SPassToBeRegisteredUsersnameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SPassToBeRegisteredUsersnameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string[] str {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void SPassToBeRegisteredUserspasswordCompletedEventHandler(object sender, SPassToBeRegisteredUserspasswordCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SPassToBeRegisteredUserspasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SPassToBeRegisteredUserspasswordCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string[] str {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void SRegisterUserCompletedEventHandler(object sender, SRegisterUserCompletedEventArgs e);
     
     /// <remarks/>
@@ -434,6 +973,40 @@ namespace WindowsFormsApplication11.Server {
         
         /// <remarks/>
         public bool SLoginUserResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void SPassUserCompletedEventHandler(object sender, SPassUserCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SPassUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SPassUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool SPassUserResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public bool SPassUserResultSpecified {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((bool)(this.results[1]));

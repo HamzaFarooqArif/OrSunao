@@ -7,6 +7,20 @@ namespace OrSunao
 {
     public class Admin : Person
     {
+       
+        public List<User> getregisteredusers()
+        {
+            return UserDl.orSunaoMembers;
+        }
+        public List<User> getsuspendedusers()
+        {
+            return UserDl.suspendedUsers;
+        }
+        public List<User> gettoboregisteredusers()
+        {
+            return UserDl.registrationRequests;
+        }
+
         public bool RegisterAdmin(string UserFirstName, string UserLastName, string Password, string Email, string CNIC, string Contact)
         {
             if (UserDl.adminExist == false)
@@ -22,6 +36,17 @@ namespace OrSunao
                 return true;
             }
             return false;
+        }
+        public bool DeleteUser(User u)
+        {
+            UserDl.orSunaoMembers.Remove(u);
+            return true;
+        }
+        public bool suspenduser(User u)
+        {
+            UserDl.suspendedUsers.Add(u);
+            UserDl.orSunaoMembers.Remove(u);
+            return true;
         }
 
         public bool LoginAdmin(string Email, string Password)
@@ -41,11 +66,15 @@ namespace OrSunao
         }
         public bool SuspendUser(User u)
         {
+            UserDl.orSunaoMembers.Remove(u);
+            UserDl.suspendedUsers.Add(u);
             return false;
         }
 
         public bool ApproveRegistration(User u)
         {
+            UserDl.orSunaoMembers.Add(u);
+            UserDl.registrationRequests.Remove(u);
             return false;
         }
 

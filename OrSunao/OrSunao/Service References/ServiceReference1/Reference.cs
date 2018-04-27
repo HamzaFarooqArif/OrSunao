@@ -78,6 +78,78 @@ namespace OrSunao.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SDeleteUser", ReplyAction="http://tempuri.org/IService1/SDeleteUserResponse")]
+        bool SDeleteUser(string email, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SDeleteUser", ReplyAction="http://tempuri.org/IService1/SDeleteUserResponse")]
+        System.Threading.Tasks.Task<bool> SDeleteUserAsync(string email, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SSuspendUser", ReplyAction="http://tempuri.org/IService1/SSuspendUserResponse")]
+        bool SSuspendUser(string email, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SSuspendUser", ReplyAction="http://tempuri.org/IService1/SSuspendUserResponse")]
+        System.Threading.Tasks.Task<bool> SSuspendUserAsync(string email, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SPassRegisteredUsersname", ReplyAction="http://tempuri.org/IService1/SPassRegisteredUsersnameResponse")]
+        OrSunao.ServiceReference1.SPassRegisteredUsersnameResponse SPassRegisteredUsersname(OrSunao.ServiceReference1.SPassRegisteredUsersnameRequest request);
+        
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SPassRegisteredUsersname", ReplyAction="http://tempuri.org/IService1/SPassRegisteredUsersnameResponse")]
+        System.Threading.Tasks.Task<OrSunao.ServiceReference1.SPassRegisteredUsersnameResponse> SPassRegisteredUsersnameAsync(OrSunao.ServiceReference1.SPassRegisteredUsersnameRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SPassRegisteredUserspassword", ReplyAction="http://tempuri.org/IService1/SPassRegisteredUserspasswordResponse")]
+        OrSunao.ServiceReference1.SPassRegisteredUserspasswordResponse SPassRegisteredUserspassword(OrSunao.ServiceReference1.SPassRegisteredUserspasswordRequest request);
+        
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SPassRegisteredUserspassword", ReplyAction="http://tempuri.org/IService1/SPassRegisteredUserspasswordResponse")]
+        System.Threading.Tasks.Task<OrSunao.ServiceReference1.SPassRegisteredUserspasswordResponse> SPassRegisteredUserspasswordAsync(OrSunao.ServiceReference1.SPassRegisteredUserspasswordRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SPassSuspendedUsersname", ReplyAction="http://tempuri.org/IService1/SPassSuspendedUsersnameResponse")]
+        OrSunao.ServiceReference1.SPassSuspendedUsersnameResponse SPassSuspendedUsersname(OrSunao.ServiceReference1.SPassSuspendedUsersnameRequest request);
+        
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SPassSuspendedUsersname", ReplyAction="http://tempuri.org/IService1/SPassSuspendedUsersnameResponse")]
+        System.Threading.Tasks.Task<OrSunao.ServiceReference1.SPassSuspendedUsersnameResponse> SPassSuspendedUsersnameAsync(OrSunao.ServiceReference1.SPassSuspendedUsersnameRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SPassSuspendedUserspassword", ReplyAction="http://tempuri.org/IService1/SPassSuspendedUserspasswordResponse")]
+        OrSunao.ServiceReference1.SPassSuspendedUserspasswordResponse SPassSuspendedUserspassword(OrSunao.ServiceReference1.SPassSuspendedUserspasswordRequest request);
+        
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SPassSuspendedUserspassword", ReplyAction="http://tempuri.org/IService1/SPassSuspendedUserspasswordResponse")]
+        System.Threading.Tasks.Task<OrSunao.ServiceReference1.SPassSuspendedUserspasswordResponse> SPassSuspendedUserspasswordAsync(OrSunao.ServiceReference1.SPassSuspendedUserspasswordRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SPassToBeRegisteredUsersname", ReplyAction="http://tempuri.org/IService1/SPassToBeRegisteredUsersnameResponse")]
+        OrSunao.ServiceReference1.SPassToBeRegisteredUsersnameResponse SPassToBeRegisteredUsersname(OrSunao.ServiceReference1.SPassToBeRegisteredUsersnameRequest request);
+        
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SPassToBeRegisteredUsersname", ReplyAction="http://tempuri.org/IService1/SPassToBeRegisteredUsersnameResponse")]
+        System.Threading.Tasks.Task<OrSunao.ServiceReference1.SPassToBeRegisteredUsersnameResponse> SPassToBeRegisteredUsersnameAsync(OrSunao.ServiceReference1.SPassToBeRegisteredUsersnameRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SPassToBeRegisteredUserspassword", ReplyAction="http://tempuri.org/IService1/SPassToBeRegisteredUserspasswordResponse")]
+        OrSunao.ServiceReference1.SPassToBeRegisteredUserspasswordResponse SPassToBeRegisteredUserspassword(OrSunao.ServiceReference1.SPassToBeRegisteredUserspasswordRequest request);
+        
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SPassToBeRegisteredUserspassword", ReplyAction="http://tempuri.org/IService1/SPassToBeRegisteredUserspasswordResponse")]
+        System.Threading.Tasks.Task<OrSunao.ServiceReference1.SPassToBeRegisteredUserspasswordResponse> SPassToBeRegisteredUserspasswordAsync(OrSunao.ServiceReference1.SPassToBeRegisteredUserspasswordRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SRegisterUser", ReplyAction="http://tempuri.org/IService1/SRegisterUserResponse")]
+        bool SRegisterUser(string firstname, string lastname, string password, string email, string contact, string cnic, string secretq, string ans);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SRegisterUser", ReplyAction="http://tempuri.org/IService1/SRegisterUserResponse")]
+        System.Threading.Tasks.Task<bool> SRegisterUserAsync(string firstname, string lastname, string password, string email, string contact, string cnic, string secretq, string ans);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SLoginUser", ReplyAction="http://tempuri.org/IService1/SLoginUserResponse")]
+        bool SLoginUser(string email, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SLoginUser", ReplyAction="http://tempuri.org/IService1/SLoginUserResponse")]
+        System.Threading.Tasks.Task<bool> SLoginUserAsync(string email, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SPassUser", ReplyAction="http://tempuri.org/IService1/SPassUserResponse")]
+        bool SPassUser(string email, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SPassUser", ReplyAction="http://tempuri.org/IService1/SPassUserResponse")]
+        System.Threading.Tasks.Task<bool> SPassUserAsync(string email, string password);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
         string GetData(int value);
         
@@ -101,6 +173,198 @@ namespace OrSunao.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SLoginAdmin", ReplyAction="http://tempuri.org/IService1/SLoginAdminResponse")]
         System.Threading.Tasks.Task<bool> SLoginAdminAsync(string Email, string Password);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="SPassRegisteredUsersname", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class SPassRegisteredUsersnameRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string[] str;
+        
+        public SPassRegisteredUsersnameRequest() {
+        }
+        
+        public SPassRegisteredUsersnameRequest(string[] str) {
+            this.str = str;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="SPassRegisteredUsersnameResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class SPassRegisteredUsersnameResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string[] str;
+        
+        public SPassRegisteredUsersnameResponse() {
+        }
+        
+        public SPassRegisteredUsersnameResponse(string[] str) {
+            this.str = str;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="SPassRegisteredUserspassword", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class SPassRegisteredUserspasswordRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string[] str;
+        
+        public SPassRegisteredUserspasswordRequest() {
+        }
+        
+        public SPassRegisteredUserspasswordRequest(string[] str) {
+            this.str = str;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="SPassRegisteredUserspasswordResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class SPassRegisteredUserspasswordResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string[] str;
+        
+        public SPassRegisteredUserspasswordResponse() {
+        }
+        
+        public SPassRegisteredUserspasswordResponse(string[] str) {
+            this.str = str;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="SPassSuspendedUsersname", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class SPassSuspendedUsersnameRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string[] str;
+        
+        public SPassSuspendedUsersnameRequest() {
+        }
+        
+        public SPassSuspendedUsersnameRequest(string[] str) {
+            this.str = str;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="SPassSuspendedUsersnameResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class SPassSuspendedUsersnameResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string[] str;
+        
+        public SPassSuspendedUsersnameResponse() {
+        }
+        
+        public SPassSuspendedUsersnameResponse(string[] str) {
+            this.str = str;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="SPassSuspendedUserspassword", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class SPassSuspendedUserspasswordRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string[] str;
+        
+        public SPassSuspendedUserspasswordRequest() {
+        }
+        
+        public SPassSuspendedUserspasswordRequest(string[] str) {
+            this.str = str;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="SPassSuspendedUserspasswordResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class SPassSuspendedUserspasswordResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string[] str;
+        
+        public SPassSuspendedUserspasswordResponse() {
+        }
+        
+        public SPassSuspendedUserspasswordResponse(string[] str) {
+            this.str = str;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="SPassToBeRegisteredUsersname", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class SPassToBeRegisteredUsersnameRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string[] str;
+        
+        public SPassToBeRegisteredUsersnameRequest() {
+        }
+        
+        public SPassToBeRegisteredUsersnameRequest(string[] str) {
+            this.str = str;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="SPassToBeRegisteredUsersnameResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class SPassToBeRegisteredUsersnameResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string[] str;
+        
+        public SPassToBeRegisteredUsersnameResponse() {
+        }
+        
+        public SPassToBeRegisteredUsersnameResponse(string[] str) {
+            this.str = str;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="SPassToBeRegisteredUserspassword", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class SPassToBeRegisteredUserspasswordRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string[] str;
+        
+        public SPassToBeRegisteredUserspasswordRequest() {
+        }
+        
+        public SPassToBeRegisteredUserspasswordRequest(string[] str) {
+            this.str = str;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="SPassToBeRegisteredUserspasswordResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class SPassToBeRegisteredUserspasswordResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string[] str;
+        
+        public SPassToBeRegisteredUserspasswordResponse() {
+        }
+        
+        public SPassToBeRegisteredUserspasswordResponse(string[] str) {
+            this.str = str;
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -128,6 +392,142 @@ namespace OrSunao.ServiceReference1 {
         
         public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public bool SDeleteUser(string email, string password) {
+            return base.Channel.SDeleteUser(email, password);
+        }
+        
+        public System.Threading.Tasks.Task<bool> SDeleteUserAsync(string email, string password) {
+            return base.Channel.SDeleteUserAsync(email, password);
+        }
+        
+        public bool SSuspendUser(string email, string password) {
+            return base.Channel.SSuspendUser(email, password);
+        }
+        
+        public System.Threading.Tasks.Task<bool> SSuspendUserAsync(string email, string password) {
+            return base.Channel.SSuspendUserAsync(email, password);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OrSunao.ServiceReference1.SPassRegisteredUsersnameResponse OrSunao.ServiceReference1.IService1.SPassRegisteredUsersname(OrSunao.ServiceReference1.SPassRegisteredUsersnameRequest request) {
+            return base.Channel.SPassRegisteredUsersname(request);
+        }
+        
+        public void SPassRegisteredUsersname(ref string[] str) {
+            OrSunao.ServiceReference1.SPassRegisteredUsersnameRequest inValue = new OrSunao.ServiceReference1.SPassRegisteredUsersnameRequest();
+            inValue.str = str;
+            OrSunao.ServiceReference1.SPassRegisteredUsersnameResponse retVal = ((OrSunao.ServiceReference1.IService1)(this)).SPassRegisteredUsersname(inValue);
+            str = retVal.str;
+        }
+        
+        public System.Threading.Tasks.Task<OrSunao.ServiceReference1.SPassRegisteredUsersnameResponse> SPassRegisteredUsersnameAsync(OrSunao.ServiceReference1.SPassRegisteredUsersnameRequest request) {
+            return base.Channel.SPassRegisteredUsersnameAsync(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OrSunao.ServiceReference1.SPassRegisteredUserspasswordResponse OrSunao.ServiceReference1.IService1.SPassRegisteredUserspassword(OrSunao.ServiceReference1.SPassRegisteredUserspasswordRequest request) {
+            return base.Channel.SPassRegisteredUserspassword(request);
+        }
+        
+        public void SPassRegisteredUserspassword(ref string[] str) {
+            OrSunao.ServiceReference1.SPassRegisteredUserspasswordRequest inValue = new OrSunao.ServiceReference1.SPassRegisteredUserspasswordRequest();
+            inValue.str = str;
+            OrSunao.ServiceReference1.SPassRegisteredUserspasswordResponse retVal = ((OrSunao.ServiceReference1.IService1)(this)).SPassRegisteredUserspassword(inValue);
+            str = retVal.str;
+        }
+        
+        public System.Threading.Tasks.Task<OrSunao.ServiceReference1.SPassRegisteredUserspasswordResponse> SPassRegisteredUserspasswordAsync(OrSunao.ServiceReference1.SPassRegisteredUserspasswordRequest request) {
+            return base.Channel.SPassRegisteredUserspasswordAsync(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OrSunao.ServiceReference1.SPassSuspendedUsersnameResponse OrSunao.ServiceReference1.IService1.SPassSuspendedUsersname(OrSunao.ServiceReference1.SPassSuspendedUsersnameRequest request) {
+            return base.Channel.SPassSuspendedUsersname(request);
+        }
+        
+        public void SPassSuspendedUsersname(ref string[] str) {
+            OrSunao.ServiceReference1.SPassSuspendedUsersnameRequest inValue = new OrSunao.ServiceReference1.SPassSuspendedUsersnameRequest();
+            inValue.str = str;
+            OrSunao.ServiceReference1.SPassSuspendedUsersnameResponse retVal = ((OrSunao.ServiceReference1.IService1)(this)).SPassSuspendedUsersname(inValue);
+            str = retVal.str;
+        }
+        
+        public System.Threading.Tasks.Task<OrSunao.ServiceReference1.SPassSuspendedUsersnameResponse> SPassSuspendedUsersnameAsync(OrSunao.ServiceReference1.SPassSuspendedUsersnameRequest request) {
+            return base.Channel.SPassSuspendedUsersnameAsync(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OrSunao.ServiceReference1.SPassSuspendedUserspasswordResponse OrSunao.ServiceReference1.IService1.SPassSuspendedUserspassword(OrSunao.ServiceReference1.SPassSuspendedUserspasswordRequest request) {
+            return base.Channel.SPassSuspendedUserspassword(request);
+        }
+        
+        public void SPassSuspendedUserspassword(ref string[] str) {
+            OrSunao.ServiceReference1.SPassSuspendedUserspasswordRequest inValue = new OrSunao.ServiceReference1.SPassSuspendedUserspasswordRequest();
+            inValue.str = str;
+            OrSunao.ServiceReference1.SPassSuspendedUserspasswordResponse retVal = ((OrSunao.ServiceReference1.IService1)(this)).SPassSuspendedUserspassword(inValue);
+            str = retVal.str;
+        }
+        
+        public System.Threading.Tasks.Task<OrSunao.ServiceReference1.SPassSuspendedUserspasswordResponse> SPassSuspendedUserspasswordAsync(OrSunao.ServiceReference1.SPassSuspendedUserspasswordRequest request) {
+            return base.Channel.SPassSuspendedUserspasswordAsync(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OrSunao.ServiceReference1.SPassToBeRegisteredUsersnameResponse OrSunao.ServiceReference1.IService1.SPassToBeRegisteredUsersname(OrSunao.ServiceReference1.SPassToBeRegisteredUsersnameRequest request) {
+            return base.Channel.SPassToBeRegisteredUsersname(request);
+        }
+        
+        public void SPassToBeRegisteredUsersname(ref string[] str) {
+            OrSunao.ServiceReference1.SPassToBeRegisteredUsersnameRequest inValue = new OrSunao.ServiceReference1.SPassToBeRegisteredUsersnameRequest();
+            inValue.str = str;
+            OrSunao.ServiceReference1.SPassToBeRegisteredUsersnameResponse retVal = ((OrSunao.ServiceReference1.IService1)(this)).SPassToBeRegisteredUsersname(inValue);
+            str = retVal.str;
+        }
+        
+        public System.Threading.Tasks.Task<OrSunao.ServiceReference1.SPassToBeRegisteredUsersnameResponse> SPassToBeRegisteredUsersnameAsync(OrSunao.ServiceReference1.SPassToBeRegisteredUsersnameRequest request) {
+            return base.Channel.SPassToBeRegisteredUsersnameAsync(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OrSunao.ServiceReference1.SPassToBeRegisteredUserspasswordResponse OrSunao.ServiceReference1.IService1.SPassToBeRegisteredUserspassword(OrSunao.ServiceReference1.SPassToBeRegisteredUserspasswordRequest request) {
+            return base.Channel.SPassToBeRegisteredUserspassword(request);
+        }
+        
+        public void SPassToBeRegisteredUserspassword(ref string[] str) {
+            OrSunao.ServiceReference1.SPassToBeRegisteredUserspasswordRequest inValue = new OrSunao.ServiceReference1.SPassToBeRegisteredUserspasswordRequest();
+            inValue.str = str;
+            OrSunao.ServiceReference1.SPassToBeRegisteredUserspasswordResponse retVal = ((OrSunao.ServiceReference1.IService1)(this)).SPassToBeRegisteredUserspassword(inValue);
+            str = retVal.str;
+        }
+        
+        public System.Threading.Tasks.Task<OrSunao.ServiceReference1.SPassToBeRegisteredUserspasswordResponse> SPassToBeRegisteredUserspasswordAsync(OrSunao.ServiceReference1.SPassToBeRegisteredUserspasswordRequest request) {
+            return base.Channel.SPassToBeRegisteredUserspasswordAsync(request);
+        }
+        
+        public bool SRegisterUser(string firstname, string lastname, string password, string email, string contact, string cnic, string secretq, string ans) {
+            return base.Channel.SRegisterUser(firstname, lastname, password, email, contact, cnic, secretq, ans);
+        }
+        
+        public System.Threading.Tasks.Task<bool> SRegisterUserAsync(string firstname, string lastname, string password, string email, string contact, string cnic, string secretq, string ans) {
+            return base.Channel.SRegisterUserAsync(firstname, lastname, password, email, contact, cnic, secretq, ans);
+        }
+        
+        public bool SLoginUser(string email, string password) {
+            return base.Channel.SLoginUser(email, password);
+        }
+        
+        public System.Threading.Tasks.Task<bool> SLoginUserAsync(string email, string password) {
+            return base.Channel.SLoginUserAsync(email, password);
+        }
+        
+        public bool SPassUser(string email, string password) {
+            return base.Channel.SPassUser(email, password);
+        }
+        
+        public System.Threading.Tasks.Task<bool> SPassUserAsync(string email, string password) {
+            return base.Channel.SPassUserAsync(email, password);
         }
         
         public string GetData(int value) {

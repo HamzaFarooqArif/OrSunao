@@ -12,6 +12,86 @@ namespace OrSunao
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
+        public bool SSuspendUser(string email, string password)
+        {
+            User k = new User();
+            k = k.getuserfromr(email, password);
+            return UserDl.adminUtill.suspenduser(k);
+        }
+        public bool SDeleteUser(string email, string password)
+        {
+            User k = new User();
+            k = k.getuserfromr(email, password);
+            return UserDl.adminUtill.DeleteUser(k);
+        }
+        public bool SPassUser(string email, string password)
+        {
+            User k = new User();
+            k = k.getuser(email, password);
+            return UserDl.adminUtill.ApproveRegistration(k);
+        }
+        public void SPassRegisteredUsersname(ref List<string> str)
+        {
+            
+           
+            foreach(User u in UserDl.orSunaoMembers)
+            {
+                str.Add(u.getEmail());
+            }
+            return;
+        }
+        public void SPassRegisteredUserspassword(ref List<string> str)
+        {
+            
+
+            foreach (User u in UserDl.orSunaoMembers)
+            {
+                str.Add(u.getPassword());
+            }
+            return;
+        }
+
+
+
+        public void SPassSuspendedUsersname(ref List<string> str)
+        {
+          
+
+            foreach (User u in UserDl.suspendedUsers)
+            {
+                str.Add(u.getEmail());
+            }
+            return;
+        }
+        public void SPassSuspendedUserspassword(ref List<string> str)
+        {
+
+            foreach (User u in UserDl.suspendedUsers)
+            {
+                str.Add(u.getPassword());
+            }
+            return;
+        }
+
+
+        public void SPassToBeRegisteredUsersname(ref List<string> str)
+        {
+            foreach (User u in UserDl.registrationRequests)
+            {
+                str.Add(u.getEmail());
+            }
+            return;
+        }
+        public void SPassToBeRegisteredUserspassword(ref List<string> str)
+        {
+          
+
+            foreach (User u in UserDl.registrationRequests)
+            {
+                str.Add(u.getPassword());
+            }
+            return;
+        }
         public bool SRegisterUser(string firstname, string lastname, string password, string email, string contact, string cnic, string secretq, string ans)
         {
             bool isregister;
