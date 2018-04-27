@@ -12,6 +12,7 @@ namespace OrSunao
         private string message;
         private bool isBlocked;
         
+        
 
         public string getPassword()
         {

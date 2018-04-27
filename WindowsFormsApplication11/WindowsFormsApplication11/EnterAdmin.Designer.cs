@@ -40,6 +40,7 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(30, 29);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(184, 378);
@@ -47,6 +48,7 @@
             // 
             // flowLayoutPanel2
             // 
+            this.flowLayoutPanel2.AutoScroll = true;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(247, 28);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(211, 378);
@@ -54,6 +56,7 @@
             // 
             // flowLayoutPanel3
             // 
+            this.flowLayoutPanel3.AutoScroll = true;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(512, 29);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(203, 377);

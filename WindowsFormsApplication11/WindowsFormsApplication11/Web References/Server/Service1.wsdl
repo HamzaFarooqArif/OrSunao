@@ -20,6 +20,12 @@
   <wsdl:message name="IService1_SSuspendUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:SSuspendUserResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_getUsersContacts_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUsersContacts" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getUsersContacts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUsersContactsResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_SPassRegisteredUsersname_InputMessage">
     <wsdl:part name="parameters" element="tns:SPassRegisteredUsersname" />
   </wsdl:message>
@@ -107,6 +113,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/SSuspendUser" message="tns:IService1_SSuspendUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/SSuspendUserResponse" message="tns:IService1_SSuspendUser_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="getUsersContacts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getUsersContacts" message="tns:IService1_getUsersContacts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getUsersContactsResponse" message="tns:IService1_getUsersContacts_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="SPassRegisteredUsersname">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/SPassRegisteredUsersname" message="tns:IService1_SPassRegisteredUsersname_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/SPassRegisteredUsersnameResponse" message="tns:IService1_SPassRegisteredUsersname_OutputMessage" />
@@ -173,6 +183,15 @@
     </wsdl:operation>
     <wsdl:operation name="SSuspendUser">
       <soap:operation soapAction="http://tempuri.org/IService1/SSuspendUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUsersContacts">
+      <soap:operation soapAction="http://tempuri.org/IService1/getUsersContacts" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

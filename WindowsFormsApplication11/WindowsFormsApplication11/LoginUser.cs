@@ -28,6 +28,11 @@ namespace WindowsFormsApplication11
                 if(islogin)
                 {
                     MessageBox.Show("You are Successfully entered Or Sunao :'D !");
+                    EnterUser n = new EnterUser();
+                    n.setname(txt_Email.Text);
+                    n.Show();
+                    this.Hide();
+                    
                 }
                 else
                 {

@@ -64,6 +64,9 @@
     <Content Include="Service References\ServiceReference1\OrSunao.ServiceReference1.CompositeType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\ServiceReference1\OrSunao.ServiceReference1.getUsersContactsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="Service References\ServiceReference1\OrSunao.ServiceReference1.SPassRegisteredUsersnameResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>

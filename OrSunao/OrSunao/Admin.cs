@@ -7,20 +7,6 @@ namespace OrSunao
 {
     public class Admin : Person
     {
-       
-        public List<User> getregisteredusers()
-        {
-            return UserDl.orSunaoMembers;
-        }
-        public List<User> getsuspendedusers()
-        {
-            return UserDl.suspendedUsers;
-        }
-        public List<User> gettoboregisteredusers()
-        {
-            return UserDl.registrationRequests;
-        }
-
         public bool RegisterAdmin(string UserFirstName, string UserLastName, string Password, string Email, string CNIC, string Contact)
         {
             if (UserDl.adminExist == false)

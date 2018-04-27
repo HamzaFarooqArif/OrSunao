@@ -32,87 +32,102 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SPassRegisteredUsersname">
+  <xs:element name="getUsersContacts">
     <xs:complexType>
       <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
         <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="str" nillable="true" type="q1:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SPassRegisteredUsersnameResponse">
+  <xs:element name="getUsersContactsResponse">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="str" nillable="true" type="q2:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SPassRegisteredUserspassword">
+  <xs:element name="SPassRegisteredUsersname">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="str" nillable="true" type="q3:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SPassRegisteredUserspasswordResponse">
+  <xs:element name="SPassRegisteredUsersnameResponse">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="str" nillable="true" type="q4:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SPassSuspendedUsersname">
+  <xs:element name="SPassRegisteredUserspassword">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="str" nillable="true" type="q5:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SPassSuspendedUsersnameResponse">
+  <xs:element name="SPassRegisteredUserspasswordResponse">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="str" nillable="true" type="q6:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SPassSuspendedUserspassword">
+  <xs:element name="SPassSuspendedUsersname">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="str" nillable="true" type="q7:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SPassSuspendedUserspasswordResponse">
+  <xs:element name="SPassSuspendedUsersnameResponse">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="str" nillable="true" type="q8:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SPassToBeRegisteredUsersname">
+  <xs:element name="SPassSuspendedUserspassword">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="str" nillable="true" type="q9:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SPassToBeRegisteredUsersnameResponse">
+  <xs:element name="SPassSuspendedUserspasswordResponse">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="str" nillable="true" type="q10:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SPassToBeRegisteredUserspassword">
+  <xs:element name="SPassToBeRegisteredUsersname">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="str" nillable="true" type="q11:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SPassToBeRegisteredUserspasswordResponse">
+  <xs:element name="SPassToBeRegisteredUsersnameResponse">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="str" nillable="true" type="q12:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SPassToBeRegisteredUserspassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="str" nillable="true" type="q13:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SPassToBeRegisteredUserspasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="str" nillable="true" type="q14:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -184,14 +199,14 @@
   <xs:element name="GetDataUsingDataContract">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/OrSunao" minOccurs="0" name="composite" nillable="true" type="q13:CompositeType" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/OrSunao" minOccurs="0" name="composite" nillable="true" type="q15:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDataUsingDataContractResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/OrSunao" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q14:CompositeType" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/OrSunao" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q16:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

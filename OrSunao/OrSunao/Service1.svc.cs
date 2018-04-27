@@ -12,6 +12,19 @@ namespace OrSunao
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
+        public void getUsersContacts(string email, ref List<string> str)
+        {
+            string p;
+            foreach(User k in UserDl.orSunaoMembers)
+            {
+                p = k.getEmail();
+                if (p != email)
+                {
+                    str.Add(p);
+                }
+            }
+        }
+
         public bool SSuspendUser(string email, string password)
         {
             User k = new User();

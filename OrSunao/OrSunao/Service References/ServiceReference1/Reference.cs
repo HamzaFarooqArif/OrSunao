@@ -90,6 +90,13 @@ namespace OrSunao.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SSuspendUser", ReplyAction="http://tempuri.org/IService1/SSuspendUserResponse")]
         System.Threading.Tasks.Task<bool> SSuspendUserAsync(string email, string password);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getUsersContacts", ReplyAction="http://tempuri.org/IService1/getUsersContactsResponse")]
+        OrSunao.ServiceReference1.getUsersContactsResponse getUsersContacts(OrSunao.ServiceReference1.getUsersContactsRequest request);
+        
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getUsersContacts", ReplyAction="http://tempuri.org/IService1/getUsersContactsResponse")]
+        System.Threading.Tasks.Task<OrSunao.ServiceReference1.getUsersContactsResponse> getUsersContactsAsync(OrSunao.ServiceReference1.getUsersContactsRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SPassRegisteredUsersname", ReplyAction="http://tempuri.org/IService1/SPassRegisteredUsersnameResponse")]
         OrSunao.ServiceReference1.SPassRegisteredUsersnameResponse SPassRegisteredUsersname(OrSunao.ServiceReference1.SPassRegisteredUsersnameRequest request);
         
@@ -173,6 +180,42 @@ namespace OrSunao.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SLoginAdmin", ReplyAction="http://tempuri.org/IService1/SLoginAdminResponse")]
         System.Threading.Tasks.Task<bool> SLoginAdminAsync(string Email, string Password);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getUsersContacts", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class getUsersContactsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string email;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string[] str;
+        
+        public getUsersContactsRequest() {
+        }
+        
+        public getUsersContactsRequest(string email, string[] str) {
+            this.email = email;
+            this.str = str;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getUsersContactsResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class getUsersContactsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string[] str;
+        
+        public getUsersContactsResponse() {
+        }
+        
+        public getUsersContactsResponse(string[] str) {
+            this.str = str;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -408,6 +451,23 @@ namespace OrSunao.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> SSuspendUserAsync(string email, string password) {
             return base.Channel.SSuspendUserAsync(email, password);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OrSunao.ServiceReference1.getUsersContactsResponse OrSunao.ServiceReference1.IService1.getUsersContacts(OrSunao.ServiceReference1.getUsersContactsRequest request) {
+            return base.Channel.getUsersContacts(request);
+        }
+        
+        public void getUsersContacts(string email, ref string[] str) {
+            OrSunao.ServiceReference1.getUsersContactsRequest inValue = new OrSunao.ServiceReference1.getUsersContactsRequest();
+            inValue.email = email;
+            inValue.str = str;
+            OrSunao.ServiceReference1.getUsersContactsResponse retVal = ((OrSunao.ServiceReference1.IService1)(this)).getUsersContacts(inValue);
+            str = retVal.str;
+        }
+        
+        public System.Threading.Tasks.Task<OrSunao.ServiceReference1.getUsersContactsResponse> getUsersContactsAsync(OrSunao.ServiceReference1.getUsersContactsRequest request) {
+            return base.Channel.getUsersContactsAsync(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

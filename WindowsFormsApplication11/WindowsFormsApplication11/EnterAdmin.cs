@@ -119,8 +119,8 @@ namespace WindowsFormsApplication11
 
         private void lbl_login_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            LoginAdmin a = new LoginAdmin();
-            a.Show();
+            LoginAdmin l = new LoginAdmin();
+            l.Show();
             this.Hide();
         }
     }

@@ -18,6 +18,9 @@ namespace OrSunao
         bool SSuspendUser(string email, string password);
 
         [OperationContract]
+        void getUsersContacts(string email, ref List<string> str);
+
+        [OperationContract]
         void SPassRegisteredUsersname(ref List<string> str);
         [OperationContract]
         void SPassRegisteredUserspassword(ref List<string> str);

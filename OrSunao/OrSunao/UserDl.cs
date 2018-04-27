@@ -12,6 +12,6 @@ namespace OrSunao
         public static List<User> orSunaoMembers = new List<User>();
         public static List<User> registrationRequests = new List<User>();
         public static List<User> suspendedUsers = new List<User>();
-
+        
     }
 }

@@ -54,6 +54,12 @@
     <Compile Include="EnterAdmin.Designer.cs">
       <DependentUpon>EnterAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="EnterUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnterUser.Designer.cs">
+      <DependentUpon>EnterUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,12 @@
     <Compile Include="UserControl3.Designer.cs">
       <DependentUpon>UserControl3.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl4.Designer.cs">
+      <DependentUpon>UserControl4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Web References\Server\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -111,6 +123,9 @@
     </Compile>
     <EmbeddedResource Include="EnterAdmin.resx">
       <DependentUpon>EnterAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnterUser.resx">
+      <DependentUpon>EnterUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginAdmin.resx">
       <DependentUpon>LoginAdmin.cs</DependentUpon>
@@ -145,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl3.resx">
       <DependentUpon>UserControl3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl4.resx">
+      <DependentUpon>UserControl4.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
