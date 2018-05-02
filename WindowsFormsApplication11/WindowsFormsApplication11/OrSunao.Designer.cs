@@ -91,6 +91,7 @@
             this.Controls.Add(this.registeradmin);
             this.Name = "OrSunao";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.OrSunao_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

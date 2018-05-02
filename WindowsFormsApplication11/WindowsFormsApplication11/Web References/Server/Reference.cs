@@ -61,6 +61,12 @@ namespace WindowsFormsApplication11.Server {
         
         private System.Threading.SendOrPostCallback SLoginAdminOperationCompleted;
         
+        private System.Threading.SendOrPostCallback DeactivateMyAccountOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback AddToContactsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback AddToBlockedUsersOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -146,6 +152,15 @@ namespace WindowsFormsApplication11.Server {
         
         /// <remarks/>
         public event SLoginAdminCompletedEventHandler SLoginAdminCompleted;
+        
+        /// <remarks/>
+        public event DeactivateMyAccountCompletedEventHandler DeactivateMyAccountCompleted;
+        
+        /// <remarks/>
+        public event AddToContactsCompletedEventHandler AddToContactsCompleted;
+        
+        /// <remarks/>
+        public event AddToBlockedUsersCompletedEventHandler AddToBlockedUsersCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/SDeleteUser", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -655,6 +670,102 @@ namespace WindowsFormsApplication11.Server {
             if ((this.SLoginAdminCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.SLoginAdminCompleted(this, new SLoginAdminCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/DeactivateMyAccount", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void DeactivateMyAccount([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string email, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string password, out bool DeactivateMyAccountResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool DeactivateMyAccountResultSpecified) {
+            object[] results = this.Invoke("DeactivateMyAccount", new object[] {
+                        email,
+                        password});
+            DeactivateMyAccountResult = ((bool)(results[0]));
+            DeactivateMyAccountResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public void DeactivateMyAccountAsync(string email, string password) {
+            this.DeactivateMyAccountAsync(email, password, null);
+        }
+        
+        /// <remarks/>
+        public void DeactivateMyAccountAsync(string email, string password, object userState) {
+            if ((this.DeactivateMyAccountOperationCompleted == null)) {
+                this.DeactivateMyAccountOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDeactivateMyAccountOperationCompleted);
+            }
+            this.InvokeAsync("DeactivateMyAccount", new object[] {
+                        email,
+                        password}, this.DeactivateMyAccountOperationCompleted, userState);
+        }
+        
+        private void OnDeactivateMyAccountOperationCompleted(object arg) {
+            if ((this.DeactivateMyAccountCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.DeactivateMyAccountCompleted(this, new DeactivateMyAccountCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/AddToContacts", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void AddToContacts([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string myEmail, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string myPassword, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string hisEmail, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string hisPassword) {
+            this.Invoke("AddToContacts", new object[] {
+                        myEmail,
+                        myPassword,
+                        hisEmail,
+                        hisPassword});
+        }
+        
+        /// <remarks/>
+        public void AddToContactsAsync(string myEmail, string myPassword, string hisEmail, string hisPassword) {
+            this.AddToContactsAsync(myEmail, myPassword, hisEmail, hisPassword, null);
+        }
+        
+        /// <remarks/>
+        public void AddToContactsAsync(string myEmail, string myPassword, string hisEmail, string hisPassword, object userState) {
+            if ((this.AddToContactsOperationCompleted == null)) {
+                this.AddToContactsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAddToContactsOperationCompleted);
+            }
+            this.InvokeAsync("AddToContacts", new object[] {
+                        myEmail,
+                        myPassword,
+                        hisEmail,
+                        hisPassword}, this.AddToContactsOperationCompleted, userState);
+        }
+        
+        private void OnAddToContactsOperationCompleted(object arg) {
+            if ((this.AddToContactsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AddToContactsCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/AddToBlockedUsers", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void AddToBlockedUsers([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string myEmail, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string hisEmail) {
+            this.Invoke("AddToBlockedUsers", new object[] {
+                        myEmail,
+                        hisEmail});
+        }
+        
+        /// <remarks/>
+        public void AddToBlockedUsersAsync(string myEmail, string hisEmail) {
+            this.AddToBlockedUsersAsync(myEmail, hisEmail, null);
+        }
+        
+        /// <remarks/>
+        public void AddToBlockedUsersAsync(string myEmail, string hisEmail, object userState) {
+            if ((this.AddToBlockedUsersOperationCompleted == null)) {
+                this.AddToBlockedUsersOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAddToBlockedUsersOperationCompleted);
+            }
+            this.InvokeAsync("AddToBlockedUsers", new object[] {
+                        myEmail,
+                        hisEmail}, this.AddToBlockedUsersOperationCompleted, userState);
+        }
+        
+        private void OnAddToBlockedUsersOperationCompleted(object arg) {
+            if ((this.AddToBlockedUsersCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AddToBlockedUsersCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1195,6 +1306,48 @@ namespace WindowsFormsApplication11.Server {
             }
         }
     }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void DeactivateMyAccountCompletedEventHandler(object sender, DeactivateMyAccountCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class DeactivateMyAccountCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal DeactivateMyAccountCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool DeactivateMyAccountResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public bool DeactivateMyAccountResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void AddToContactsCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void AddToBlockedUsersCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
 }
 
 #pragma warning restore 1591

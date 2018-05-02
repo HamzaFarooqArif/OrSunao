@@ -12,6 +12,7 @@ namespace WindowsFormsApplication11
 {
     public partial class RegisterUser : Form
     {
+        public static RegisterUser RegisterUserForm = null;
         public RegisterUser()
         {
             InitializeComponent();
@@ -19,16 +20,28 @@ namespace WindowsFormsApplication11
 
         private void lnklbl_GoToMainPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            OrSunao r = new OrSunao();
-            r.Show();
+            RegisterUserForm = this;
+            if (OrSunao.OrSunaoForm == null)
+            {
+                OrSunao.OrSunaoForm = new OrSunao();
+            }
+
             this.Hide();
+            OrSunao.OrSunaoForm.Show();
+            
         }
 
         private void lnklbl_Login_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            LoginUser l = new LoginUser();
-            l.Show();
+            RegisterUserForm = this;
+            if (LoginUser.LoginUserForm == null)
+            {
+                LoginUser.LoginUserForm = new LoginUser();
+            }
+
             this.Hide();
+            LoginUser.LoginUserForm.Show();
+
         }
 
         private void btn_Register_Click(object sender, EventArgs e)

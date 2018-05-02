@@ -180,6 +180,24 @@ namespace OrSunao.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SLoginAdmin", ReplyAction="http://tempuri.org/IService1/SLoginAdminResponse")]
         System.Threading.Tasks.Task<bool> SLoginAdminAsync(string Email, string Password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeactivateMyAccount", ReplyAction="http://tempuri.org/IService1/DeactivateMyAccountResponse")]
+        bool DeactivateMyAccount(string email, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeactivateMyAccount", ReplyAction="http://tempuri.org/IService1/DeactivateMyAccountResponse")]
+        System.Threading.Tasks.Task<bool> DeactivateMyAccountAsync(string email, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddToContacts", ReplyAction="http://tempuri.org/IService1/AddToContactsResponse")]
+        void AddToContacts(string myEmail, string myPassword, string hisEmail, string hisPassword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddToContacts", ReplyAction="http://tempuri.org/IService1/AddToContactsResponse")]
+        System.Threading.Tasks.Task AddToContactsAsync(string myEmail, string myPassword, string hisEmail, string hisPassword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddToBlockedUsers", ReplyAction="http://tempuri.org/IService1/AddToBlockedUsersResponse")]
+        void AddToBlockedUsers(string myEmail, string hisEmail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddToBlockedUsers", ReplyAction="http://tempuri.org/IService1/AddToBlockedUsersResponse")]
+        System.Threading.Tasks.Task AddToBlockedUsersAsync(string myEmail, string hisEmail);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -620,6 +638,30 @@ namespace OrSunao.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> SLoginAdminAsync(string Email, string Password) {
             return base.Channel.SLoginAdminAsync(Email, Password);
+        }
+        
+        public bool DeactivateMyAccount(string email, string password) {
+            return base.Channel.DeactivateMyAccount(email, password);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeactivateMyAccountAsync(string email, string password) {
+            return base.Channel.DeactivateMyAccountAsync(email, password);
+        }
+        
+        public void AddToContacts(string myEmail, string myPassword, string hisEmail, string hisPassword) {
+            base.Channel.AddToContacts(myEmail, myPassword, hisEmail, hisPassword);
+        }
+        
+        public System.Threading.Tasks.Task AddToContactsAsync(string myEmail, string myPassword, string hisEmail, string hisPassword) {
+            return base.Channel.AddToContactsAsync(myEmail, myPassword, hisEmail, hisPassword);
+        }
+        
+        public void AddToBlockedUsers(string myEmail, string hisEmail) {
+            base.Channel.AddToBlockedUsers(myEmail, hisEmail);
+        }
+        
+        public System.Threading.Tasks.Task AddToBlockedUsersAsync(string myEmail, string hisEmail) {
+            return base.Channel.AddToBlockedUsersAsync(myEmail, hisEmail);
         }
     }
 }

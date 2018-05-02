@@ -12,6 +12,7 @@ namespace WindowsFormsApplication11
 {
     public partial class OrSunao : Form
     {
+        public static OrSunao OrSunaoForm = null;
         public OrSunao()
         {
             InitializeComponent();
@@ -19,31 +20,60 @@ namespace WindowsFormsApplication11
 
         private void registeradmin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
-            RegisterAdmin r1 = new RegisterAdmin();
-            r1.Show();
+
+            OrSunaoForm = this;
+            if (RegisterAdmin.RegisterAdminForm == null)
+            {
+                RegisterAdmin.RegisterAdminForm = new RegisterAdmin();
+            }
+
             this.Hide();
+            RegisterAdmin.RegisterAdminForm.Show();
         }
 
         private void loginadmin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            LoginAdmin a1 = new LoginAdmin();
-            a1.Show();
+            OrSunaoForm = this;
+            if (LoginAdmin.LoginAdminForm == null)
+            {
+                LoginAdmin.LoginAdminForm = new LoginAdmin();
+            }
+
+          
+            LoginAdmin.LoginAdminForm.Show();
             this.Hide();
+
+
         }
 
         private void registeruser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            RegisterUser r = new RegisterUser();
-            r.Show();
+            OrSunaoForm = this;
+            if (RegisterUser.RegisterUserForm == null)
+            {
+                RegisterUser.RegisterUserForm = new RegisterUser();
+            }
+
             this.Hide();
+            RegisterUser.RegisterUserForm.Show();
+
         }
 
         private void loginuser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            LoginUser l = new LoginUser();
-            l.Show();
+            OrSunaoForm = this;
+            if (LoginUser.LoginUserForm == null)
+            {
+                LoginUser.LoginUserForm = new LoginUser();
+            }
+
             this.Hide();
+            LoginUser.LoginUserForm.Show();
+        }
+
+        private void OrSunao_Load(object sender, EventArgs e)
+        {
+            OrSunao.OrSunaoForm = this;
         }
     }
 }

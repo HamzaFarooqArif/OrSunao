@@ -12,6 +12,7 @@ namespace WindowsFormsApplication11
 {
     public partial class LoginAdmin : Form
     {
+        public static LoginAdmin LoginAdminForm = null;
         public LoginAdmin()
         {
             InitializeComponent();
@@ -19,9 +20,15 @@ namespace WindowsFormsApplication11
 
         private void lnklbl_SignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            RegisterAdmin r = new RegisterAdmin();
-            r.Show();
-            this.Close();
+            LoginAdminForm = this;
+            if (RegisterAdmin.RegisterAdminForm == null)
+            {
+                RegisterAdmin.RegisterAdminForm = new RegisterAdmin();
+            }
+
+            this.Hide();
+            RegisterAdmin.RegisterAdminForm.Show();
+
         }
 
         private void btn_Login_Click(object sender, EventArgs e)
@@ -51,9 +58,22 @@ namespace WindowsFormsApplication11
 
         private void lnklbl_GoToMainPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            OrSunao o = new OrSunao();
-            o.Show();
-            this.Close();
+
+            LoginAdminForm = this;
+            if (OrSunao.OrSunaoForm == null)
+            {
+                OrSunao.OrSunaoForm = new OrSunao();
+            }
+
+            this.Hide();
+            OrSunao.OrSunaoForm.Show();
+
+            
+        }
+
+        private void LoginAdmin_Load(object sender, EventArgs e)
+        {
+            LoginAdmin.LoginAdminForm = this;
         }
     }
 }

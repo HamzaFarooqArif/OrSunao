@@ -196,6 +196,7 @@
             this.Controls.Add(this.Txt_FirstName);
             this.Name = "RegisterAdmin";
             this.Text = "RegisterAdmin";
+            this.Load += new System.EventHandler(this.RegisterAdmin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

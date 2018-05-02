@@ -104,6 +104,24 @@
   <wsdl:message name="IService1_SLoginAdmin_OutputMessage">
     <wsdl:part name="parameters" element="tns:SLoginAdminResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_DeactivateMyAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeactivateMyAccount" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeactivateMyAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeactivateMyAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddToContacts_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddToContacts" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddToContacts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddToContactsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddToBlockedUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddToBlockedUsers" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddToBlockedUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddToBlockedUsersResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="SDeleteUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/SDeleteUser" message="tns:IService1_SDeleteUser_InputMessage" />
@@ -168,6 +186,18 @@
     <wsdl:operation name="SLoginAdmin">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/SLoginAdmin" message="tns:IService1_SLoginAdmin_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/SLoginAdminResponse" message="tns:IService1_SLoginAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeactivateMyAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeactivateMyAccount" message="tns:IService1_DeactivateMyAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeactivateMyAccountResponse" message="tns:IService1_DeactivateMyAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToContacts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddToContacts" message="tns:IService1_AddToContacts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddToContactsResponse" message="tns:IService1_AddToContacts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToBlockedUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddToBlockedUsers" message="tns:IService1_AddToBlockedUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddToBlockedUsersResponse" message="tns:IService1_AddToBlockedUsers_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -309,6 +339,33 @@
     </wsdl:operation>
     <wsdl:operation name="SLoginAdmin">
       <soap:operation soapAction="http://tempuri.org/IService1/SLoginAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeactivateMyAccount">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeactivateMyAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToContacts">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddToContacts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToBlockedUsers">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddToBlockedUsers" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

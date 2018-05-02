@@ -116,6 +116,7 @@
             this.Controls.Add(this.btn_Login);
             this.Name = "LoginAdmin";
             this.Text = "LoginAdmin";
+            this.Load += new System.EventHandler(this.LoginAdmin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

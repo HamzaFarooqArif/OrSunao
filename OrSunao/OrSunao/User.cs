@@ -11,8 +11,11 @@ namespace OrSunao
         private string answer;
         private string message;
         private bool isBlocked;
-        
-        
+        public List<User> contacts = new List<User>();
+        public List<User> blockedUsers = new List<User>();
+
+
+
 
         public string getPassword()
         {
@@ -150,6 +153,20 @@ namespace OrSunao
             {
                 isBlocked = value;
             }
+        }
+
+        public User getUserByEmail(string email)
+        {
+            User p = new User();
+            foreach (User k in UserDl.orSunaoMembers)
+            {
+                if (k.Email == email)
+                {
+                    p = k;
+                    break;
+                }
+            }
+            return p;
         }
 
      

@@ -14,7 +14,7 @@ namespace OrSunao
     {
         public void getUsersContacts(string email, ref List<string> str)
         {
-            string p;
+            string p = "";
             foreach(User k in UserDl.orSunaoMembers)
             {
                 p = k.getEmail();
@@ -22,6 +22,12 @@ namespace OrSunao
                 {
                     str.Add(p);
                 }
+            }
+            User i = new User();
+            i = i.getUserByEmail(email);
+            foreach(User l in i.blockedUsers)
+            {
+                str.Remove(l.getEmail());
             }
         }
 
@@ -163,5 +169,55 @@ namespace OrSunao
             }
             return false;
         }
+
+        public bool DeactivateMyAccount(string email, string password)
+        {
+            User k = new User();
+            k = k.getuserfromr(email, password);
+            UserDl.orSunaoMembers.Remove(k);
+            return true;
+        //    foreach (User u in UserDl.orSunaoMembers)
+        //    {
+        //        if (u.getEmail() == email && u.getPassword() == password)
+        //        {
+        //            break;
+        //        }
+        //        idx++;
+        //    }
+
+        //    if (idx > 0)
+        //    {
+        //        UserDl.orSunaoMembers.RemoveAt(idx);
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        }
+
+        public void AddToContacts(string myEmail, string myPassword, string hisEmail, string hisPassword)
+        {
+            User me = new User();
+            me = me.getuserfromr(myEmail, myPassword);
+
+            User he = new User();
+            he = he.getuserfromr(hisEmail, hisPassword);
+
+            me.contacts.Add(he);
+
+        }
+
+        public void AddToBlockedUsers(string myEmail, string hisEmail)
+        {
+            User me = new User();
+            me = me.getUserByEmail(myEmail);
+
+            User he = new User();
+            he = he.getUserByEmail(hisEmail);
+
+            me.blockedUsers.Add(he);
+        }
+
     }
 }

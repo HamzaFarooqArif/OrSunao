@@ -28,3 +28,15 @@ C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\La
 C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\LabProject\Sprint2\version5\OrSunao\OrSunao\bin\OrSunao.dll.config
 C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\LabProject\Sprint2\version5\OrSunao\OrSunao\bin\OrSunao.dll
 C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\LabProject\Sprint2\version5\OrSunao\OrSunao\bin\OrSunao.pdb
+C:\Users\Waris\Downloads\Compressed\OrSunao-master\OrSunao-master\OrSunao\OrSunao\bin\OrSunao.dll.config
+C:\Users\Waris\Downloads\Compressed\OrSunao-master\OrSunao-master\OrSunao\OrSunao\bin\OrSunao.dll
+C:\Users\Waris\Downloads\Compressed\OrSunao-master\OrSunao-master\OrSunao\OrSunao\bin\OrSunao.pdb
+C:\Users\Waris\Downloads\Compressed\OrSunao-master\OrSunao-master\OrSunao\OrSunao\obj\Debug\OrSunao.csprojResolveAssemblyReference.cache
+C:\Users\Waris\Downloads\Compressed\OrSunao-master\OrSunao-master\OrSunao\OrSunao\obj\Debug\OrSunao.dll
+C:\Users\Waris\Downloads\Compressed\OrSunao-master\OrSunao-master\OrSunao\OrSunao\obj\Debug\OrSunao.pdb
+C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\LabProject\Sprint2\version6\OrSunao\OrSunao\obj\Debug\OrSunao.csprojResolveAssemblyReference.cache
+C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\LabProject\Sprint2\version6\OrSunao\OrSunao\obj\Debug\OrSunao.dll
+C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\LabProject\Sprint2\version6\OrSunao\OrSunao\obj\Debug\OrSunao.pdb
+C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\LabProject\Sprint2\version6\OrSunao\OrSunao\bin\OrSunao.dll.config
+C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\LabProject\Sprint2\version6\OrSunao\OrSunao\bin\OrSunao.dll
+C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\LabProject\Sprint2\version6\OrSunao\OrSunao\bin\OrSunao.pdb

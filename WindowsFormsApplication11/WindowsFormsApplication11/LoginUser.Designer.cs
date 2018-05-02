@@ -128,6 +128,7 @@
             this.Controls.Add(this.txt_Email);
             this.Name = "LoginUser";
             this.Text = "LoginUser";
+            this.Load += new System.EventHandler(this.LoginUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

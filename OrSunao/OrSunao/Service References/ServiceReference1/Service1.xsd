@@ -244,4 +244,47 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="DeactivateMyAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeactivateMyAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeactivateMyAccountResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddToContacts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="myEmail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="myPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="hisEmail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="hisPassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddToContactsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddToBlockedUsers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="myEmail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="hisEmail" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddToBlockedUsersResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

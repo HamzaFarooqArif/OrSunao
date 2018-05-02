@@ -12,6 +12,7 @@ namespace WindowsFormsApplication11
 {
     public partial class LoginUser : Form
     {
+        public static LoginUser LoginUserForm = null;
         public LoginUser()
         {
             InitializeComponent();
@@ -29,7 +30,9 @@ namespace WindowsFormsApplication11
                 {
                     MessageBox.Show("You are Successfully entered Or Sunao :'D !");
                     EnterUser n = new EnterUser();
-                    n.setname(txt_Email.Text);
+                    
+                    n.setUserFormAttr(txt_Email.Text, txt_Password.Text);
+                    n.refreshComponents();
                     n.Show();
                     this.Hide();
                     
@@ -45,16 +48,33 @@ namespace WindowsFormsApplication11
 
         private void lnklbl_Register_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            RegisterUser r = new RegisterUser();
-            r.Show();
-            this.Close();
+
+            LoginUserForm = this;
+            if (RegisterUser.RegisterUserForm == null)
+            {
+                RegisterUser.RegisterUserForm = new RegisterUser();
+            }
+
+            this.Hide();
+            RegisterUser.RegisterUserForm.Show();
+            
         }
 
         private void lnklbl_GoToMainPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            OrSunao s = new OrSunao();
-            s.Show();
-            this.Close();
+            LoginUserForm = this;
+            if (OrSunao.OrSunaoForm == null)
+            {
+                OrSunao.OrSunaoForm = new OrSunao();
+            }
+
+            this.Hide();
+            OrSunao.OrSunaoForm.Show();
+        }
+
+        private void LoginUser_Load(object sender, EventArgs e)
+        {
+            LoginUser.LoginUserForm = this;
         }
     }
 }

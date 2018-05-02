@@ -12,6 +12,7 @@ namespace WindowsFormsApplication11
 {
     public partial class EnterAdmin : Form
     {
+        public static EnterAdmin EnterAdminForm = null;
         public EnterAdmin()
         {
             InitializeComponent();
@@ -19,6 +20,8 @@ namespace WindowsFormsApplication11
 
         private void EnterAdmin_Load(object sender, EventArgs e)
         {
+            EnterAdmin.EnterAdminForm = this;
+
             List<string> strnamer = new List<string>();
             List<string> strpasswordr = new List<string>();
             List<string> strnamep = new List<string>();
@@ -119,9 +122,14 @@ namespace WindowsFormsApplication11
 
         private void lbl_login_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            LoginAdmin l = new LoginAdmin();
-            l.Show();
+            EnterAdminForm = this;
+            if (LoginAdmin.LoginAdminForm == null)
+            {
+                LoginAdmin.LoginAdminForm = new LoginAdmin();
+            }
+            
             this.Hide();
+            LoginAdmin.LoginAdminForm.Show();
         }
     }
 }

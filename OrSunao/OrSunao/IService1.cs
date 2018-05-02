@@ -57,6 +57,20 @@ namespace OrSunao
 
         [OperationContract]
         bool SLoginAdmin(string Email, string Password);
+
+        [OperationContract]
+        bool DeactivateMyAccount(string email, string password);
+
+        [OperationContract]
+        void AddToContacts(string myEmail, string myPassword, string hisEmail, string hisPassword);
+
+
+  
+
+        [OperationContract]
+        void AddToBlockedUsers(string myEmail, string hisEmail);
+
+
         // TODO: Add your service operations here
     }
 

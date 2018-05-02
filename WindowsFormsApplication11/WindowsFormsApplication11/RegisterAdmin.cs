@@ -12,6 +12,7 @@ namespace WindowsFormsApplication11
 {
     public partial class RegisterAdmin : Form
     {
+        public static RegisterAdmin RegisterAdminForm = null;
         public RegisterAdmin()
         {
             InitializeComponent();
@@ -49,16 +50,34 @@ namespace WindowsFormsApplication11
 
         private void lnklbl_Login_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            LoginAdmin n1 = new LoginAdmin();
-            n1.Show();
-            this.Close();
+            RegisterAdminForm = this;
+            if (LoginAdmin.LoginAdminForm == null)
+            {
+                LoginAdmin.LoginAdminForm = new LoginAdmin();
+            }
+
+            this.Hide();
+            LoginAdmin.LoginAdminForm.Show();
+            
         }
 
         private void lnklbl_GoToMainPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            OrSunao o = new OrSunao();
-            o.Show();
-            this.Close();
+
+            RegisterAdminForm = this;
+            if (OrSunao.OrSunaoForm == null)
+            {
+                OrSunao.OrSunaoForm = new OrSunao();
+            }
+
+            this.Hide();
+            OrSunao.OrSunaoForm.Show();
+            
+        }
+
+        private void RegisterAdmin_Load(object sender, EventArgs e)
+        {
+            RegisterAdmin.RegisterAdminForm = this;
         }
     }
 }
