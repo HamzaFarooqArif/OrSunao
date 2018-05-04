@@ -13,6 +13,12 @@ namespace OrSunao
     public interface IService1
     {
         [OperationContract]
+        bool SIsOfflineUser(string myemail);
+        [OperationContract]
+        void SOfflineUser(string myemail);
+        [OperationContract]
+        bool SConnectwithuser(string myemail,string hisemail);
+        [OperationContract]
         bool SDeleteUser(string email, string password);
         [OperationContract]
         bool SSuspendUser(string email, string password);

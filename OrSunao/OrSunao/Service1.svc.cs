@@ -12,6 +12,32 @@ namespace OrSunao
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
+        
+        public bool SIsOfflineUser(string myemail)
+        {
+            User k = new User();
+            k = k.getUserByEmail(myemail);
+            return !k.Isonline;
+        }
+        public void SOfflineUser(string myemail)
+        {
+            User k = new User();
+            k = k.getUserByEmail(myemail);
+            k.Isonline = false;
+        }
+        public bool SConnectwithuser(string myemail,string hisemail)
+        {
+            User n = new User();
+            n = n.getUserByEmail(hisemail);
+            if(n.Isonline == true)
+            {
+                User k = new User();
+                k = k.getUserByEmail(myemail);
+                k.contacts.Add(n);
+                return true;
+            }
+            return false;
+        }
         public void getUsersContacts(string email, ref List<string> str)
         {
             string p = "";

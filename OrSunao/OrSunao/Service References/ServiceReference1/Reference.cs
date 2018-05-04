@@ -78,6 +78,24 @@ namespace OrSunao.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SIsOfflineUser", ReplyAction="http://tempuri.org/IService1/SIsOfflineUserResponse")]
+        bool SIsOfflineUser(string myemail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SIsOfflineUser", ReplyAction="http://tempuri.org/IService1/SIsOfflineUserResponse")]
+        System.Threading.Tasks.Task<bool> SIsOfflineUserAsync(string myemail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SOfflineUser", ReplyAction="http://tempuri.org/IService1/SOfflineUserResponse")]
+        void SOfflineUser(string myemail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SOfflineUser", ReplyAction="http://tempuri.org/IService1/SOfflineUserResponse")]
+        System.Threading.Tasks.Task SOfflineUserAsync(string myemail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SConnectwithuser", ReplyAction="http://tempuri.org/IService1/SConnectwithuserResponse")]
+        bool SConnectwithuser(string myemail, string hisemail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SConnectwithuser", ReplyAction="http://tempuri.org/IService1/SConnectwithuserResponse")]
+        System.Threading.Tasks.Task<bool> SConnectwithuserAsync(string myemail, string hisemail);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SDeleteUser", ReplyAction="http://tempuri.org/IService1/SDeleteUserResponse")]
         bool SDeleteUser(string email, string password);
         
@@ -453,6 +471,30 @@ namespace OrSunao.ServiceReference1 {
         
         public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public bool SIsOfflineUser(string myemail) {
+            return base.Channel.SIsOfflineUser(myemail);
+        }
+        
+        public System.Threading.Tasks.Task<bool> SIsOfflineUserAsync(string myemail) {
+            return base.Channel.SIsOfflineUserAsync(myemail);
+        }
+        
+        public void SOfflineUser(string myemail) {
+            base.Channel.SOfflineUser(myemail);
+        }
+        
+        public System.Threading.Tasks.Task SOfflineUserAsync(string myemail) {
+            return base.Channel.SOfflineUserAsync(myemail);
+        }
+        
+        public bool SConnectwithuser(string myemail, string hisemail) {
+            return base.Channel.SConnectwithuser(myemail, hisemail);
+        }
+        
+        public System.Threading.Tasks.Task<bool> SConnectwithuserAsync(string myemail, string hisemail) {
+            return base.Channel.SConnectwithuserAsync(myemail, hisemail);
         }
         
         public bool SDeleteUser(string email, string password) {

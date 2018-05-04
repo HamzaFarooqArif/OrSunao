@@ -10,6 +10,7 @@ namespace OrSunao
         private string secretQuestion;
         private string answer;
         private string message;
+        private bool isonline = false;
         private bool isBlocked;
         public List<User> contacts = new List<User>();
         public List<User> blockedUsers = new List<User>();
@@ -66,7 +67,7 @@ namespace OrSunao
             {
                 foreach (User k in UserDl.orSunaoMembers)
                 {
-                    if (k.Email == email && k.Password == password)
+                    if (k.Email == email || k.Password == password)
                     {
                         return false;
                     }
@@ -98,6 +99,8 @@ namespace OrSunao
                     this.CNIC = u.CNIC;
                     this.SecretQuestion = u.SecretQuestion;
                     this.Answer = u.Answer;
+                    u.Isonline = true;
+                    this.Isonline = u.Isonline;
                     return true;
                 }
             }
@@ -152,6 +155,19 @@ namespace OrSunao
             set
             {
                 isBlocked = value;
+            }
+        }
+
+        public bool Isonline
+        {
+            get
+            {
+                return isonline;
+            }
+
+            set
+            {
+                isonline = value;
             }
         }
 

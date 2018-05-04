@@ -23,11 +23,17 @@ namespace WindowsFormsApplication11.Server {
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="BasicHttpBinding_IService1", Namespace="http://tempuri.org/")]
     public partial class Service1 : System.Web.Services.Protocols.SoapHttpClientProtocol {
+        
+        private System.Threading.SendOrPostCallback SIsOfflineUserOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SOfflineUserOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SConnectwithuserOperationCompleted;
         
         private System.Threading.SendOrPostCallback SDeleteUserOperationCompleted;
         
@@ -106,6 +112,15 @@ namespace WindowsFormsApplication11.Server {
         }
         
         /// <remarks/>
+        public event SIsOfflineUserCompletedEventHandler SIsOfflineUserCompleted;
+        
+        /// <remarks/>
+        public event SOfflineUserCompletedEventHandler SOfflineUserCompleted;
+        
+        /// <remarks/>
+        public event SConnectwithuserCompletedEventHandler SConnectwithuserCompleted;
+        
+        /// <remarks/>
         public event SDeleteUserCompletedEventHandler SDeleteUserCompleted;
         
         /// <remarks/>
@@ -161,6 +176,96 @@ namespace WindowsFormsApplication11.Server {
         
         /// <remarks/>
         public event AddToBlockedUsersCompletedEventHandler AddToBlockedUsersCompleted;
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/SIsOfflineUser", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void SIsOfflineUser([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string myemail, out bool SIsOfflineUserResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool SIsOfflineUserResultSpecified) {
+            object[] results = this.Invoke("SIsOfflineUser", new object[] {
+                        myemail});
+            SIsOfflineUserResult = ((bool)(results[0]));
+            SIsOfflineUserResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public void SIsOfflineUserAsync(string myemail) {
+            this.SIsOfflineUserAsync(myemail, null);
+        }
+        
+        /// <remarks/>
+        public void SIsOfflineUserAsync(string myemail, object userState) {
+            if ((this.SIsOfflineUserOperationCompleted == null)) {
+                this.SIsOfflineUserOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSIsOfflineUserOperationCompleted);
+            }
+            this.InvokeAsync("SIsOfflineUser", new object[] {
+                        myemail}, this.SIsOfflineUserOperationCompleted, userState);
+        }
+        
+        private void OnSIsOfflineUserOperationCompleted(object arg) {
+            if ((this.SIsOfflineUserCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SIsOfflineUserCompleted(this, new SIsOfflineUserCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/SOfflineUser", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void SOfflineUser([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string myemail) {
+            this.Invoke("SOfflineUser", new object[] {
+                        myemail});
+        }
+        
+        /// <remarks/>
+        public void SOfflineUserAsync(string myemail) {
+            this.SOfflineUserAsync(myemail, null);
+        }
+        
+        /// <remarks/>
+        public void SOfflineUserAsync(string myemail, object userState) {
+            if ((this.SOfflineUserOperationCompleted == null)) {
+                this.SOfflineUserOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSOfflineUserOperationCompleted);
+            }
+            this.InvokeAsync("SOfflineUser", new object[] {
+                        myemail}, this.SOfflineUserOperationCompleted, userState);
+        }
+        
+        private void OnSOfflineUserOperationCompleted(object arg) {
+            if ((this.SOfflineUserCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SOfflineUserCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/SConnectwithuser", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void SConnectwithuser([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string myemail, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string hisemail, out bool SConnectwithuserResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool SConnectwithuserResultSpecified) {
+            object[] results = this.Invoke("SConnectwithuser", new object[] {
+                        myemail,
+                        hisemail});
+            SConnectwithuserResult = ((bool)(results[0]));
+            SConnectwithuserResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public void SConnectwithuserAsync(string myemail, string hisemail) {
+            this.SConnectwithuserAsync(myemail, hisemail, null);
+        }
+        
+        /// <remarks/>
+        public void SConnectwithuserAsync(string myemail, string hisemail, object userState) {
+            if ((this.SConnectwithuserOperationCompleted == null)) {
+                this.SConnectwithuserOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSConnectwithuserOperationCompleted);
+            }
+            this.InvokeAsync("SConnectwithuser", new object[] {
+                        myemail,
+                        hisemail}, this.SConnectwithuserOperationCompleted, userState);
+        }
+        
+        private void OnSConnectwithuserOperationCompleted(object arg) {
+            if ((this.SConnectwithuserCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SConnectwithuserCompleted(this, new SConnectwithuserCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/SDeleteUser", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -836,11 +941,83 @@ namespace WindowsFormsApplication11.Server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void SIsOfflineUserCompletedEventHandler(object sender, SIsOfflineUserCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SIsOfflineUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SIsOfflineUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool SIsOfflineUserResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public bool SIsOfflineUserResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void SOfflineUserCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void SConnectwithuserCompletedEventHandler(object sender, SConnectwithuserCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SConnectwithuserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SConnectwithuserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool SConnectwithuserResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public bool SConnectwithuserResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void SDeleteUserCompletedEventHandler(object sender, SDeleteUserCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SDeleteUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -870,11 +1047,11 @@ namespace WindowsFormsApplication11.Server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void SSuspendUserCompletedEventHandler(object sender, SSuspendUserCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SSuspendUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -904,11 +1081,11 @@ namespace WindowsFormsApplication11.Server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void getUsersContactsCompletedEventHandler(object sender, getUsersContactsCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getUsersContactsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -930,11 +1107,11 @@ namespace WindowsFormsApplication11.Server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void SPassRegisteredUsersnameCompletedEventHandler(object sender, SPassRegisteredUsersnameCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SPassRegisteredUsersnameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -956,11 +1133,11 @@ namespace WindowsFormsApplication11.Server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void SPassRegisteredUserspasswordCompletedEventHandler(object sender, SPassRegisteredUserspasswordCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SPassRegisteredUserspasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -982,11 +1159,11 @@ namespace WindowsFormsApplication11.Server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void SPassSuspendedUsersnameCompletedEventHandler(object sender, SPassSuspendedUsersnameCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SPassSuspendedUsersnameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1008,11 +1185,11 @@ namespace WindowsFormsApplication11.Server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void SPassSuspendedUserspasswordCompletedEventHandler(object sender, SPassSuspendedUserspasswordCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SPassSuspendedUserspasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1034,11 +1211,11 @@ namespace WindowsFormsApplication11.Server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void SPassToBeRegisteredUsersnameCompletedEventHandler(object sender, SPassToBeRegisteredUsersnameCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SPassToBeRegisteredUsersnameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1060,11 +1237,11 @@ namespace WindowsFormsApplication11.Server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void SPassToBeRegisteredUserspasswordCompletedEventHandler(object sender, SPassToBeRegisteredUserspasswordCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SPassToBeRegisteredUserspasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1086,11 +1263,11 @@ namespace WindowsFormsApplication11.Server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void SRegisterUserCompletedEventHandler(object sender, SRegisterUserCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SRegisterUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1120,11 +1297,11 @@ namespace WindowsFormsApplication11.Server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void SLoginUserCompletedEventHandler(object sender, SLoginUserCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SLoginUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1154,11 +1331,11 @@ namespace WindowsFormsApplication11.Server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void SPassUserCompletedEventHandler(object sender, SPassUserCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SPassUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1188,11 +1365,11 @@ namespace WindowsFormsApplication11.Server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void GetDataCompletedEventHandler(object sender, GetDataCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetDataCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1214,11 +1391,11 @@ namespace WindowsFormsApplication11.Server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void GetDataUsingDataContractCompletedEventHandler(object sender, GetDataUsingDataContractCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetDataUsingDataContractCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1240,11 +1417,11 @@ namespace WindowsFormsApplication11.Server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void SRegisterAdminCompletedEventHandler(object sender, SRegisterAdminCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SRegisterAdminCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1274,11 +1451,11 @@ namespace WindowsFormsApplication11.Server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void SLoginAdminCompletedEventHandler(object sender, SLoginAdminCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SLoginAdminCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1308,11 +1485,11 @@ namespace WindowsFormsApplication11.Server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void DeactivateMyAccountCompletedEventHandler(object sender, DeactivateMyAccountCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class DeactivateMyAccountCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1342,11 +1519,11 @@ namespace WindowsFormsApplication11.Server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void AddToContactsCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void AddToBlockedUsersCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
 }
 

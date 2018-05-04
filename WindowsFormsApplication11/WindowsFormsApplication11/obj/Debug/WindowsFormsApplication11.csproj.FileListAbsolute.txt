@@ -100,3 +100,24 @@ C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\La
 C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\LabProject\Sprint2\version6\WindowsFormsApplication11\WindowsFormsApplication11\obj\Debug\WindowsFormsApplication11.csproj.GenerateResource.Cache
 C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\LabProject\Sprint2\version6\WindowsFormsApplication11\WindowsFormsApplication11\bin\Debug\WindowsFormsApplication11.exe
 C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\LabProject\Sprint2\version6\WindowsFormsApplication11\WindowsFormsApplication11\bin\Debug\WindowsFormsApplication11.pdb
+C:\Users\Dc\Desktop\ooadP\version6\WindowsFormsApplication11\WindowsFormsApplication11\bin\Debug\WindowsFormsApplication11.exe.config
+C:\Users\Dc\Desktop\ooadP\version6\WindowsFormsApplication11\WindowsFormsApplication11\obj\Debug\WindowsFormsApplication11.exe
+C:\Users\Dc\Desktop\ooadP\version6\WindowsFormsApplication11\WindowsFormsApplication11\obj\Debug\WindowsFormsApplication11.pdb
+C:\Users\Dc\Desktop\ooadP\version6\WindowsFormsApplication11\WindowsFormsApplication11\bin\Debug\WindowsFormsApplication11.exe
+C:\Users\Dc\Desktop\ooadP\version6\WindowsFormsApplication11\WindowsFormsApplication11\bin\Debug\WindowsFormsApplication11.pdb
+C:\Users\Dc\Desktop\ooadP\version6\WindowsFormsApplication11\WindowsFormsApplication11\obj\Debug\WindowsFormsApplication11.csprojResolveAssemblyReference.cache
+C:\Users\Dc\Desktop\ooadP\version6\WindowsFormsApplication11\WindowsFormsApplication11\obj\Debug\WindowsFormsApplication11.EnterAdmin.resources
+C:\Users\Dc\Desktop\ooadP\version6\WindowsFormsApplication11\WindowsFormsApplication11\obj\Debug\WindowsFormsApplication11.EnterUser.resources
+C:\Users\Dc\Desktop\ooadP\version6\WindowsFormsApplication11\WindowsFormsApplication11\obj\Debug\WindowsFormsApplication11.LoginAdmin.resources
+C:\Users\Dc\Desktop\ooadP\version6\WindowsFormsApplication11\WindowsFormsApplication11\obj\Debug\WindowsFormsApplication11.LoginUser.resources
+C:\Users\Dc\Desktop\ooadP\version6\WindowsFormsApplication11\WindowsFormsApplication11\obj\Debug\WindowsFormsApplication11.OrSunao.resources
+C:\Users\Dc\Desktop\ooadP\version6\WindowsFormsApplication11\WindowsFormsApplication11\obj\Debug\WindowsFormsApplication11.Properties.Resources.resources
+C:\Users\Dc\Desktop\ooadP\version6\WindowsFormsApplication11\WindowsFormsApplication11\obj\Debug\WindowsFormsApplication11.RegisterAdmin.resources
+C:\Users\Dc\Desktop\ooadP\version6\WindowsFormsApplication11\WindowsFormsApplication11\obj\Debug\WindowsFormsApplication11.RegisterUser.resources
+C:\Users\Dc\Desktop\ooadP\version6\WindowsFormsApplication11\WindowsFormsApplication11\obj\Debug\WindowsFormsApplication11.UserControl1.resources
+C:\Users\Dc\Desktop\ooadP\version6\WindowsFormsApplication11\WindowsFormsApplication11\obj\Debug\WindowsFormsApplication11.UserControl2.resources
+C:\Users\Dc\Desktop\ooadP\version6\WindowsFormsApplication11\WindowsFormsApplication11\obj\Debug\WindowsFormsApplication11.UserControl3.resources
+C:\Users\Dc\Desktop\ooadP\version6\WindowsFormsApplication11\WindowsFormsApplication11\obj\Debug\WindowsFormsApplication11.UserControl4.resources
+C:\Users\Dc\Desktop\ooadP\version6\WindowsFormsApplication11\WindowsFormsApplication11\obj\Debug\WindowsFormsApplication11.csproj.GenerateResource.Cache
+C:\Users\Dc\Desktop\ooadP\version6\WindowsFormsApplication11\WindowsFormsApplication11\obj\Debug\WindowsFormsApplication11.chatbox.resources
+C:\Users\Dc\Desktop\ooadP\version6\WindowsFormsApplication11\WindowsFormsApplication11\obj\Debug\WindowsFormsApplication11.msg.resources
