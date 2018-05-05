@@ -140,6 +140,36 @@
   <wsdl:message name="IService1_AddToBlockedUsers_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddToBlockedUsersResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_setChatToText_InputMessage">
+    <wsdl:part name="parameters" element="tns:setChatToText" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setChatToText_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setChatToTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setChatToEmpty_InputMessage">
+    <wsdl:part name="parameters" element="tns:setChatToEmpty" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setChatToEmpty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setChatToEmptyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getChatText_InputMessage">
+    <wsdl:part name="parameters" element="tns:getChatText" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getChatText_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getChatTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_isConnected_InputMessage">
+    <wsdl:part name="parameters" element="tns:isConnected" />
+  </wsdl:message>
+  <wsdl:message name="IService1_isConnected_OutputMessage">
+    <wsdl:part name="parameters" element="tns:isConnectedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setConnected_InputMessage">
+    <wsdl:part name="parameters" element="tns:setConnected" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setConnected_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setConnectedResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="SIsOfflineUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/SIsOfflineUser" message="tns:IService1_SIsOfflineUser_InputMessage" />
@@ -228,6 +258,26 @@
     <wsdl:operation name="AddToBlockedUsers">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddToBlockedUsers" message="tns:IService1_AddToBlockedUsers_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddToBlockedUsersResponse" message="tns:IService1_AddToBlockedUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setChatToText">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/setChatToText" message="tns:IService1_setChatToText_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/setChatToTextResponse" message="tns:IService1_setChatToText_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setChatToEmpty">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/setChatToEmpty" message="tns:IService1_setChatToEmpty_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/setChatToEmptyResponse" message="tns:IService1_setChatToEmpty_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getChatText">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getChatText" message="tns:IService1_getChatText_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getChatTextResponse" message="tns:IService1_getChatText_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="isConnected">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/isConnected" message="tns:IService1_isConnected_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/isConnectedResponse" message="tns:IService1_isConnected_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setConnected">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/setConnected" message="tns:IService1_setConnected_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/setConnectedResponse" message="tns:IService1_setConnected_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -423,6 +473,51 @@
     </wsdl:operation>
     <wsdl:operation name="AddToBlockedUsers">
       <soap:operation soapAction="http://tempuri.org/IService1/AddToBlockedUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setChatToText">
+      <soap:operation soapAction="http://tempuri.org/IService1/setChatToText" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setChatToEmpty">
+      <soap:operation soapAction="http://tempuri.org/IService1/setChatToEmpty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getChatText">
+      <soap:operation soapAction="http://tempuri.org/IService1/getChatText" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isConnected">
+      <soap:operation soapAction="http://tempuri.org/IService1/isConnected" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setConnected">
+      <soap:operation soapAction="http://tempuri.org/IService1/setConnected" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

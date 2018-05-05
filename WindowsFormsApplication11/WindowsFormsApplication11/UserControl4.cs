@@ -33,6 +33,7 @@ namespace WindowsFormsApplication11
         private void btn_Connect_Click(object sender, EventArgs e)
         {
             Server.Service1 server = new Server.Service1();
+            
             bool ispassed;
             bool passed;
             server.SConnectwithuser(EnterUser.EnterUserForm.email, lbl_Email.Text, out passed, out ispassed);
@@ -49,6 +50,9 @@ namespace WindowsFormsApplication11
                     EnterUser.EnterUserForm.Hide();
                     chatbox.chatboxform.setmyname(EnterUser.EnterUserForm.email);
                     chatbox.chatboxform.sethisname(lbl_Email.Text);
+
+                    
+
                 }
                 else
                 {

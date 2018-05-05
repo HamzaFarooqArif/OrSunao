@@ -245,5 +245,44 @@ namespace OrSunao
             me.blockedUsers.Add(he);
         }
 
+        public void setChatToText(string Email, string msg)
+        {
+            User u = new User();
+            u = u.getUserByEmail(Email);
+            u.CurrentText = msg;
+        }
+
+        public void setChatToEmpty(string Email)
+        {
+            User u = new User();
+            u = u.getUserByEmail(Email);
+            u.CurrentText = "";
+        }
+
+        public void getChatText(string Email, ref string msg)
+        {
+            User u = new User();
+            u = u.getUserByEmail(Email);
+            msg = u.CurrentText;
+        }
+
+        public void isConnected(string Email, ref bool connected)
+        {
+            User u = new User();
+            u = u.getUserByEmail(Email);
+            connected = u.IsConnected;
+        }
+
+        public void setConnected(string Email, bool connected)
+        {
+            User u = new User();
+            u = u.getUserByEmail(Email);
+            u.IsConnected = connected;
+
+
+            bool test = u.IsConnected;
+
+        }
+
     }
 }

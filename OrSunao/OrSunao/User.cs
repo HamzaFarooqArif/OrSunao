@@ -12,6 +12,8 @@ namespace OrSunao
         private string message;
         private bool isonline = false;
         private bool isBlocked;
+        private bool isConnected;
+        private string currentText;
         public List<User> contacts = new List<User>();
         public List<User> blockedUsers = new List<User>();
 
@@ -168,6 +170,32 @@ namespace OrSunao
             set
             {
                 isonline = value;
+            }
+        }
+
+        public string CurrentText
+        {
+            get
+            {
+                return currentText;
+            }
+
+            set
+            {
+                currentText = value;
+            }
+        }
+
+        public bool IsConnected
+        {
+            get
+            {
+                return isConnected;
+            }
+
+            set
+            {
+                isConnected = value;
             }
         }
 

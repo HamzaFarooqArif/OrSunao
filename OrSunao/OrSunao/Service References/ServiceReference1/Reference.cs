@@ -216,6 +216,38 @@ namespace OrSunao.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddToBlockedUsers", ReplyAction="http://tempuri.org/IService1/AddToBlockedUsersResponse")]
         System.Threading.Tasks.Task AddToBlockedUsersAsync(string myEmail, string hisEmail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setChatToText", ReplyAction="http://tempuri.org/IService1/setChatToTextResponse")]
+        void setChatToText(string Email, string msg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setChatToText", ReplyAction="http://tempuri.org/IService1/setChatToTextResponse")]
+        System.Threading.Tasks.Task setChatToTextAsync(string Email, string msg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setChatToEmpty", ReplyAction="http://tempuri.org/IService1/setChatToEmptyResponse")]
+        void setChatToEmpty(string Email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setChatToEmpty", ReplyAction="http://tempuri.org/IService1/setChatToEmptyResponse")]
+        System.Threading.Tasks.Task setChatToEmptyAsync(string Email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getChatText", ReplyAction="http://tempuri.org/IService1/getChatTextResponse")]
+        OrSunao.ServiceReference1.getChatTextResponse getChatText(OrSunao.ServiceReference1.getChatTextRequest request);
+        
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getChatText", ReplyAction="http://tempuri.org/IService1/getChatTextResponse")]
+        System.Threading.Tasks.Task<OrSunao.ServiceReference1.getChatTextResponse> getChatTextAsync(OrSunao.ServiceReference1.getChatTextRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/isConnected", ReplyAction="http://tempuri.org/IService1/isConnectedResponse")]
+        OrSunao.ServiceReference1.isConnectedResponse isConnected(OrSunao.ServiceReference1.isConnectedRequest request);
+        
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/isConnected", ReplyAction="http://tempuri.org/IService1/isConnectedResponse")]
+        System.Threading.Tasks.Task<OrSunao.ServiceReference1.isConnectedResponse> isConnectedAsync(OrSunao.ServiceReference1.isConnectedRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setConnected", ReplyAction="http://tempuri.org/IService1/setConnectedResponse")]
+        void setConnected(string Email, bool connected);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setConnected", ReplyAction="http://tempuri.org/IService1/setConnectedResponse")]
+        System.Threading.Tasks.Task setConnectedAsync(string Email, bool connected);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -443,6 +475,78 @@ namespace OrSunao.ServiceReference1 {
         
         public SPassToBeRegisteredUserspasswordResponse(string[] str) {
             this.str = str;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getChatText", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class getChatTextRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string Email;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string msg;
+        
+        public getChatTextRequest() {
+        }
+        
+        public getChatTextRequest(string Email, string msg) {
+            this.Email = Email;
+            this.msg = msg;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getChatTextResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class getChatTextResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string msg;
+        
+        public getChatTextResponse() {
+        }
+        
+        public getChatTextResponse(string msg) {
+            this.msg = msg;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="isConnected", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class isConnectedRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string Email;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public bool connected;
+        
+        public isConnectedRequest() {
+        }
+        
+        public isConnectedRequest(string Email, bool connected) {
+            this.Email = Email;
+            this.connected = connected;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="isConnectedResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class isConnectedResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public bool connected;
+        
+        public isConnectedResponse() {
+        }
+        
+        public isConnectedResponse(bool connected) {
+            this.connected = connected;
         }
     }
     
@@ -704,6 +808,64 @@ namespace OrSunao.ServiceReference1 {
         
         public System.Threading.Tasks.Task AddToBlockedUsersAsync(string myEmail, string hisEmail) {
             return base.Channel.AddToBlockedUsersAsync(myEmail, hisEmail);
+        }
+        
+        public void setChatToText(string Email, string msg) {
+            base.Channel.setChatToText(Email, msg);
+        }
+        
+        public System.Threading.Tasks.Task setChatToTextAsync(string Email, string msg) {
+            return base.Channel.setChatToTextAsync(Email, msg);
+        }
+        
+        public void setChatToEmpty(string Email) {
+            base.Channel.setChatToEmpty(Email);
+        }
+        
+        public System.Threading.Tasks.Task setChatToEmptyAsync(string Email) {
+            return base.Channel.setChatToEmptyAsync(Email);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OrSunao.ServiceReference1.getChatTextResponse OrSunao.ServiceReference1.IService1.getChatText(OrSunao.ServiceReference1.getChatTextRequest request) {
+            return base.Channel.getChatText(request);
+        }
+        
+        public void getChatText(string Email, ref string msg) {
+            OrSunao.ServiceReference1.getChatTextRequest inValue = new OrSunao.ServiceReference1.getChatTextRequest();
+            inValue.Email = Email;
+            inValue.msg = msg;
+            OrSunao.ServiceReference1.getChatTextResponse retVal = ((OrSunao.ServiceReference1.IService1)(this)).getChatText(inValue);
+            msg = retVal.msg;
+        }
+        
+        public System.Threading.Tasks.Task<OrSunao.ServiceReference1.getChatTextResponse> getChatTextAsync(OrSunao.ServiceReference1.getChatTextRequest request) {
+            return base.Channel.getChatTextAsync(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OrSunao.ServiceReference1.isConnectedResponse OrSunao.ServiceReference1.IService1.isConnected(OrSunao.ServiceReference1.isConnectedRequest request) {
+            return base.Channel.isConnected(request);
+        }
+        
+        public void isConnected(string Email, ref bool connected) {
+            OrSunao.ServiceReference1.isConnectedRequest inValue = new OrSunao.ServiceReference1.isConnectedRequest();
+            inValue.Email = Email;
+            inValue.connected = connected;
+            OrSunao.ServiceReference1.isConnectedResponse retVal = ((OrSunao.ServiceReference1.IService1)(this)).isConnected(inValue);
+            connected = retVal.connected;
+        }
+        
+        public System.Threading.Tasks.Task<OrSunao.ServiceReference1.isConnectedResponse> isConnectedAsync(OrSunao.ServiceReference1.isConnectedRequest request) {
+            return base.Channel.isConnectedAsync(request);
+        }
+        
+        public void setConnected(string Email, bool connected) {
+            base.Channel.setConnected(Email, connected);
+        }
+        
+        public System.Threading.Tasks.Task setConnectedAsync(string Email, bool connected) {
+            return base.Channel.setConnectedAsync(Email, connected);
         }
     }
 }

@@ -35,6 +35,7 @@
             this.txt_message = new System.Windows.Forms.TextBox();
             this.btn_send = new System.Windows.Forms.Button();
             this.btn_exit = new System.Windows.Forms.Button();
+            this.btn_Refresh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_me
@@ -98,11 +99,22 @@
             this.btn_exit.UseVisualStyleBackColor = true;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
+            // btn_Refresh
+            // 
+            this.btn_Refresh.Location = new System.Drawing.Point(67, 12);
+            this.btn_Refresh.Name = "btn_Refresh";
+            this.btn_Refresh.Size = new System.Drawing.Size(75, 23);
+            this.btn_Refresh.TabIndex = 7;
+            this.btn_Refresh.Text = "Refresh";
+            this.btn_Refresh.UseVisualStyleBackColor = true;
+            this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
+            // 
             // chatbox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(453, 428);
+            this.Controls.Add(this.btn_Refresh);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.btn_send);
             this.Controls.Add(this.txt_message);
@@ -127,5 +139,6 @@
         private System.Windows.Forms.TextBox txt_message;
         private System.Windows.Forms.Button btn_send;
         private System.Windows.Forms.Button btn_exit;
+        private System.Windows.Forms.Button btn_Refresh;
     }
 }

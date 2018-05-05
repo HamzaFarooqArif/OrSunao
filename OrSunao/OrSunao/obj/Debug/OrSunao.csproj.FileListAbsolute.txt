@@ -46,3 +46,9 @@ C:\Users\Dc\Desktop\ooadP\version6\OrSunao\OrSunao\bin\OrSunao.pdb
 C:\Users\Dc\Desktop\ooadP\version6\OrSunao\OrSunao\obj\Debug\OrSunao.csprojResolveAssemblyReference.cache
 C:\Users\Dc\Desktop\ooadP\version6\OrSunao\OrSunao\obj\Debug\OrSunao.dll
 C:\Users\Dc\Desktop\ooadP\version6\OrSunao\OrSunao\obj\Debug\OrSunao.pdb
+C:\Users\Waris\Desktop\version6\OrSunao\OrSunao\obj\Debug\OrSunao.csprojResolveAssemblyReference.cache
+C:\Users\Waris\Desktop\version6\OrSunao\OrSunao\obj\Debug\OrSunao.dll
+C:\Users\Waris\Desktop\version6\OrSunao\OrSunao\obj\Debug\OrSunao.pdb
+C:\Users\Waris\Desktop\version6\OrSunao\OrSunao\bin\OrSunao.dll.config
+C:\Users\Waris\Desktop\version6\OrSunao\OrSunao\bin\OrSunao.dll
+C:\Users\Waris\Desktop\version6\OrSunao\OrSunao\bin\OrSunao.pdb

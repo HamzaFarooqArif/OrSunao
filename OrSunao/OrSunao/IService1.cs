@@ -76,6 +76,22 @@ namespace OrSunao
         [OperationContract]
         void AddToBlockedUsers(string myEmail, string hisEmail);
 
+        [OperationContract]
+        void setChatToText(string Email, string msg);
+
+        [OperationContract]
+        void setChatToEmpty(string Email);
+
+        [OperationContract]
+        void getChatText(string Email, ref string msg);
+
+        [OperationContract]
+        void isConnected(string Email, ref bool connected);
+
+        [OperationContract]
+        void setConnected(string Email, bool connected);
+
+
 
         // TODO: Add your service operations here
     }
