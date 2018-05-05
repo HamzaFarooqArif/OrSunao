@@ -105,5 +105,21 @@ namespace WindowsFormsApplication11
 
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_GroupChat_Click(object sender, EventArgs e)
+        {
+            if(UsersForGroupChat.usersforgroupchat == null)
+            {
+                UsersForGroupChat n = new UsersForGroupChat();
+                UsersForGroupChat.usersforgroupchat = n;
+            }
+            UsersForGroupChat.usersforgroupchat.Show();
+            this.Hide();
+        }
     }
 }

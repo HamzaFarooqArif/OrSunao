@@ -16,6 +16,7 @@ namespace OrSunao
         private string currentText;
         public List<User> contacts = new List<User>();
         public List<User> blockedUsers = new List<User>();
+        public List<User> groupUsers = new List<User>();
 
 
 
@@ -75,7 +76,17 @@ namespace OrSunao
                     }
                 }
             }
-          
+            if (UserDl.registrationRequests != null)
+            {
+                foreach (User k in UserDl.registrationRequests)
+                {
+                    if (k.Email == email || k.Password == password)
+                    {
+                        return false;
+                    }
+                }
+            }
+
             this.FirstName = firstname;
             this.LastName = lastname;
             this.Password = password;

@@ -45,8 +45,9 @@ namespace WindowsFormsApplication11
             server.getChatText(lbl_me.Text, ref message);
             if (!(message == ""))
             {
-                msg n = new msg(message);
+                msg n = new msg(message, lbl_connecteduser.Text);
                 flowLayoutPanel1.Controls.Add(n);
+                flowLayoutPanel1.ScrollControlIntoView(n);
                 server.setChatToEmpty(lbl_me.Text);
             }
         }
@@ -73,6 +74,13 @@ namespace WindowsFormsApplication11
                     if(isHeConnected)
                     {
                         server.setChatToText(lbl_connecteduser.Text, txt_message.Text);
+                        if(!(txt_message.Text == ""))
+                        {
+                            msg n = new msg(txt_message.Text, lbl_me.Text);
+                            flowLayoutPanel1.Controls.Add(n);
+                            flowLayoutPanel1.ScrollControlIntoView(n);
+                        }
+
                     }
                     else
                     {

@@ -52,3 +52,9 @@ C:\Users\Waris\Desktop\version6\OrSunao\OrSunao\obj\Debug\OrSunao.pdb
 C:\Users\Waris\Desktop\version6\OrSunao\OrSunao\bin\OrSunao.dll.config
 C:\Users\Waris\Desktop\version6\OrSunao\OrSunao\bin\OrSunao.dll
 C:\Users\Waris\Desktop\version6\OrSunao\OrSunao\bin\OrSunao.pdb
+C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\LabProject\Sprint3\version6\OrSunao\OrSunao\obj\Debug\OrSunao.csprojResolveAssemblyReference.cache
+C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\LabProject\Sprint3\version6\OrSunao\OrSunao\obj\Debug\OrSunao.dll
+C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\LabProject\Sprint3\version6\OrSunao\OrSunao\obj\Debug\OrSunao.pdb
+C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\LabProject\Sprint3\version6\OrSunao\OrSunao\bin\OrSunao.dll.config
+C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\LabProject\Sprint3\version6\OrSunao\OrSunao\bin\OrSunao.dll
+C:\Users\haris\Desktop\UET\Semester 4\Object Oriented Analysis and Design\Lab\LabProject\Sprint3\version6\OrSunao\OrSunao\bin\OrSunao.pdb

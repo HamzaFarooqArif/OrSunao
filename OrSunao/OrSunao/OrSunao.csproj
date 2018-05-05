@@ -70,6 +70,9 @@
     <Content Include="Service References\ServiceReference1\OrSunao.ServiceReference1.getUsersContactsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\ServiceReference1\OrSunao.ServiceReference1.getUsersgroupContactsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="Service References\ServiceReference1\OrSunao.ServiceReference1.isConnectedResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>

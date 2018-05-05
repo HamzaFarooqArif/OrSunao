@@ -16,12 +16,18 @@ namespace WindowsFormsApplication11
         {
             InitializeComponent();
         }
-        public msg(string my)
+        public msg(string message, string username)
         {
             InitializeComponent();
-            textBox1.Text = my;
+            textBox1.Text = message;
+            lbl_username.Text = username;
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void msg_Load(object sender, EventArgs e)
         {
 
         }

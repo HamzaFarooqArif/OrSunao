@@ -29,6 +29,10 @@ namespace WindowsFormsApplication11.Server {
     [System.Web.Services.WebServiceBindingAttribute(Name="BasicHttpBinding_IService1", Namespace="http://tempuri.org/")]
     public partial class Service1 : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
+        private System.Threading.SendOrPostCallback addusertogroupOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getUsersgroupContactsOperationCompleted;
+        
         private System.Threading.SendOrPostCallback SIsOfflineUserOperationCompleted;
         
         private System.Threading.SendOrPostCallback SOfflineUserOperationCompleted;
@@ -122,6 +126,12 @@ namespace WindowsFormsApplication11.Server {
         }
         
         /// <remarks/>
+        public event addusertogroupCompletedEventHandler addusertogroupCompleted;
+        
+        /// <remarks/>
+        public event getUsersgroupContactsCompletedEventHandler getUsersgroupContactsCompleted;
+        
+        /// <remarks/>
         public event SIsOfflineUserCompletedEventHandler SIsOfflineUserCompleted;
         
         /// <remarks/>
@@ -201,6 +211,67 @@ namespace WindowsFormsApplication11.Server {
         
         /// <remarks/>
         public event setConnectedCompletedEventHandler setConnectedCompleted;
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/addusertogroup", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void addusertogroup([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string myemail, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string hisemail) {
+            this.Invoke("addusertogroup", new object[] {
+                        myemail,
+                        hisemail});
+        }
+        
+        /// <remarks/>
+        public void addusertogroupAsync(string myemail, string hisemail) {
+            this.addusertogroupAsync(myemail, hisemail, null);
+        }
+        
+        /// <remarks/>
+        public void addusertogroupAsync(string myemail, string hisemail, object userState) {
+            if ((this.addusertogroupOperationCompleted == null)) {
+                this.addusertogroupOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddusertogroupOperationCompleted);
+            }
+            this.InvokeAsync("addusertogroup", new object[] {
+                        myemail,
+                        hisemail}, this.addusertogroupOperationCompleted, userState);
+        }
+        
+        private void OnaddusertogroupOperationCompleted(object arg) {
+            if ((this.addusertogroupCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.addusertogroupCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/getUsersgroupContacts", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void getUsersgroupContacts([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string email, [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)] [System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays")] ref string[] str) {
+            object[] results = this.Invoke("getUsersgroupContacts", new object[] {
+                        email,
+                        str});
+            str = ((string[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getUsersgroupContactsAsync(string email, string[] str) {
+            this.getUsersgroupContactsAsync(email, str, null);
+        }
+        
+        /// <remarks/>
+        public void getUsersgroupContactsAsync(string email, string[] str, object userState) {
+            if ((this.getUsersgroupContactsOperationCompleted == null)) {
+                this.getUsersgroupContactsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetUsersgroupContactsOperationCompleted);
+            }
+            this.InvokeAsync("getUsersgroupContacts", new object[] {
+                        email,
+                        str}, this.getUsersgroupContactsOperationCompleted, userState);
+        }
+        
+        private void OngetUsersgroupContactsOperationCompleted(object arg) {
+            if ((this.getUsersgroupContactsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getUsersgroupContactsCompleted(this, new getUsersgroupContactsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/SIsOfflineUser", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -1074,7 +1145,7 @@ namespace WindowsFormsApplication11.Server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1116,6 +1187,36 @@ namespace WindowsFormsApplication11.Server {
             }
             set {
                 this.stringValueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void addusertogroupCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void getUsersgroupContactsCompletedEventHandler(object sender, getUsersgroupContactsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getUsersgroupContactsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getUsersgroupContactsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string[] str {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
             }
         }
     }

@@ -13,6 +13,10 @@ namespace OrSunao
     public interface IService1
     {
         [OperationContract]
+        void addusertogroup(string myemail, string hisemail);
+        [OperationContract]
+        void getUsersgroupContacts(string email, ref List<string> str);
+        [OperationContract]
         bool SIsOfflineUser(string myemail);
         [OperationContract]
         void SOfflineUser(string myemail);

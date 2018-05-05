@@ -78,6 +78,19 @@ namespace OrSunao.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addusertogroup", ReplyAction="http://tempuri.org/IService1/addusertogroupResponse")]
+        void addusertogroup(string myemail, string hisemail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addusertogroup", ReplyAction="http://tempuri.org/IService1/addusertogroupResponse")]
+        System.Threading.Tasks.Task addusertogroupAsync(string myemail, string hisemail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getUsersgroupContacts", ReplyAction="http://tempuri.org/IService1/getUsersgroupContactsResponse")]
+        OrSunao.ServiceReference1.getUsersgroupContactsResponse getUsersgroupContacts(OrSunao.ServiceReference1.getUsersgroupContactsRequest request);
+        
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getUsersgroupContacts", ReplyAction="http://tempuri.org/IService1/getUsersgroupContactsResponse")]
+        System.Threading.Tasks.Task<OrSunao.ServiceReference1.getUsersgroupContactsResponse> getUsersgroupContactsAsync(OrSunao.ServiceReference1.getUsersgroupContactsRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SIsOfflineUser", ReplyAction="http://tempuri.org/IService1/SIsOfflineUserResponse")]
         bool SIsOfflineUser(string myemail);
         
@@ -248,6 +261,42 @@ namespace OrSunao.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setConnected", ReplyAction="http://tempuri.org/IService1/setConnectedResponse")]
         System.Threading.Tasks.Task setConnectedAsync(string Email, bool connected);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getUsersgroupContacts", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class getUsersgroupContactsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string email;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string[] str;
+        
+        public getUsersgroupContactsRequest() {
+        }
+        
+        public getUsersgroupContactsRequest(string email, string[] str) {
+            this.email = email;
+            this.str = str;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getUsersgroupContactsResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class getUsersgroupContactsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string[] str;
+        
+        public getUsersgroupContactsResponse() {
+        }
+        
+        public getUsersgroupContactsResponse(string[] str) {
+            this.str = str;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -575,6 +624,31 @@ namespace OrSunao.ServiceReference1 {
         
         public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public void addusertogroup(string myemail, string hisemail) {
+            base.Channel.addusertogroup(myemail, hisemail);
+        }
+        
+        public System.Threading.Tasks.Task addusertogroupAsync(string myemail, string hisemail) {
+            return base.Channel.addusertogroupAsync(myemail, hisemail);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OrSunao.ServiceReference1.getUsersgroupContactsResponse OrSunao.ServiceReference1.IService1.getUsersgroupContacts(OrSunao.ServiceReference1.getUsersgroupContactsRequest request) {
+            return base.Channel.getUsersgroupContacts(request);
+        }
+        
+        public void getUsersgroupContacts(string email, ref string[] str) {
+            OrSunao.ServiceReference1.getUsersgroupContactsRequest inValue = new OrSunao.ServiceReference1.getUsersgroupContactsRequest();
+            inValue.email = email;
+            inValue.str = str;
+            OrSunao.ServiceReference1.getUsersgroupContactsResponse retVal = ((OrSunao.ServiceReference1.IService1)(this)).getUsersgroupContacts(inValue);
+            str = retVal.str;
+        }
+        
+        public System.Threading.Tasks.Task<OrSunao.ServiceReference1.getUsersgroupContactsResponse> getUsersgroupContactsAsync(OrSunao.ServiceReference1.getUsersgroupContactsRequest request) {
+            return base.Channel.getUsersgroupContactsAsync(request);
         }
         
         public bool SIsOfflineUser(string myemail) {

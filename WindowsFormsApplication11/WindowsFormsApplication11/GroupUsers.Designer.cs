@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication11
 {
-    partial class msg
+    partial class GroupUsers
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,37 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lbl_username = new System.Windows.Forms.Label();
+            this.lbl_Email = new System.Windows.Forms.Label();
+            this.btn_Add = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // lbl_Email
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 22);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(186, 25);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.lbl_Email.AutoSize = true;
+            this.lbl_Email.Location = new System.Drawing.Point(22, 12);
+            this.lbl_Email.Name = "lbl_Email";
+            this.lbl_Email.Size = new System.Drawing.Size(32, 13);
+            this.lbl_Email.TabIndex = 0;
+            this.lbl_Email.Text = "Email";
             // 
-            // lbl_username
+            // btn_Add
             // 
-            this.lbl_username.AutoSize = true;
-            this.lbl_username.Location = new System.Drawing.Point(3, 6);
-            this.lbl_username.Name = "lbl_username";
-            this.lbl_username.Size = new System.Drawing.Size(53, 13);
-            this.lbl_username.TabIndex = 1;
-            this.lbl_username.Text = "username";
+            this.btn_Add.Location = new System.Drawing.Point(74, 7);
+            this.btn_Add.Name = "btn_Add";
+            this.btn_Add.Size = new System.Drawing.Size(75, 23);
+            this.btn_Add.TabIndex = 1;
+            this.btn_Add.Text = "Add";
+            this.btn_Add.UseVisualStyleBackColor = true;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
-            // msg
+            // GroupUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lbl_username);
-            this.Controls.Add(this.textBox1);
-            this.Name = "msg";
-            this.Size = new System.Drawing.Size(194, 49);
-            this.Load += new System.EventHandler(this.msg_Load);
+            this.Controls.Add(this.btn_Add);
+            this.Controls.Add(this.lbl_Email);
+            this.Name = "GroupUsers";
+            this.Size = new System.Drawing.Size(179, 41);
+            this.Load += new System.EventHandler(this.GroupUsers_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -66,7 +67,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label lbl_username;
+        private System.Windows.Forms.Label lbl_Email;
+        private System.Windows.Forms.Button btn_Add;
     }
 }
