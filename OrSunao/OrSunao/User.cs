@@ -1,5 +1,7 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 
@@ -14,6 +16,7 @@ namespace OrSunao
         private bool isBlocked;
         private bool isConnected;
         private string currentText;
+        private byte[] image;
         public List<User> contacts = new List<User>();
         public List<User> blockedUsers = new List<User>();
         public List<User> groupUsers = new List<User>();
@@ -207,6 +210,19 @@ namespace OrSunao
             set
             {
                 isConnected = value;
+            }
+        }
+
+        public byte[] Image
+        {
+            get
+            {
+                return image;
+            }
+
+            set
+            {
+                image = value;
             }
         }
 

@@ -37,8 +37,10 @@
             this.textBox1.Location = new System.Drawing.Point(6, 22);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(186, 25);
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(198, 49);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lbl_username
@@ -57,7 +59,7 @@
             this.Controls.Add(this.lbl_username);
             this.Controls.Add(this.textBox1);
             this.Name = "msg";
-            this.Size = new System.Drawing.Size(194, 49);
+            this.Size = new System.Drawing.Size(207, 74);
             this.Load += new System.EventHandler(this.msg_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

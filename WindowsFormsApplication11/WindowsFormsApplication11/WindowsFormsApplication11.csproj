@@ -78,6 +78,12 @@
     <Compile Include="GroupUsers.Designer.cs">
       <DependentUpon>GroupUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="imagemsg.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="imagemsg.Designer.cs">
+      <DependentUpon>imagemsg.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GroupUsers.resx">
       <DependentUpon>GroupUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="imagemsg.resx">
+      <DependentUpon>imagemsg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginAdmin.resx">
       <DependentUpon>LoginAdmin.cs</DependentUpon>

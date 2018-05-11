@@ -8,6 +8,36 @@
       <xsd:import schemaLocation="http://localhost:3255/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/OrSunao" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IService1_getimagelength_InputMessage">
+    <wsdl:part name="parameters" element="tns:getimagelength" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getimagelength_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getimagelengthResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_checkimage_InputMessage">
+    <wsdl:part name="parameters" element="tns:checkimage" />
+  </wsdl:message>
+  <wsdl:message name="IService1_checkimage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:checkimageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setImageToEmpty_InputMessage">
+    <wsdl:part name="parameters" element="tns:setImageToEmpty" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setImageToEmpty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setImageToEmptyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getChatImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:getChatImage" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getChatImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getChatImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setChatToImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:setChatToImage" />
+  </wsdl:message>
+  <wsdl:message name="IService1_setChatToImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setChatToImageResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_addusertogroup_InputMessage">
     <wsdl:part name="parameters" element="tns:addusertogroup" />
   </wsdl:message>
@@ -183,6 +213,26 @@
     <wsdl:part name="parameters" element="tns:setConnectedResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
+    <wsdl:operation name="getimagelength">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getimagelength" message="tns:IService1_getimagelength_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getimagelengthResponse" message="tns:IService1_getimagelength_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="checkimage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/checkimage" message="tns:IService1_checkimage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/checkimageResponse" message="tns:IService1_checkimage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setImageToEmpty">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/setImageToEmpty" message="tns:IService1_setImageToEmpty_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/setImageToEmptyResponse" message="tns:IService1_setImageToEmpty_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getChatImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getChatImage" message="tns:IService1_getChatImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getChatImageResponse" message="tns:IService1_getChatImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setChatToImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/setChatToImage" message="tns:IService1_setChatToImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/setChatToImageResponse" message="tns:IService1_setChatToImage_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="addusertogroup">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/addusertogroup" message="tns:IService1_addusertogroup_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/addusertogroupResponse" message="tns:IService1_addusertogroup_OutputMessage" />
@@ -302,6 +352,51 @@
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getimagelength">
+      <soap:operation soapAction="http://tempuri.org/IService1/getimagelength" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkimage">
+      <soap:operation soapAction="http://tempuri.org/IService1/checkimage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setImageToEmpty">
+      <soap:operation soapAction="http://tempuri.org/IService1/setImageToEmpty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getChatImage">
+      <soap:operation soapAction="http://tempuri.org/IService1/getChatImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setChatToImage">
+      <soap:operation soapAction="http://tempuri.org/IService1/setChatToImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="addusertogroup">
       <soap:operation soapAction="http://tempuri.org/IService1/addusertogroup" style="document" />
       <wsdl:input>

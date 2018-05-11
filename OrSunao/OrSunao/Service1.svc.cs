@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.ComponentModel;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -299,6 +301,44 @@ namespace OrSunao
 
             bool test = u.IsConnected;
 
+        }
+
+
+        public void setChatToImage(string Email, byte[] img, int length)
+        {
+            User u = new User();
+            u = u.getUserByEmail(Email);
+            u.Image = new byte[length];
+            u.Image = img;
+        }
+        public int getimagelength(string email)
+        {
+            User u = new User();
+            u = u.getUserByEmail(email);
+            return u.Image.Length;
+        }
+        public void setImageToEmpty(string Email)
+        {
+            User u = new User();
+            u = u.getUserByEmail(Email);
+            u.Image = null;
+        }
+
+        public void getChatImage(string Email, ref byte[] img)
+        {
+            User u = new User();
+            u = u.getUserByEmail(Email);
+            img = u.Image;
+        }
+        public bool checkimage(string email)
+        {
+            User u = new User();
+            u = u.getUserByEmail(email);
+            if(u.Image != null)
+            {
+                return true;
+            }
+            return false;
         }
 
     }

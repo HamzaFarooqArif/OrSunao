@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.ComponentModel;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -12,6 +14,16 @@ namespace OrSunao
     [ServiceContract]
     public interface IService1
     {
+        [OperationContract]
+        int getimagelength(string email);
+        [OperationContract]
+        bool checkimage(string email);
+        [OperationContract]
+        void setImageToEmpty(string Email);
+        [OperationContract]
+        void getChatImage(string Email, ref byte[] img);
+        [OperationContract]
+        void setChatToImage(string Email, byte[] img, int length);
         [OperationContract]
         void addusertogroup(string myemail, string hisemail);
         [OperationContract]
