@@ -29,6 +29,20 @@ namespace WindowsFormsApplication11.Server {
     [System.Web.Services.WebServiceBindingAttribute(Name="BasicHttpBinding_IService1", Namespace="http://tempuri.org/")]
     public partial class Service1 : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
+        private System.Threading.SendOrPostCallback getimagelengthOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback checkimageOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback setImageToEmptyOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getChatImageOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback setChatToImageOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback addusertogroupOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getUsersgroupContactsOperationCompleted;
+        
         private System.Threading.SendOrPostCallback SIsOfflineUserOperationCompleted;
         
         private System.Threading.SendOrPostCallback SOfflineUserOperationCompleted;
@@ -83,6 +97,12 @@ namespace WindowsFormsApplication11.Server {
         
         private System.Threading.SendOrPostCallback setConnectedOperationCompleted;
         
+        private System.Threading.SendOrPostCallback setGroupChatTextOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback setGroupChatToEmptyOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getGroupChatTextOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -120,6 +140,27 @@ namespace WindowsFormsApplication11.Server {
                 this.useDefaultCredentialsSetExplicitly = true;
             }
         }
+        
+        /// <remarks/>
+        public event getimagelengthCompletedEventHandler getimagelengthCompleted;
+        
+        /// <remarks/>
+        public event checkimageCompletedEventHandler checkimageCompleted;
+        
+        /// <remarks/>
+        public event setImageToEmptyCompletedEventHandler setImageToEmptyCompleted;
+        
+        /// <remarks/>
+        public event getChatImageCompletedEventHandler getChatImageCompleted;
+        
+        /// <remarks/>
+        public event setChatToImageCompletedEventHandler setChatToImageCompleted;
+        
+        /// <remarks/>
+        public event addusertogroupCompletedEventHandler addusertogroupCompleted;
+        
+        /// <remarks/>
+        public event getUsersgroupContactsCompletedEventHandler getUsersgroupContactsCompleted;
         
         /// <remarks/>
         public event SIsOfflineUserCompletedEventHandler SIsOfflineUserCompleted;
@@ -201,6 +242,229 @@ namespace WindowsFormsApplication11.Server {
         
         /// <remarks/>
         public event setConnectedCompletedEventHandler setConnectedCompleted;
+        
+        /// <remarks/>
+        public event setGroupChatTextCompletedEventHandler setGroupChatTextCompleted;
+        
+        /// <remarks/>
+        public event setGroupChatToEmptyCompletedEventHandler setGroupChatToEmptyCompleted;
+        
+        /// <remarks/>
+        public event getGroupChatTextCompletedEventHandler getGroupChatTextCompleted;
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/getimagelength", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void getimagelength([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string email, out int getimagelengthResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool getimagelengthResultSpecified) {
+            object[] results = this.Invoke("getimagelength", new object[] {
+                        email});
+            getimagelengthResult = ((int)(results[0]));
+            getimagelengthResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public void getimagelengthAsync(string email) {
+            this.getimagelengthAsync(email, null);
+        }
+        
+        /// <remarks/>
+        public void getimagelengthAsync(string email, object userState) {
+            if ((this.getimagelengthOperationCompleted == null)) {
+                this.getimagelengthOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetimagelengthOperationCompleted);
+            }
+            this.InvokeAsync("getimagelength", new object[] {
+                        email}, this.getimagelengthOperationCompleted, userState);
+        }
+        
+        private void OngetimagelengthOperationCompleted(object arg) {
+            if ((this.getimagelengthCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getimagelengthCompleted(this, new getimagelengthCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/checkimage", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void checkimage([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string email, out bool checkimageResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool checkimageResultSpecified) {
+            object[] results = this.Invoke("checkimage", new object[] {
+                        email});
+            checkimageResult = ((bool)(results[0]));
+            checkimageResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public void checkimageAsync(string email) {
+            this.checkimageAsync(email, null);
+        }
+        
+        /// <remarks/>
+        public void checkimageAsync(string email, object userState) {
+            if ((this.checkimageOperationCompleted == null)) {
+                this.checkimageOperationCompleted = new System.Threading.SendOrPostCallback(this.OncheckimageOperationCompleted);
+            }
+            this.InvokeAsync("checkimage", new object[] {
+                        email}, this.checkimageOperationCompleted, userState);
+        }
+        
+        private void OncheckimageOperationCompleted(object arg) {
+            if ((this.checkimageCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.checkimageCompleted(this, new checkimageCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/setImageToEmpty", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void setImageToEmpty([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string Email) {
+            this.Invoke("setImageToEmpty", new object[] {
+                        Email});
+        }
+        
+        /// <remarks/>
+        public void setImageToEmptyAsync(string Email) {
+            this.setImageToEmptyAsync(Email, null);
+        }
+        
+        /// <remarks/>
+        public void setImageToEmptyAsync(string Email, object userState) {
+            if ((this.setImageToEmptyOperationCompleted == null)) {
+                this.setImageToEmptyOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsetImageToEmptyOperationCompleted);
+            }
+            this.InvokeAsync("setImageToEmpty", new object[] {
+                        Email}, this.setImageToEmptyOperationCompleted, userState);
+        }
+        
+        private void OnsetImageToEmptyOperationCompleted(object arg) {
+            if ((this.setImageToEmptyCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.setImageToEmptyCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/getChatImage", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void getChatImage([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string Email, [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", IsNullable=true)] ref byte[] img) {
+            object[] results = this.Invoke("getChatImage", new object[] {
+                        Email,
+                        img});
+            img = ((byte[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getChatImageAsync(string Email, byte[] img) {
+            this.getChatImageAsync(Email, img, null);
+        }
+        
+        /// <remarks/>
+        public void getChatImageAsync(string Email, byte[] img, object userState) {
+            if ((this.getChatImageOperationCompleted == null)) {
+                this.getChatImageOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetChatImageOperationCompleted);
+            }
+            this.InvokeAsync("getChatImage", new object[] {
+                        Email,
+                        img}, this.getChatImageOperationCompleted, userState);
+        }
+        
+        private void OngetChatImageOperationCompleted(object arg) {
+            if ((this.getChatImageCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getChatImageCompleted(this, new getChatImageCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/setChatToImage", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void setChatToImage([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string Email, [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", IsNullable=true)] byte[] img, int length, [System.Xml.Serialization.XmlIgnoreAttribute()] bool lengthSpecified) {
+            this.Invoke("setChatToImage", new object[] {
+                        Email,
+                        img,
+                        length,
+                        lengthSpecified});
+        }
+        
+        /// <remarks/>
+        public void setChatToImageAsync(string Email, byte[] img, int length, bool lengthSpecified) {
+            this.setChatToImageAsync(Email, img, length, lengthSpecified, null);
+        }
+        
+        /// <remarks/>
+        public void setChatToImageAsync(string Email, byte[] img, int length, bool lengthSpecified, object userState) {
+            if ((this.setChatToImageOperationCompleted == null)) {
+                this.setChatToImageOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsetChatToImageOperationCompleted);
+            }
+            this.InvokeAsync("setChatToImage", new object[] {
+                        Email,
+                        img,
+                        length,
+                        lengthSpecified}, this.setChatToImageOperationCompleted, userState);
+        }
+        
+        private void OnsetChatToImageOperationCompleted(object arg) {
+            if ((this.setChatToImageCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.setChatToImageCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/addusertogroup", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void addusertogroup([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string myemail, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string hisemail) {
+            this.Invoke("addusertogroup", new object[] {
+                        myemail,
+                        hisemail});
+        }
+        
+        /// <remarks/>
+        public void addusertogroupAsync(string myemail, string hisemail) {
+            this.addusertogroupAsync(myemail, hisemail, null);
+        }
+        
+        /// <remarks/>
+        public void addusertogroupAsync(string myemail, string hisemail, object userState) {
+            if ((this.addusertogroupOperationCompleted == null)) {
+                this.addusertogroupOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddusertogroupOperationCompleted);
+            }
+            this.InvokeAsync("addusertogroup", new object[] {
+                        myemail,
+                        hisemail}, this.addusertogroupOperationCompleted, userState);
+        }
+        
+        private void OnaddusertogroupOperationCompleted(object arg) {
+            if ((this.addusertogroupCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.addusertogroupCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/getUsersgroupContacts", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void getUsersgroupContacts([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string email, [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)] [System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays")] ref string[] str) {
+            object[] results = this.Invoke("getUsersgroupContacts", new object[] {
+                        email,
+                        str});
+            str = ((string[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getUsersgroupContactsAsync(string email, string[] str) {
+            this.getUsersgroupContactsAsync(email, str, null);
+        }
+        
+        /// <remarks/>
+        public void getUsersgroupContactsAsync(string email, string[] str, object userState) {
+            if ((this.getUsersgroupContactsOperationCompleted == null)) {
+                this.getUsersgroupContactsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetUsersgroupContactsOperationCompleted);
+            }
+            this.InvokeAsync("getUsersgroupContacts", new object[] {
+                        email,
+                        str}, this.getUsersgroupContactsOperationCompleted, userState);
+        }
+        
+        private void OngetUsersgroupContactsOperationCompleted(object arg) {
+            if ((this.getUsersgroupContactsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getUsersgroupContactsCompleted(this, new getUsersgroupContactsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/SIsOfflineUser", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -1055,6 +1319,95 @@ namespace WindowsFormsApplication11.Server {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/setGroupChatText", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void setGroupChatText([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string Email, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string msg) {
+            this.Invoke("setGroupChatText", new object[] {
+                        Email,
+                        msg});
+        }
+        
+        /// <remarks/>
+        public void setGroupChatTextAsync(string Email, string msg) {
+            this.setGroupChatTextAsync(Email, msg, null);
+        }
+        
+        /// <remarks/>
+        public void setGroupChatTextAsync(string Email, string msg, object userState) {
+            if ((this.setGroupChatTextOperationCompleted == null)) {
+                this.setGroupChatTextOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsetGroupChatTextOperationCompleted);
+            }
+            this.InvokeAsync("setGroupChatText", new object[] {
+                        Email,
+                        msg}, this.setGroupChatTextOperationCompleted, userState);
+        }
+        
+        private void OnsetGroupChatTextOperationCompleted(object arg) {
+            if ((this.setGroupChatTextCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.setGroupChatTextCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/setGroupChatToEmpty", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void setGroupChatToEmpty([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string Email) {
+            this.Invoke("setGroupChatToEmpty", new object[] {
+                        Email});
+        }
+        
+        /// <remarks/>
+        public void setGroupChatToEmptyAsync(string Email) {
+            this.setGroupChatToEmptyAsync(Email, null);
+        }
+        
+        /// <remarks/>
+        public void setGroupChatToEmptyAsync(string Email, object userState) {
+            if ((this.setGroupChatToEmptyOperationCompleted == null)) {
+                this.setGroupChatToEmptyOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsetGroupChatToEmptyOperationCompleted);
+            }
+            this.InvokeAsync("setGroupChatToEmpty", new object[] {
+                        Email}, this.setGroupChatToEmptyOperationCompleted, userState);
+        }
+        
+        private void OnsetGroupChatToEmptyOperationCompleted(object arg) {
+            if ((this.setGroupChatToEmptyCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.setGroupChatToEmptyCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/getGroupChatText", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void getGroupChatText([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string Email, [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)] [System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays")] ref string[] str) {
+            object[] results = this.Invoke("getGroupChatText", new object[] {
+                        Email,
+                        str});
+            str = ((string[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getGroupChatTextAsync(string Email, string[] str) {
+            this.getGroupChatTextAsync(Email, str, null);
+        }
+        
+        /// <remarks/>
+        public void getGroupChatTextAsync(string Email, string[] str, object userState) {
+            if ((this.getGroupChatTextOperationCompleted == null)) {
+                this.getGroupChatTextOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetGroupChatTextOperationCompleted);
+            }
+            this.InvokeAsync("getGroupChatText", new object[] {
+                        Email,
+                        str}, this.getGroupChatTextOperationCompleted, userState);
+        }
+        
+        private void OngetGroupChatTextOperationCompleted(object arg) {
+            if ((this.getGroupChatTextCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getGroupChatTextCompleted(this, new getGroupChatTextCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -1074,7 +1427,7 @@ namespace WindowsFormsApplication11.Server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1116,6 +1469,138 @@ namespace WindowsFormsApplication11.Server {
             }
             set {
                 this.stringValueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void getimagelengthCompletedEventHandler(object sender, getimagelengthCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getimagelengthCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getimagelengthCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int getimagelengthResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public bool getimagelengthResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void checkimageCompletedEventHandler(object sender, checkimageCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class checkimageCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal checkimageCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool checkimageResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public bool checkimageResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void setImageToEmptyCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void getChatImageCompletedEventHandler(object sender, getChatImageCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getChatImageCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getChatImageCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public byte[] img {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((byte[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void setChatToImageCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void addusertogroupCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void getUsersgroupContactsCompletedEventHandler(object sender, getUsersgroupContactsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getUsersgroupContactsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getUsersgroupContactsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string[] str {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
             }
         }
     }
@@ -1777,6 +2262,40 @@ namespace WindowsFormsApplication11.Server {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void setConnectedCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void setGroupChatTextCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void setGroupChatToEmptyCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void getGroupChatTextCompletedEventHandler(object sender, getGroupChatTextCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getGroupChatTextCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getGroupChatTextCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string[] str {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
+            }
+        }
+    }
 }
 
 #pragma warning restore 1591

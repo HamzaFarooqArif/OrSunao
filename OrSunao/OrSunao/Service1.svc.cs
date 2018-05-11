@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.ComponentModel;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -12,6 +14,23 @@ namespace OrSunao
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
+        public void addusertogroup(string myemail, string hisemail)
+        {
+            User u = new User();
+            u = u.getUserByEmail(myemail);
+            User k = new User();
+            k = k.getUserByEmail(hisemail);
+            u.groupUsers.Add(k);
+        }
+        public void getUsersgroupContacts(string email, ref List<string> str)
+        {
+            User k = new User();
+            k = k.getUserByEmail(email);
+            foreach(User u in k.groupUsers)
+            {
+                str.Add(u.getEmail());
+            }
+        }
         
         public bool SIsOfflineUser(string myemail)
         {
@@ -282,6 +301,69 @@ namespace OrSunao
 
             bool test = u.IsConnected;
 
+        }
+
+
+        public void setChatToImage(string Email, byte[] img, int length)
+        {
+            User u = new User();
+            u = u.getUserByEmail(Email);
+            u.Image = new byte[length];
+            u.Image = img;
+        }
+        public int getimagelength(string email)
+        {
+            User u = new User();
+            u = u.getUserByEmail(email);
+            return u.Image.Length;
+        }
+        public void setImageToEmpty(string Email)
+        {
+            User u = new User();
+            u = u.getUserByEmail(Email);
+            u.Image = null;
+        }
+
+        public void getChatImage(string Email, ref byte[] img)
+        {
+            User u = new User();
+            u = u.getUserByEmail(Email);
+            img = u.Image;
+        }
+        public bool checkimage(string email)
+        {
+            User u = new User();
+            u = u.getUserByEmail(email);
+            if(u.Image != null)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public void setGroupChatText(string Email, string msg)
+        {
+            User u = new User();
+            u = u.getUserByEmail(Email);
+            u.CurrentChatRoomText.Add(msg);
+        }
+
+        public void setGroupChatToEmpty(string Email)
+        {
+            User u = new User();
+            u = u.getUserByEmail(Email);
+            u.CurrentChatRoomText.Clear();
+        }
+
+        public void getGroupChatText(string Email, ref List<string> str)
+        {
+            foreach(User u in UserDl.orSunaoMembers)
+            {
+                if(u.getEmail() == Email)
+                {
+                    str = u.CurrentChatRoomText;
+                }
+            }
         }
 
     }

@@ -36,6 +36,8 @@
             this.btn_send = new System.Windows.Forms.Button();
             this.btn_exit = new System.Windows.Forms.Button();
             this.btn_Refresh = new System.Windows.Forms.Button();
+            this.btn_sendimage = new System.Windows.Forms.Button();
+            this.opendirectory = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // lbl_me
@@ -81,7 +83,7 @@
             // 
             // btn_send
             // 
-            this.btn_send.Location = new System.Drawing.Point(338, 379);
+            this.btn_send.Location = new System.Drawing.Point(338, 366);
             this.btn_send.Name = "btn_send";
             this.btn_send.Size = new System.Drawing.Size(75, 23);
             this.btn_send.TabIndex = 5;
@@ -109,11 +111,27 @@
             this.btn_Refresh.UseVisualStyleBackColor = true;
             this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
             // 
+            // btn_sendimage
+            // 
+            this.btn_sendimage.Location = new System.Drawing.Point(338, 393);
+            this.btn_sendimage.Name = "btn_sendimage";
+            this.btn_sendimage.Size = new System.Drawing.Size(75, 23);
+            this.btn_sendimage.TabIndex = 8;
+            this.btn_sendimage.Text = "Send Image";
+            this.btn_sendimage.UseVisualStyleBackColor = true;
+            this.btn_sendimage.Click += new System.EventHandler(this.btn_sendimage_Click);
+            // 
+            // opendirectory
+            // 
+            this.opendirectory.FileName = "openFileDialog1";
+            this.opendirectory.FileOk += new System.ComponentModel.CancelEventHandler(this.opendirectory_FileOk);
+            // 
             // chatbox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(453, 428);
+            this.Controls.Add(this.btn_sendimage);
             this.Controls.Add(this.btn_Refresh);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.btn_send);
@@ -140,5 +158,7 @@
         private System.Windows.Forms.Button btn_send;
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Button btn_Refresh;
+        private System.Windows.Forms.Button btn_sendimage;
+        private System.Windows.Forms.OpenFileDialog opendirectory;
     }
 }

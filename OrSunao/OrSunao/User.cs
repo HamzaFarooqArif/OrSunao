@@ -1,5 +1,7 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 
@@ -14,8 +16,11 @@ namespace OrSunao
         private bool isBlocked;
         private bool isConnected;
         private string currentText;
+        private byte[] image;
+        private List<string> currentChatRoomText = new List<string>();
         public List<User> contacts = new List<User>();
         public List<User> blockedUsers = new List<User>();
+        public List<User> groupUsers = new List<User>();
 
 
 
@@ -75,7 +80,17 @@ namespace OrSunao
                     }
                 }
             }
-          
+            if (UserDl.registrationRequests != null)
+            {
+                foreach (User k in UserDl.registrationRequests)
+                {
+                    if (k.Email == email || k.Password == password)
+                    {
+                        return false;
+                    }
+                }
+            }
+
             this.FirstName = firstname;
             this.LastName = lastname;
             this.Password = password;
@@ -196,6 +211,32 @@ namespace OrSunao
             set
             {
                 isConnected = value;
+            }
+        }
+
+        public byte[] Image
+        {
+            get
+            {
+                return image;
+            }
+
+            set
+            {
+                image = value;
+            }
+        }
+
+        public List<string> CurrentChatRoomText
+        {
+            get
+            {
+                return currentChatRoomText;
+            }
+
+            set
+            {
+                currentChatRoomText = value;
             }
         }
 

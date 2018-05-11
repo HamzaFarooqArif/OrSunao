@@ -78,6 +78,50 @@ namespace OrSunao.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getimagelength", ReplyAction="http://tempuri.org/IService1/getimagelengthResponse")]
+        int getimagelength(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getimagelength", ReplyAction="http://tempuri.org/IService1/getimagelengthResponse")]
+        System.Threading.Tasks.Task<int> getimagelengthAsync(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/checkimage", ReplyAction="http://tempuri.org/IService1/checkimageResponse")]
+        bool checkimage(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/checkimage", ReplyAction="http://tempuri.org/IService1/checkimageResponse")]
+        System.Threading.Tasks.Task<bool> checkimageAsync(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setImageToEmpty", ReplyAction="http://tempuri.org/IService1/setImageToEmptyResponse")]
+        void setImageToEmpty(string Email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setImageToEmpty", ReplyAction="http://tempuri.org/IService1/setImageToEmptyResponse")]
+        System.Threading.Tasks.Task setImageToEmptyAsync(string Email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getChatImage", ReplyAction="http://tempuri.org/IService1/getChatImageResponse")]
+        OrSunao.ServiceReference1.getChatImageResponse getChatImage(OrSunao.ServiceReference1.getChatImageRequest request);
+        
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getChatImage", ReplyAction="http://tempuri.org/IService1/getChatImageResponse")]
+        System.Threading.Tasks.Task<OrSunao.ServiceReference1.getChatImageResponse> getChatImageAsync(OrSunao.ServiceReference1.getChatImageRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setChatToImage", ReplyAction="http://tempuri.org/IService1/setChatToImageResponse")]
+        void setChatToImage(string Email, byte[] img, int length);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setChatToImage", ReplyAction="http://tempuri.org/IService1/setChatToImageResponse")]
+        System.Threading.Tasks.Task setChatToImageAsync(string Email, byte[] img, int length);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addusertogroup", ReplyAction="http://tempuri.org/IService1/addusertogroupResponse")]
+        void addusertogroup(string myemail, string hisemail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addusertogroup", ReplyAction="http://tempuri.org/IService1/addusertogroupResponse")]
+        System.Threading.Tasks.Task addusertogroupAsync(string myemail, string hisemail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getUsersgroupContacts", ReplyAction="http://tempuri.org/IService1/getUsersgroupContactsResponse")]
+        OrSunao.ServiceReference1.getUsersgroupContactsResponse getUsersgroupContacts(OrSunao.ServiceReference1.getUsersgroupContactsRequest request);
+        
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getUsersgroupContacts", ReplyAction="http://tempuri.org/IService1/getUsersgroupContactsResponse")]
+        System.Threading.Tasks.Task<OrSunao.ServiceReference1.getUsersgroupContactsResponse> getUsersgroupContactsAsync(OrSunao.ServiceReference1.getUsersgroupContactsRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SIsOfflineUser", ReplyAction="http://tempuri.org/IService1/SIsOfflineUserResponse")]
         bool SIsOfflineUser(string myemail);
         
@@ -248,6 +292,97 @@ namespace OrSunao.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setConnected", ReplyAction="http://tempuri.org/IService1/setConnectedResponse")]
         System.Threading.Tasks.Task setConnectedAsync(string Email, bool connected);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setGroupChatText", ReplyAction="http://tempuri.org/IService1/setGroupChatTextResponse")]
+        void setGroupChatText(string Email, string msg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setGroupChatText", ReplyAction="http://tempuri.org/IService1/setGroupChatTextResponse")]
+        System.Threading.Tasks.Task setGroupChatTextAsync(string Email, string msg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setGroupChatToEmpty", ReplyAction="http://tempuri.org/IService1/setGroupChatToEmptyResponse")]
+        void setGroupChatToEmpty(string Email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/setGroupChatToEmpty", ReplyAction="http://tempuri.org/IService1/setGroupChatToEmptyResponse")]
+        System.Threading.Tasks.Task setGroupChatToEmptyAsync(string Email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getGroupChatText", ReplyAction="http://tempuri.org/IService1/getGroupChatTextResponse")]
+        OrSunao.ServiceReference1.getGroupChatTextResponse getGroupChatText(OrSunao.ServiceReference1.getGroupChatTextRequest request);
+        
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getGroupChatText", ReplyAction="http://tempuri.org/IService1/getGroupChatTextResponse")]
+        System.Threading.Tasks.Task<OrSunao.ServiceReference1.getGroupChatTextResponse> getGroupChatTextAsync(OrSunao.ServiceReference1.getGroupChatTextRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getChatImage", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class getChatImageRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string Email;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public byte[] img;
+        
+        public getChatImageRequest() {
+        }
+        
+        public getChatImageRequest(string Email, byte[] img) {
+            this.Email = Email;
+            this.img = img;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getChatImageResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class getChatImageResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public byte[] img;
+        
+        public getChatImageResponse() {
+        }
+        
+        public getChatImageResponse(byte[] img) {
+            this.img = img;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getUsersgroupContacts", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class getUsersgroupContactsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string email;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string[] str;
+        
+        public getUsersgroupContactsRequest() {
+        }
+        
+        public getUsersgroupContactsRequest(string email, string[] str) {
+            this.email = email;
+            this.str = str;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getUsersgroupContactsResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class getUsersgroupContactsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string[] str;
+        
+        public getUsersgroupContactsResponse() {
+        }
+        
+        public getUsersgroupContactsResponse(string[] str) {
+            this.str = str;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -550,6 +685,42 @@ namespace OrSunao.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getGroupChatText", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class getGroupChatTextRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string Email;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string[] str;
+        
+        public getGroupChatTextRequest() {
+        }
+        
+        public getGroupChatTextRequest(string Email, string[] str) {
+            this.Email = Email;
+            this.str = str;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getGroupChatTextResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class getGroupChatTextResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string[] str;
+        
+        public getGroupChatTextResponse() {
+        }
+        
+        public getGroupChatTextResponse(string[] str) {
+            this.str = str;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IService1Channel : OrSunao.ServiceReference1.IService1, System.ServiceModel.IClientChannel {
     }
@@ -575,6 +746,80 @@ namespace OrSunao.ServiceReference1 {
         
         public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public int getimagelength(string email) {
+            return base.Channel.getimagelength(email);
+        }
+        
+        public System.Threading.Tasks.Task<int> getimagelengthAsync(string email) {
+            return base.Channel.getimagelengthAsync(email);
+        }
+        
+        public bool checkimage(string email) {
+            return base.Channel.checkimage(email);
+        }
+        
+        public System.Threading.Tasks.Task<bool> checkimageAsync(string email) {
+            return base.Channel.checkimageAsync(email);
+        }
+        
+        public void setImageToEmpty(string Email) {
+            base.Channel.setImageToEmpty(Email);
+        }
+        
+        public System.Threading.Tasks.Task setImageToEmptyAsync(string Email) {
+            return base.Channel.setImageToEmptyAsync(Email);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OrSunao.ServiceReference1.getChatImageResponse OrSunao.ServiceReference1.IService1.getChatImage(OrSunao.ServiceReference1.getChatImageRequest request) {
+            return base.Channel.getChatImage(request);
+        }
+        
+        public void getChatImage(string Email, ref byte[] img) {
+            OrSunao.ServiceReference1.getChatImageRequest inValue = new OrSunao.ServiceReference1.getChatImageRequest();
+            inValue.Email = Email;
+            inValue.img = img;
+            OrSunao.ServiceReference1.getChatImageResponse retVal = ((OrSunao.ServiceReference1.IService1)(this)).getChatImage(inValue);
+            img = retVal.img;
+        }
+        
+        public System.Threading.Tasks.Task<OrSunao.ServiceReference1.getChatImageResponse> getChatImageAsync(OrSunao.ServiceReference1.getChatImageRequest request) {
+            return base.Channel.getChatImageAsync(request);
+        }
+        
+        public void setChatToImage(string Email, byte[] img, int length) {
+            base.Channel.setChatToImage(Email, img, length);
+        }
+        
+        public System.Threading.Tasks.Task setChatToImageAsync(string Email, byte[] img, int length) {
+            return base.Channel.setChatToImageAsync(Email, img, length);
+        }
+        
+        public void addusertogroup(string myemail, string hisemail) {
+            base.Channel.addusertogroup(myemail, hisemail);
+        }
+        
+        public System.Threading.Tasks.Task addusertogroupAsync(string myemail, string hisemail) {
+            return base.Channel.addusertogroupAsync(myemail, hisemail);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OrSunao.ServiceReference1.getUsersgroupContactsResponse OrSunao.ServiceReference1.IService1.getUsersgroupContacts(OrSunao.ServiceReference1.getUsersgroupContactsRequest request) {
+            return base.Channel.getUsersgroupContacts(request);
+        }
+        
+        public void getUsersgroupContacts(string email, ref string[] str) {
+            OrSunao.ServiceReference1.getUsersgroupContactsRequest inValue = new OrSunao.ServiceReference1.getUsersgroupContactsRequest();
+            inValue.email = email;
+            inValue.str = str;
+            OrSunao.ServiceReference1.getUsersgroupContactsResponse retVal = ((OrSunao.ServiceReference1.IService1)(this)).getUsersgroupContacts(inValue);
+            str = retVal.str;
+        }
+        
+        public System.Threading.Tasks.Task<OrSunao.ServiceReference1.getUsersgroupContactsResponse> getUsersgroupContactsAsync(OrSunao.ServiceReference1.getUsersgroupContactsRequest request) {
+            return base.Channel.getUsersgroupContactsAsync(request);
         }
         
         public bool SIsOfflineUser(string myemail) {
@@ -866,6 +1111,39 @@ namespace OrSunao.ServiceReference1 {
         
         public System.Threading.Tasks.Task setConnectedAsync(string Email, bool connected) {
             return base.Channel.setConnectedAsync(Email, connected);
+        }
+        
+        public void setGroupChatText(string Email, string msg) {
+            base.Channel.setGroupChatText(Email, msg);
+        }
+        
+        public System.Threading.Tasks.Task setGroupChatTextAsync(string Email, string msg) {
+            return base.Channel.setGroupChatTextAsync(Email, msg);
+        }
+        
+        public void setGroupChatToEmpty(string Email) {
+            base.Channel.setGroupChatToEmpty(Email);
+        }
+        
+        public System.Threading.Tasks.Task setGroupChatToEmptyAsync(string Email) {
+            return base.Channel.setGroupChatToEmptyAsync(Email);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        OrSunao.ServiceReference1.getGroupChatTextResponse OrSunao.ServiceReference1.IService1.getGroupChatText(OrSunao.ServiceReference1.getGroupChatTextRequest request) {
+            return base.Channel.getGroupChatText(request);
+        }
+        
+        public void getGroupChatText(string Email, ref string[] str) {
+            OrSunao.ServiceReference1.getGroupChatTextRequest inValue = new OrSunao.ServiceReference1.getGroupChatTextRequest();
+            inValue.Email = Email;
+            inValue.str = str;
+            OrSunao.ServiceReference1.getGroupChatTextResponse retVal = ((OrSunao.ServiceReference1.IService1)(this)).getGroupChatText(inValue);
+            str = retVal.str;
+        }
+        
+        public System.Threading.Tasks.Task<OrSunao.ServiceReference1.getGroupChatTextResponse> getGroupChatTextAsync(OrSunao.ServiceReference1.getGroupChatTextRequest request) {
+            return base.Channel.getGroupChatTextAsync(request);
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.ComponentModel;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -12,6 +14,20 @@ namespace OrSunao
     [ServiceContract]
     public interface IService1
     {
+        [OperationContract]
+        int getimagelength(string email);
+        [OperationContract]
+        bool checkimage(string email);
+        [OperationContract]
+        void setImageToEmpty(string Email);
+        [OperationContract]
+        void getChatImage(string Email, ref byte[] img);
+        [OperationContract]
+        void setChatToImage(string Email, byte[] img, int length);
+        [OperationContract]
+        void addusertogroup(string myemail, string hisemail);
+        [OperationContract]
+        void getUsersgroupContacts(string email, ref List<string> str);
         [OperationContract]
         bool SIsOfflineUser(string myemail);
         [OperationContract]
@@ -91,6 +107,14 @@ namespace OrSunao
         [OperationContract]
         void setConnected(string Email, bool connected);
 
+        [OperationContract]
+        void setGroupChatText(string Email, string msg);
+
+        [OperationContract]
+        void setGroupChatToEmpty(string Email);
+
+        [OperationContract]
+        void getGroupChatText(string Email, ref List<string> str);
 
 
         // TODO: Add your service operations here

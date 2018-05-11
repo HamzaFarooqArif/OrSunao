@@ -54,6 +54,12 @@
     <Compile Include="chatbox.Designer.cs">
       <DependentUpon>chatbox.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChatRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChatRoom.Designer.cs">
+      <DependentUpon>ChatRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="EnterAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +71,18 @@
     </Compile>
     <Compile Include="EnterUser.Designer.cs">
       <DependentUpon>EnterUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupUsers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GroupUsers.Designer.cs">
+      <DependentUpon>GroupUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="imagemsg.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="imagemsg.Designer.cs">
+      <DependentUpon>imagemsg.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginAdmin.cs">
       <SubType>Form</SubType>
@@ -128,6 +146,12 @@
     <Compile Include="UserControl4.Designer.cs">
       <DependentUpon>UserControl4.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsersForGroupChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsersForGroupChat.Designer.cs">
+      <DependentUpon>UsersForGroupChat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Web References\Server\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -136,11 +160,20 @@
     <EmbeddedResource Include="chatbox.resx">
       <DependentUpon>chatbox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChatRoom.resx">
+      <DependentUpon>ChatRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EnterAdmin.resx">
       <DependentUpon>EnterAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EnterUser.resx">
       <DependentUpon>EnterUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupUsers.resx">
+      <DependentUpon>GroupUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="imagemsg.resx">
+      <DependentUpon>imagemsg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginAdmin.resx">
       <DependentUpon>LoginAdmin.cs</DependentUpon>
@@ -181,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl4.resx">
       <DependentUpon>UserControl4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsersForGroupChat.resx">
+      <DependentUpon>UsersForGroupChat.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
