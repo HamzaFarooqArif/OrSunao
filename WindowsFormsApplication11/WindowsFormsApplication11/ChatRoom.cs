@@ -16,15 +16,24 @@ namespace WindowsFormsApplication11
         public ChatRoom()
         {
             InitializeComponent();
+
+
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        public void setname(string name)
         {
-
+            lbl_me.Text = name;
         }
 
         private void ChatRoom_Load(object sender, EventArgs e)
         {
+            ChatRoom.chatroom = this;
+
+            Timer timer = new Timer();
+            timer.Interval = (1 * 1000); // 10 secs
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Start();
+
             List<string> strnamer = new List<string>();
             Server.Service1 server = new Server.Service1();
             string[] strnamer1 = strnamer.ToArray();
@@ -74,6 +83,34 @@ namespace WindowsFormsApplication11
 
         }
 
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            Server.Service1 server = new Server.Service1();
+            server.setConnected(lbl_me.Text, true, true);
+            List<string> messagesList = new List<string>();
+            string[] messagesArray = messagesList.ToArray();
+            server.getGroupChatText(lbl_me.Text, ref messagesArray);
+
+            foreach(string message in messagesArray)
+            {
+                string actualMessage = "";
+                string userName = "";
+                bool flipFlag = false;
+                
+                foreach(char chr in message)
+                {
+                    if (flipFlag) userName += chr;
+                    if (chr == '^') flipFlag = true;
+                    if(!flipFlag) actualMessage += chr;
+                }
+
+                msg n = new msg(actualMessage, userName);
+                flowLayoutPanel1.Controls.Add(n);
+                flowLayoutPanel1.ScrollControlIntoView(n);
+            }
+            server.setGroupChatToEmpty(lbl_me.Text);
+        }
+
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             if(EnterUser.EnterUserForm == null)
@@ -100,6 +137,34 @@ namespace WindowsFormsApplication11
         {
             if(txt_Message.Text != "")
             {
+                string message = txt_Message.Text;
+                message += "^";
+                message += lbl_me.Text;
+
+                Server.Service1 server = new Server.Service1();
+
+                if (lbl1_Email.Text != "")
+                {
+                    server.setGroupChatText(lbl1_Email.Text, message);
+                }
+
+                if (lbl2_Email.Text != "")
+                {
+                    server.setGroupChatText(lbl2_Email.Text, message);
+                }
+
+                if (lbl3_Email.Text != "")
+                {
+                    server.setGroupChatText(lbl3_Email.Text, message);
+                }
+
+                if (lbl4_Email.Text != "")
+                {
+                    server.setGroupChatText(lbl4_Email.Text, message);
+                }
+
+
+
                 msg my = new msg(txt_Message.Text, EnterUser.EnterUserForm.email);
                 flowLayoutPanel1.Controls.Add(my);
                 flowLayoutPanel1.ScrollControlIntoView(my);

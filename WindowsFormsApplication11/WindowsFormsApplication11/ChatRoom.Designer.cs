@@ -38,16 +38,16 @@
             this.lbl3_Email = new System.Windows.Forms.Label();
             this.lbl4_Email = new System.Windows.Forms.Label();
             this.btn_AddUsers = new System.Windows.Forms.Button();
+            this.lbl_me = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txt_Message
             // 
-            this.txt_Message.Location = new System.Drawing.Point(10, 367);
+            this.txt_Message.Location = new System.Drawing.Point(29, 357);
             this.txt_Message.Multiline = true;
             this.txt_Message.Name = "txt_Message";
-            this.txt_Message.Size = new System.Drawing.Size(297, 34);
+            this.txt_Message.Size = new System.Drawing.Size(282, 45);
             this.txt_Message.TabIndex = 0;
-            this.txt_Message.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btn_Send
             // 
@@ -61,7 +61,7 @@
             // 
             // btn_Exit
             // 
-            this.btn_Exit.Location = new System.Drawing.Point(348, 12);
+            this.btn_Exit.Location = new System.Drawing.Point(350, 12);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(75, 23);
             this.btn_Exit.TabIndex = 3;
@@ -71,7 +71,7 @@
             // 
             // btn_Refresh
             // 
-            this.btn_Refresh.Location = new System.Drawing.Point(255, 12);
+            this.btn_Refresh.Location = new System.Drawing.Point(267, 12);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(75, 23);
             this.btn_Refresh.TabIndex = 2;
@@ -82,15 +82,15 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 99);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(29, 107);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(294, 257);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(291, 230);
             this.flowLayoutPanel1.TabIndex = 5;
             // 
             // lbl1_Email
             // 
             this.lbl1_Email.AutoSize = true;
-            this.lbl1_Email.Location = new System.Drawing.Point(26, 12);
+            this.lbl1_Email.Location = new System.Drawing.Point(26, 37);
             this.lbl1_Email.Name = "lbl1_Email";
             this.lbl1_Email.Size = new System.Drawing.Size(32, 13);
             this.lbl1_Email.TabIndex = 0;
@@ -99,7 +99,7 @@
             // lbl2_Email
             // 
             this.lbl2_Email.AutoSize = true;
-            this.lbl2_Email.Location = new System.Drawing.Point(116, 12);
+            this.lbl2_Email.Location = new System.Drawing.Point(81, 37);
             this.lbl2_Email.Name = "lbl2_Email";
             this.lbl2_Email.Size = new System.Drawing.Size(32, 13);
             this.lbl2_Email.TabIndex = 6;
@@ -108,7 +108,7 @@
             // lbl3_Email
             // 
             this.lbl3_Email.AutoSize = true;
-            this.lbl3_Email.Location = new System.Drawing.Point(26, 48);
+            this.lbl3_Email.Location = new System.Drawing.Point(27, 59);
             this.lbl3_Email.Name = "lbl3_Email";
             this.lbl3_Email.Size = new System.Drawing.Size(32, 13);
             this.lbl3_Email.TabIndex = 7;
@@ -117,7 +117,7 @@
             // lbl4_Email
             // 
             this.lbl4_Email.AutoSize = true;
-            this.lbl4_Email.Location = new System.Drawing.Point(116, 48);
+            this.lbl4_Email.Location = new System.Drawing.Point(81, 59);
             this.lbl4_Email.Name = "lbl4_Email";
             this.lbl4_Email.Size = new System.Drawing.Size(32, 13);
             this.lbl4_Email.TabIndex = 8;
@@ -133,11 +133,23 @@
             this.btn_AddUsers.UseVisualStyleBackColor = true;
             this.btn_AddUsers.Click += new System.EventHandler(this.btn_AddUsers_Click);
             // 
+            // lbl_me
+            // 
+            this.lbl_me.AutoSize = true;
+            this.lbl_me.Location = new System.Drawing.Point(27, 9);
+            this.lbl_me.Name = "lbl_me";
+            this.lbl_me.Size = new System.Drawing.Size(49, 13);
+            this.lbl_me.TabIndex = 10;
+            this.lbl_me.Text = "My Email";
+            // 
             // ChatRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(437, 413);
+            this.BackgroundImage = global::WindowsFormsApplication11.Properties.Resources.chatroom;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(446, 414);
+            this.Controls.Add(this.lbl_me);
             this.Controls.Add(this.btn_AddUsers);
             this.Controls.Add(this.lbl4_Email);
             this.Controls.Add(this.lbl3_Email);
@@ -168,5 +180,6 @@
         private System.Windows.Forms.Label lbl3_Email;
         private System.Windows.Forms.Label lbl4_Email;
         private System.Windows.Forms.Button btn_AddUsers;
+        private System.Windows.Forms.Label lbl_me;
     }
 }

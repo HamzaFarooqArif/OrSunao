@@ -121,10 +121,52 @@
   <data name="t1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\t1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Welcome-3d-Picture" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Welcome-3d-Picture.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="enter user" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enter user.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="userlogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\userlogin.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chat background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chat background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user log in" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user log in.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user registeration" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user registeration.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enter admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enter admin.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="adminregisteration" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adminregisteration.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ey-profile-dummy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ey-profile-dummy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="userreg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\userreg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Admin registeration" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Admin registeration.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chatroom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chatroom.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="admin log in" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\admin log in.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Welcome-3d-Picture" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Welcome-3d-Picture.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chat background1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chat background1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="userreg1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\userreg1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="adminlogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adminlogin.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

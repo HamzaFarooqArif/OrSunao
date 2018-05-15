@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.ComponentModel;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -20,6 +22,7 @@ namespace OrSunao
             k = k.getUserByEmail(hisemail);
             u.groupUsers.Add(k);
         }
+
         public void getUsersgroupContacts(string email, ref List<string> str)
         {
             User k = new User();
@@ -36,12 +39,14 @@ namespace OrSunao
             k = k.getUserByEmail(myemail);
             return !k.Isonline;
         }
+
         public void SOfflineUser(string myemail)
         {
             User k = new User();
             k = k.getUserByEmail(myemail);
             k.Isonline = false;
         }
+
         public bool SConnectwithuser(string myemail,string hisemail)
         {
             User n = new User();
@@ -55,6 +60,7 @@ namespace OrSunao
             }
             return false;
         }
+
         public void getUsersContacts(string email, ref List<string> str)
         {
             string p = "";
@@ -80,32 +86,32 @@ namespace OrSunao
             k = k.getuserfromr(email, password);
             return UserDl.adminUtill.suspenduser(k);
         }
+
         public bool SDeleteUser(string email, string password)
         {
             User k = new User();
             k = k.getuserfromr(email, password);
             return UserDl.adminUtill.DeleteUser(k);
         }
+
         public bool SPassUser(string email, string password)
         {
             User k = new User();
             k = k.getuser(email, password);
             return UserDl.adminUtill.ApproveRegistration(k);
         }
+
         public void SPassRegisteredUsersname(ref List<string> str)
         {
-            
-           
             foreach(User u in UserDl.orSunaoMembers)
             {
                 str.Add(u.getEmail());
             }
             return;
         }
+
         public void SPassRegisteredUserspassword(ref List<string> str)
         {
-            
-
             foreach (User u in UserDl.orSunaoMembers)
             {
                 str.Add(u.getPassword());
@@ -113,21 +119,17 @@ namespace OrSunao
             return;
         }
 
-
-
         public void SPassSuspendedUsersname(ref List<string> str)
         {
-          
-
             foreach (User u in UserDl.suspendedUsers)
             {
                 str.Add(u.getEmail());
             }
             return;
         }
+
         public void SPassSuspendedUserspassword(ref List<string> str)
         {
-
             foreach (User u in UserDl.suspendedUsers)
             {
                 str.Add(u.getPassword());
@@ -144,16 +146,16 @@ namespace OrSunao
             }
             return;
         }
+
         public void SPassToBeRegisteredUserspassword(ref List<string> str)
         {
-          
-
             foreach (User u in UserDl.registrationRequests)
             {
                 str.Add(u.getPassword());
             }
             return;
         }
+
         public bool SRegisterUser(string firstname, string lastname, string password, string email, string contact, string cnic, string secretq, string ans)
         {
             bool isregister;
@@ -161,6 +163,7 @@ namespace OrSunao
             isregister = u.registeruser(firstname, lastname, password, email, contact, cnic, secretq, ans);
             return isregister;
         }
+
         public bool SLoginUser(string email, string password)
         {
             User n = new User();
@@ -219,24 +222,6 @@ namespace OrSunao
             k = k.getuserfromr(email, password);
             UserDl.orSunaoMembers.Remove(k);
             return true;
-        //    foreach (User u in UserDl.orSunaoMembers)
-        //    {
-        //        if (u.getEmail() == email && u.getPassword() == password)
-        //        {
-        //            break;
-        //        }
-        //        idx++;
-        //    }
-
-        //    if (idx > 0)
-        //    {
-        //        UserDl.orSunaoMembers.RemoveAt(idx);
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
         }
 
         public void AddToContacts(string myEmail, string myPassword, string hisEmail, string hisPassword)
@@ -295,10 +280,73 @@ namespace OrSunao
             User u = new User();
             u = u.getUserByEmail(Email);
             u.IsConnected = connected;
-
-
             bool test = u.IsConnected;
 
+        }
+
+        public void setChatToImage(string Email, byte[] img, int length)
+        {
+            User u = new User();
+            u = u.getUserByEmail(Email);
+            u.Image = new byte[length];
+            u.Image = img;
+        }
+
+        public int getimagelength(string email)
+        {
+            User u = new User();
+            u = u.getUserByEmail(email);
+            return u.Image.Length;
+        }
+
+        public void setImageToEmpty(string Email)
+        {
+            User u = new User();
+            u = u.getUserByEmail(Email);
+            u.Image = null;
+        }
+
+        public void getChatImage(string Email, ref byte[] img)
+        {
+            User u = new User();
+            u = u.getUserByEmail(Email);
+            img = u.Image;
+        }
+
+        public bool checkimage(string email)
+        {
+            User u = new User();
+            u = u.getUserByEmail(email);
+            if(u.Image != null)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public void setGroupChatText(string Email, string msg)
+        {
+            User u = new User();
+            u = u.getUserByEmail(Email);
+            u.CurrentChatRoomText.Add(msg);
+        }
+
+        public void setGroupChatToEmpty(string Email)
+        {
+            User u = new User();
+            u = u.getUserByEmail(Email);
+            u.CurrentChatRoomText.Clear();
+        }
+
+        public void getGroupChatText(string Email, ref List<string> str)
+        {
+            foreach(User u in UserDl.orSunaoMembers)
+            {
+                if(u.getEmail() == Email)
+                {
+                    str = u.CurrentChatRoomText;
+                }
+            }
         }
 
     }

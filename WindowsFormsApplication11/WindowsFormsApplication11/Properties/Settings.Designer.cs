@@ -26,7 +26,7 @@ namespace WindowsFormsApplication11.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:3255/Service1.svc")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://10.5.62.21:3255/Service1.svc")]
         public string WindowsFormsApplication11_Server_Service1 {
             get {
                 return ((string)(this["WindowsFormsApplication11_Server_Service1"]));

@@ -78,6 +78,12 @@
     <Compile Include="GroupUsers.Designer.cs">
       <DependentUpon>GroupUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="imagemsg.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="imagemsg.Designer.cs">
+      <DependentUpon>imagemsg.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GroupUsers.resx">
       <DependentUpon>GroupUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="imagemsg.resx">
+      <DependentUpon>imagemsg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginAdmin.resx">
       <DependentUpon>LoginAdmin.cs</DependentUpon>
@@ -258,10 +267,52 @@
     <None Include="Resources\ey-profile-dummy.png" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://localhost:3255/Service1.svc">
+    <None Include="Resources\enter admin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enter user.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chat background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chat background1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin log in.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user log in.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin registeration.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user registeration.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chatroom.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userreg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userreg1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adminregisteration.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userlogin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adminlogin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://10.5.62.21:3255/Service1.svc">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\Server\</RelPath>
-      <UpdateFromURL>http://localhost:3255/Service1.svc</UpdateFromURL>
+      <UpdateFromURL>http://10.5.62.21:3255/Service1.svc</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

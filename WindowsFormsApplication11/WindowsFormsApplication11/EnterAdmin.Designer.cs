@@ -41,31 +41,31 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(30, 29);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(23, 29);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(184, 378);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(207, 293);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.AutoScroll = true;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(247, 28);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(275, 29);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(211, 378);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(207, 293);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.AutoScroll = true;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(512, 29);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(531, 29);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(203, 377);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(203, 293);
             this.flowLayoutPanel3.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 9);
+            this.label1.Location = new System.Drawing.Point(20, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 13);
             this.label1.TabIndex = 0;
@@ -74,7 +74,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(244, 9);
+            this.label2.Location = new System.Drawing.Point(272, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 13);
             this.label2.TabIndex = 3;
@@ -83,7 +83,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(509, 9);
+            this.label3.Location = new System.Drawing.Point(528, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 13);
             this.label3.TabIndex = 4;
@@ -91,7 +91,7 @@
             // 
             // btn_Refresh
             // 
-            this.btn_Refresh.Location = new System.Drawing.Point(640, 428);
+            this.btn_Refresh.Location = new System.Drawing.Point(636, 382);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(75, 23);
             this.btn_Refresh.TabIndex = 5;
@@ -102,18 +102,20 @@
             // lbl_login
             // 
             this.lbl_login.AutoSize = true;
-            this.lbl_login.Location = new System.Drawing.Point(27, 438);
+            this.lbl_login.Location = new System.Drawing.Point(49, 392);
             this.lbl_login.Name = "lbl_login";
-            this.lbl_login.Size = new System.Drawing.Size(37, 13);
+            this.lbl_login.Size = new System.Drawing.Size(36, 13);
             this.lbl_login.TabIndex = 6;
             this.lbl_login.TabStop = true;
-            this.lbl_login.Text = "LogIn ";
+            this.lbl_login.Text = "Login ";
             this.lbl_login.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbl_login_LinkClicked);
             // 
             // EnterAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::WindowsFormsApplication11.Properties.Resources.enter_admin;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(746, 454);
             this.Controls.Add(this.lbl_login);
             this.Controls.Add(this.btn_Refresh);

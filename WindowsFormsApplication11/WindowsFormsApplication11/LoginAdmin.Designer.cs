@@ -39,7 +39,7 @@
             // 
             // btn_Login
             // 
-            this.btn_Login.Location = new System.Drawing.Point(188, 175);
+            this.btn_Login.Location = new System.Drawing.Point(188, 233);
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Size = new System.Drawing.Size(100, 22);
             this.btn_Login.TabIndex = 0;
@@ -49,14 +49,14 @@
             // 
             // txt_Email
             // 
-            this.txt_Email.Location = new System.Drawing.Point(188, 43);
+            this.txt_Email.Location = new System.Drawing.Point(188, 101);
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.Size = new System.Drawing.Size(100, 20);
             this.txt_Email.TabIndex = 1;
             // 
             // txt_Password
             // 
-            this.txt_Password.Location = new System.Drawing.Point(188, 105);
+            this.txt_Password.Location = new System.Drawing.Point(188, 157);
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.PasswordChar = '*';
             this.txt_Password.Size = new System.Drawing.Size(100, 20);
@@ -65,7 +65,7 @@
             // lbl_Email
             // 
             this.lbl_Email.AutoSize = true;
-            this.lbl_Email.Location = new System.Drawing.Point(41, 46);
+            this.lbl_Email.Location = new System.Drawing.Point(41, 108);
             this.lbl_Email.Name = "lbl_Email";
             this.lbl_Email.Size = new System.Drawing.Size(32, 13);
             this.lbl_Email.TabIndex = 3;
@@ -74,7 +74,7 @@
             // lbl_Password
             // 
             this.lbl_Password.AutoSize = true;
-            this.lbl_Password.Location = new System.Drawing.Point(41, 108);
+            this.lbl_Password.Location = new System.Drawing.Point(41, 164);
             this.lbl_Password.Name = "lbl_Password";
             this.lbl_Password.Size = new System.Drawing.Size(53, 13);
             this.lbl_Password.TabIndex = 4;
@@ -83,7 +83,7 @@
             // lnklbl_SignUp
             // 
             this.lnklbl_SignUp.AutoSize = true;
-            this.lnklbl_SignUp.Location = new System.Drawing.Point(41, 180);
+            this.lnklbl_SignUp.Location = new System.Drawing.Point(41, 242);
             this.lnklbl_SignUp.Name = "lnklbl_SignUp";
             this.lnklbl_SignUp.Size = new System.Drawing.Size(42, 13);
             this.lnklbl_SignUp.TabIndex = 5;
@@ -94,7 +94,7 @@
             // lnklbl_GoToMainPage
             // 
             this.lnklbl_GoToMainPage.AutoSize = true;
-            this.lnklbl_GoToMainPage.Location = new System.Drawing.Point(108, 220);
+            this.lnklbl_GoToMainPage.Location = new System.Drawing.Point(112, 293);
             this.lnklbl_GoToMainPage.Name = "lnklbl_GoToMainPage";
             this.lnklbl_GoToMainPage.Size = new System.Drawing.Size(91, 13);
             this.lnklbl_GoToMainPage.TabIndex = 6;
@@ -106,7 +106,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(327, 267);
+            this.BackgroundImage = global::WindowsFormsApplication11.Properties.Resources.adminlogin;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(348, 358);
             this.Controls.Add(this.lnklbl_GoToMainPage);
             this.Controls.Add(this.lnklbl_SignUp);
             this.Controls.Add(this.lbl_Password);

@@ -35,6 +35,11 @@ namespace WindowsFormsApplication11
             }
         }
 
+        public void setname(string name)
+        {
+            lbl_me.Text = name;
+        }
+
         private void btn_StartGroupChat_Click(object sender, EventArgs e)
         {
             if(ChatRoom.chatroom == null)
@@ -42,6 +47,7 @@ namespace WindowsFormsApplication11
                 ChatRoom n = new ChatRoom();
                 ChatRoom.chatroom = n;
             }
+            ChatRoom.chatroom.setname(lbl_me.Text);
             ChatRoom.chatroom.Show();
             this.Hide();
         }

@@ -76,5 +76,10 @@ namespace WindowsFormsApplication11
         {
             LoginUser.LoginUserForm = this;
         }
+
+        private void lnklbl_ForgetPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }

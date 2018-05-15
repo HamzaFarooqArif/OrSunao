@@ -118,8 +118,12 @@ namespace WindowsFormsApplication11
                 UsersForGroupChat n = new UsersForGroupChat();
                 UsersForGroupChat.usersforgroupchat = n;
             }
+
+            UsersForGroupChat.usersforgroupchat.setname(lbl_name.Text);
             UsersForGroupChat.usersforgroupchat.Show();
             this.Hide();
         }
+
+        
     }
 }

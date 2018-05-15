@@ -51,7 +51,7 @@
             // 
             // btn_Register
             // 
-            this.btn_Register.Location = new System.Drawing.Point(277, 235);
+            this.btn_Register.Location = new System.Drawing.Point(396, 331);
             this.btn_Register.Name = "btn_Register";
             this.btn_Register.Size = new System.Drawing.Size(75, 23);
             this.btn_Register.TabIndex = 0;
@@ -62,7 +62,7 @@
             // lbl_FirstName
             // 
             this.lbl_FirstName.AutoSize = true;
-            this.lbl_FirstName.Location = new System.Drawing.Point(20, 19);
+            this.lbl_FirstName.Location = new System.Drawing.Point(108, 98);
             this.lbl_FirstName.Name = "lbl_FirstName";
             this.lbl_FirstName.Size = new System.Drawing.Size(57, 13);
             this.lbl_FirstName.TabIndex = 1;
@@ -71,7 +71,7 @@
             // lbl_LastName
             // 
             this.lbl_LastName.AutoSize = true;
-            this.lbl_LastName.Location = new System.Drawing.Point(23, 45);
+            this.lbl_LastName.Location = new System.Drawing.Point(107, 127);
             this.lbl_LastName.Name = "lbl_LastName";
             this.lbl_LastName.Size = new System.Drawing.Size(58, 13);
             this.lbl_LastName.TabIndex = 2;
@@ -80,7 +80,7 @@
             // lbl_Email
             // 
             this.lbl_Email.AutoSize = true;
-            this.lbl_Email.Location = new System.Drawing.Point(24, 71);
+            this.lbl_Email.Location = new System.Drawing.Point(108, 149);
             this.lbl_Email.Name = "lbl_Email";
             this.lbl_Email.Size = new System.Drawing.Size(32, 13);
             this.lbl_Email.TabIndex = 3;
@@ -89,7 +89,7 @@
             // lbl_Password
             // 
             this.lbl_Password.AutoSize = true;
-            this.lbl_Password.Location = new System.Drawing.Point(24, 97);
+            this.lbl_Password.Location = new System.Drawing.Point(107, 170);
             this.lbl_Password.Name = "lbl_Password";
             this.lbl_Password.Size = new System.Drawing.Size(53, 13);
             this.lbl_Password.TabIndex = 4;
@@ -98,7 +98,7 @@
             // lbl_CNIC
             // 
             this.lbl_CNIC.AutoSize = true;
-            this.lbl_CNIC.Location = new System.Drawing.Point(24, 123);
+            this.lbl_CNIC.Location = new System.Drawing.Point(107, 199);
             this.lbl_CNIC.Name = "lbl_CNIC";
             this.lbl_CNIC.Size = new System.Drawing.Size(32, 13);
             this.lbl_CNIC.TabIndex = 5;
@@ -107,7 +107,7 @@
             // lbl_Contact
             // 
             this.lbl_Contact.AutoSize = true;
-            this.lbl_Contact.Location = new System.Drawing.Point(20, 149);
+            this.lbl_Contact.Location = new System.Drawing.Point(107, 222);
             this.lbl_Contact.Name = "lbl_Contact";
             this.lbl_Contact.Size = new System.Drawing.Size(44, 13);
             this.lbl_Contact.TabIndex = 6;
@@ -116,7 +116,7 @@
             // lbl_SecretQuestion
             // 
             this.lbl_SecretQuestion.AutoSize = true;
-            this.lbl_SecretQuestion.Location = new System.Drawing.Point(17, 175);
+            this.lbl_SecretQuestion.Location = new System.Drawing.Point(107, 251);
             this.lbl_SecretQuestion.Name = "lbl_SecretQuestion";
             this.lbl_SecretQuestion.Size = new System.Drawing.Size(83, 13);
             this.lbl_SecretQuestion.TabIndex = 7;
@@ -125,7 +125,7 @@
             // lbl_SecretAnswqer
             // 
             this.lbl_SecretAnswqer.AutoSize = true;
-            this.lbl_SecretAnswqer.Location = new System.Drawing.Point(20, 203);
+            this.lbl_SecretAnswqer.Location = new System.Drawing.Point(108, 282);
             this.lbl_SecretAnswqer.Name = "lbl_SecretAnswqer";
             this.lbl_SecretAnswqer.Size = new System.Drawing.Size(76, 13);
             this.lbl_SecretAnswqer.TabIndex = 8;
@@ -133,28 +133,28 @@
             // 
             // txt_FirstName
             // 
-            this.txt_FirstName.Location = new System.Drawing.Point(198, 16);
+            this.txt_FirstName.Location = new System.Drawing.Point(353, 98);
             this.txt_FirstName.Name = "txt_FirstName";
             this.txt_FirstName.Size = new System.Drawing.Size(118, 20);
             this.txt_FirstName.TabIndex = 9;
             // 
             // txt_LastName
             // 
-            this.txt_LastName.Location = new System.Drawing.Point(198, 42);
+            this.txt_LastName.Location = new System.Drawing.Point(353, 124);
             this.txt_LastName.Name = "txt_LastName";
             this.txt_LastName.Size = new System.Drawing.Size(118, 20);
             this.txt_LastName.TabIndex = 10;
             // 
             // txt_Email
             // 
-            this.txt_Email.Location = new System.Drawing.Point(198, 68);
+            this.txt_Email.Location = new System.Drawing.Point(353, 146);
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.Size = new System.Drawing.Size(118, 20);
             this.txt_Email.TabIndex = 11;
             // 
             // txt_Password
             // 
-            this.txt_Password.Location = new System.Drawing.Point(198, 94);
+            this.txt_Password.Location = new System.Drawing.Point(353, 170);
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.PasswordChar = '*';
             this.txt_Password.Size = new System.Drawing.Size(118, 20);
@@ -162,21 +162,21 @@
             // 
             // txt_CNIC
             // 
-            this.txt_CNIC.Location = new System.Drawing.Point(198, 120);
+            this.txt_CNIC.Location = new System.Drawing.Point(353, 196);
             this.txt_CNIC.Name = "txt_CNIC";
             this.txt_CNIC.Size = new System.Drawing.Size(118, 20);
             this.txt_CNIC.TabIndex = 13;
             // 
             // txt_Contact
             // 
-            this.txt_Contact.Location = new System.Drawing.Point(198, 146);
+            this.txt_Contact.Location = new System.Drawing.Point(353, 222);
             this.txt_Contact.Name = "txt_Contact";
             this.txt_Contact.Size = new System.Drawing.Size(118, 20);
             this.txt_Contact.TabIndex = 14;
             // 
             // txt_SecretAnswer
             // 
-            this.txt_SecretAnswer.Location = new System.Drawing.Point(198, 200);
+            this.txt_SecretAnswer.Location = new System.Drawing.Point(353, 275);
             this.txt_SecretAnswer.Name = "txt_SecretAnswer";
             this.txt_SecretAnswer.Size = new System.Drawing.Size(118, 20);
             this.txt_SecretAnswer.TabIndex = 16;
@@ -184,7 +184,7 @@
             // lnklbl_Login
             // 
             this.lnklbl_Login.AutoSize = true;
-            this.lnklbl_Login.Location = new System.Drawing.Point(33, 235);
+            this.lnklbl_Login.Location = new System.Drawing.Point(108, 331);
             this.lnklbl_Login.Name = "lnklbl_Login";
             this.lnklbl_Login.Size = new System.Drawing.Size(33, 13);
             this.lnklbl_Login.TabIndex = 17;
@@ -195,7 +195,7 @@
             // lnklbl_GoToMainPage
             // 
             this.lnklbl_GoToMainPage.AutoSize = true;
-            this.lnklbl_GoToMainPage.Location = new System.Drawing.Point(131, 248);
+            this.lnklbl_GoToMainPage.Location = new System.Drawing.Point(33, 378);
             this.lnklbl_GoToMainPage.Name = "lnklbl_GoToMainPage";
             this.lnklbl_GoToMainPage.Size = new System.Drawing.Size(91, 13);
             this.lnklbl_GoToMainPage.TabIndex = 18;
@@ -211,7 +211,7 @@
             "Your Favourite teacher name?",
             "Your favourite food name ?",
             "Your favourite place name?"});
-            this.txt_SecretQuestion.Location = new System.Drawing.Point(198, 175);
+            this.txt_SecretQuestion.Location = new System.Drawing.Point(353, 248);
             this.txt_SecretQuestion.Name = "txt_SecretQuestion";
             this.txt_SecretQuestion.Size = new System.Drawing.Size(118, 21);
             this.txt_SecretQuestion.TabIndex = 19;
@@ -220,7 +220,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 270);
+            this.BackgroundImage = global::WindowsFormsApplication11.Properties.Resources.userreg1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(568, 412);
             this.Controls.Add(this.txt_SecretQuestion);
             this.Controls.Add(this.lnklbl_GoToMainPage);
             this.Controls.Add(this.lnklbl_Login);

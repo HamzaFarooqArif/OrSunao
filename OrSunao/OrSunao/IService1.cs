@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.ComponentModel;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -13,17 +15,38 @@ namespace OrSunao
     public interface IService1
     {
         [OperationContract]
+        int getimagelength(string email);
+
+        [OperationContract]
+        bool checkimage(string email);
+
+        [OperationContract]
+        void setImageToEmpty(string Email);
+
+        [OperationContract]
+        void getChatImage(string Email, ref byte[] img);
+
+        [OperationContract]
+        void setChatToImage(string Email, byte[] img, int length);
+
+        [OperationContract]
         void addusertogroup(string myemail, string hisemail);
+
         [OperationContract]
         void getUsersgroupContacts(string email, ref List<string> str);
+
         [OperationContract]
         bool SIsOfflineUser(string myemail);
+
         [OperationContract]
         void SOfflineUser(string myemail);
+
         [OperationContract]
         bool SConnectwithuser(string myemail,string hisemail);
+
         [OperationContract]
         bool SDeleteUser(string email, string password);
+
         [OperationContract]
         bool SSuspendUser(string email, string password);
 
@@ -32,22 +55,24 @@ namespace OrSunao
 
         [OperationContract]
         void SPassRegisteredUsersname(ref List<string> str);
+
         [OperationContract]
         void SPassRegisteredUserspassword(ref List<string> str);
 
         [OperationContract]
         void SPassSuspendedUsersname(ref List<string> str);
+
         [OperationContract]
         void SPassSuspendedUserspassword(ref List<string> str);
+
         [OperationContract]
         void SPassToBeRegisteredUsersname(ref List<string> str);
+
         [OperationContract]
         void SPassToBeRegisteredUserspassword(ref List<string> str);
 
-
         [OperationContract]
         bool SRegisterUser(string firstname, string lastname, string password, string email, string contact, string cnic, string secretq, string ans);
-
 
         [OperationContract]
         bool SLoginUser(string email, string password);
@@ -74,9 +99,6 @@ namespace OrSunao
         [OperationContract]
         void AddToContacts(string myEmail, string myPassword, string hisEmail, string hisPassword);
 
-
-  
-
         [OperationContract]
         void AddToBlockedUsers(string myEmail, string hisEmail);
 
@@ -95,6 +117,14 @@ namespace OrSunao
         [OperationContract]
         void setConnected(string Email, bool connected);
 
+        [OperationContract]
+        void setGroupChatText(string Email, string msg);
+
+        [OperationContract]
+        void setGroupChatToEmpty(string Email);
+
+        [OperationContract]
+        void getGroupChatText(string Email, ref List<string> str);
 
 
         // TODO: Add your service operations here

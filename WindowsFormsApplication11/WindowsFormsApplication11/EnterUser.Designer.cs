@@ -1,4 +1,6 @@
-﻿namespace WindowsFormsApplication11
+﻿using System;
+
+namespace WindowsFormsApplication11
 {
     partial class EnterUser
     {
@@ -39,34 +41,35 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(31, 43);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(49, 63);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(296, 235);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(300, 221);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // lbl_login
             // 
             this.lbl_login.AutoSize = true;
-            this.lbl_login.Location = new System.Drawing.Point(12, 295);
+            this.lbl_login.Location = new System.Drawing.Point(30, 325);
             this.lbl_login.Name = "lbl_login";
-            this.lbl_login.Size = new System.Drawing.Size(37, 13);
+            this.lbl_login.Size = new System.Drawing.Size(33, 13);
             this.lbl_login.TabIndex = 0;
             this.lbl_login.TabStop = true;
-            this.lbl_login.Text = "Log In";
+            this.lbl_login.Text = "Login";
             this.lbl_login.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbl_login_LinkClicked);
             // 
             // lbl_name
             // 
             this.lbl_name.AutoSize = true;
-            this.lbl_name.Location = new System.Drawing.Point(30, 9);
+            this.lbl_name.Location = new System.Drawing.Point(30, 21);
             this.lbl_name.Name = "lbl_name";
             this.lbl_name.Size = new System.Drawing.Size(33, 13);
             this.lbl_name.TabIndex = 0;
             this.lbl_name.Text = "name";
+            this.lbl_name.Click += new System.EventHandler(this.lbl_name_Click);
             // 
             // btn_Deactivate
             // 
-            this.btn_Deactivate.Location = new System.Drawing.Point(252, 295);
+            this.btn_Deactivate.Location = new System.Drawing.Point(297, 320);
             this.btn_Deactivate.Name = "btn_Deactivate";
             this.btn_Deactivate.Size = new System.Drawing.Size(75, 23);
             this.btn_Deactivate.TabIndex = 1;
@@ -76,7 +79,7 @@
             // 
             // btn_Refresh
             // 
-            this.btn_Refresh.Location = new System.Drawing.Point(156, 295);
+            this.btn_Refresh.Location = new System.Drawing.Point(186, 320);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(75, 23);
             this.btn_Refresh.TabIndex = 2;
@@ -86,7 +89,7 @@
             // 
             // btn_GroupChat
             // 
-            this.btn_GroupChat.Location = new System.Drawing.Point(65, 295);
+            this.btn_GroupChat.Location = new System.Drawing.Point(78, 320);
             this.btn_GroupChat.Name = "btn_GroupChat";
             this.btn_GroupChat.Size = new System.Drawing.Size(75, 23);
             this.btn_GroupChat.TabIndex = 3;
@@ -98,7 +101,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(364, 326);
+            this.BackgroundImage = global::WindowsFormsApplication11.Properties.Resources.enter_user;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(415, 368);
             this.Controls.Add(this.btn_GroupChat);
             this.Controls.Add(this.btn_Refresh);
             this.Controls.Add(this.btn_Deactivate);
@@ -111,6 +116,11 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void lbl_name_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

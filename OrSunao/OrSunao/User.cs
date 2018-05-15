@@ -1,5 +1,7 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 
@@ -14,6 +16,8 @@ namespace OrSunao
         private bool isBlocked;
         private bool isConnected;
         private string currentText;
+        private byte[] image;
+        private List<string> currentChatRoomText = new List<string>();
         public List<User> contacts = new List<User>();
         public List<User> blockedUsers = new List<User>();
         public List<User> groupUsers = new List<User>();
@@ -30,6 +34,7 @@ namespace OrSunao
         {
             return this.Email;
         }
+
         public User getuserfromr(string email, string password)
         {
             User p = new User();
@@ -43,6 +48,7 @@ namespace OrSunao
             }
             return p;
         }
+
         public User getuser(string email, string password)
         {
             User p = new User();
@@ -57,7 +63,7 @@ namespace OrSunao
             return p;
         }
 
-        public bool registeruser(string firstname, string lastname,string password, string email, string contact, string cnic, string secretq, string ans)
+        public bool registeruser(string firstname, string lastname, string password, string email, string contact, string cnic, string secretq, string ans)
         {
             foreach(User u in UserDl.suspendedUsers)
             {
@@ -70,7 +76,7 @@ namespace OrSunao
             {
                 foreach (User k in UserDl.orSunaoMembers)
                 {
-                    if (k.Email == email || k.Password == password)
+                    if (k.Email == email && k.Password == password)
                     {
                         return false;
                     }
@@ -80,7 +86,7 @@ namespace OrSunao
             {
                 foreach (User k in UserDl.registrationRequests)
                 {
-                    if (k.Email == email || k.Password == password)
+                    if (k.Email == email && k.Password == password)
                     {
                         return false;
                     }
@@ -98,6 +104,7 @@ namespace OrSunao
             UserDl.registrationRequests.Add(this);
             return true;
         }
+
         public bool loginuser(string email, string password)
         {
             foreach (User u in UserDl.orSunaoMembers)
@@ -119,6 +126,7 @@ namespace OrSunao
             }
             return false;
         }
+
         public string SecretQuestion
         {
             get
@@ -207,6 +215,32 @@ namespace OrSunao
             set
             {
                 isConnected = value;
+            }
+        }
+
+        public byte[] Image
+        {
+            get
+            {
+                return image;
+            }
+
+            set
+            {
+                image = value;
+            }
+        }
+
+        public List<string> CurrentChatRoomText
+        {
+            get
+            {
+                return currentChatRoomText;
+            }
+
+            set
+            {
+                currentChatRoomText = value;
             }
         }
 
