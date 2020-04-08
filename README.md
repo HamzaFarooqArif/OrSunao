@@ -1,4 +1,4 @@
-# OrSunao---OOAD
+# OrSunao Messenger
 ![OrSunao-main-img](https://i.imgur.com/pUAsdsN.png)
 
 Instant Messaging App used to share text and images in chat groups as well. Some of its features are.
